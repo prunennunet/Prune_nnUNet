@@ -1,4 +1,7 @@
+from pprint import pprint
+
 import yaml
+
 
 
 def read_config(yaml_file):

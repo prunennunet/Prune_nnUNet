@@ -1,0 +1,16 @@
+prune:
+  checkpoint_name: checkpoint_final.pth
+  fold:
+  - - 0
+    - 1
+  - - 1
+  - - 2
+  gt_folder: nnUNet_raw/Dataset027_ACDC/labelsTs
+  input_folder: nnUNet_raw/Dataset027_ACDC/imagesTs
+  model_folder: nnUNet_results/Dataset027_ACDC/FlexibleTrainerV1__nnUNetPlans__2d
+  output_folder: nnUNet_results/Dataset027_ACDC/FlexibleTrainerV1__nnUNetPlans__2d/prune_predictions
+  prune_method: RangePruning
+  prune_parameters:
+    max_val: 0.01
+    min_val: -0.01
+    prune_bias: true

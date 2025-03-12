@@ -11,7 +11,7 @@ min_vals = [0e-0]
 prune_biases = [False]
 
 # Path to the config file
-config_path = 'scripts/config/config.yaml'
+config_path = 'train_nnunet/config.yaml'
 
 
 # Function to update the config file
