@@ -22,10 +22,14 @@ def create_output_path(config: dict, fold: list):
         param_parts = []
         for key, value in config['prune_parameters'].items():
             # Format numbers in scientific notation (Xe-Y)
-            if isinstance(value, (int, float)):
+            if isinstance(value, (int, float)) and not isinstance(value, bool):
                 # Convert value to scientific notation
                 value_str = format_scientific(value)
                 # Scientific notation formatting already gives the X.XXe±Y format
+            elif isinstance(value, list):
+                # Convert each element to string and join with hyphens
+                elements = [str(item) for item in value]
+                value_str = "-".join(elements)
             else:
                 value_str = str(value)
 

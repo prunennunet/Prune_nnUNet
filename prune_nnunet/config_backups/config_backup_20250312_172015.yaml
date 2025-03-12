@@ -13,6 +13,6 @@ prune:
     max_val: 0.01
     min_val: -0.01
     prune_bias: true
-    prune_layers:
-    - conv
     prune_weights: true
+    prune_layers:
+      - conv
