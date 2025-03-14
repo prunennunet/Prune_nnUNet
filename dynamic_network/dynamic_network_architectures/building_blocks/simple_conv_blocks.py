@@ -35,6 +35,12 @@ class ConvDropoutNormReLU(nn.Module):
         kernel_size = maybe_convert_scalar_to_list(conv_op, kernel_size)
         if norm_op_kwargs is None:
             norm_op_kwargs = {}
+        # Comment the non if you want the normalization layers to have learnable parameters
+        else:
+            # Create a copy to avoid modifying the original dictionary
+            norm_op_kwargs = norm_op_kwargs.copy()
+            norm_op_kwargs['affine'] = False
+
         if nonlin_kwargs is None:
             nonlin_kwargs = {}
 

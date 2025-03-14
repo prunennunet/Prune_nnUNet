@@ -110,8 +110,35 @@ def plot_performance_vs_pruning(csv_file, output_dir="plots"):
             for i, method in enumerate(prune_methods):
                 method_data = group_data[group_data['prune_method'] == method]
 
-                # Sort by total_percentage for proper line drawing
-                method_data = method_data.sort_values(by='total_percentage')
+                # Extract numeric values from min_val for sorting
+                def extract_number(val):
+                    """Safely extract numeric value from threshold strings"""
+                    if pd.isna(val):
+                        return 0
+
+                    # If it's already a number, return its absolute value
+                    if isinstance(val, (int, float)):
+                        return abs(float(val))
+
+                    # Convert to string and handle various formats
+                    val_str = str(val)
+
+                    # Extract digits using regex
+                    import re
+                    numbers = re.findall(r'[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?', val_str)
+                    if numbers:
+                        try:
+                            # Return the absolute value of the first number found
+                            return abs(float(numbers[0]))
+                        except:
+                            return 0
+                    return 0
+
+                # Create a sorting key
+                method_data['threshold_value'] = method_data['min_val'].apply(extract_number)
+
+                # Sort first by total_percentage, then by threshold_value for points with same percentage
+                method_data = method_data.sort_values(by=['total_percentage', 'threshold_value'])
 
                 if len(method_data) == 0:
                     continue
@@ -268,8 +295,35 @@ def create_summary_plots(csv_file, output_dir="plots"):
         for i, method in enumerate(prune_methods):
             method_data = summary[summary['prune_method'] == method]
 
-            # Sort by total_percentage for proper line drawing
-            method_data = method_data.sort_values(by='total_percentage')
+            # Extract numeric values from min_val for sorting
+            def extract_number(val):
+                """Safely extract numeric value from threshold strings"""
+                if pd.isna(val):
+                    return 0
+
+                # If it's already a number, return its absolute value
+                if isinstance(val, (int, float)):
+                    return abs(float(val))
+
+                # Convert to string and handle various formats
+                val_str = str(val)
+
+                # Extract digits using regex
+                import re
+                numbers = re.findall(r'[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?', val_str)
+                if numbers:
+                    try:
+                        # Return the absolute value of the first number found
+                        return abs(float(numbers[0]))
+                    except:
+                        return 0
+                return 0
+
+            # Create a sorting key
+            method_data['threshold_value'] = method_data['min_val'].apply(extract_number)
+
+            # Sort first by total_percentage, then by threshold_value for points with same percentage
+            method_data = method_data.sort_values(by=['total_percentage', 'threshold_value'])
 
             if len(method_data) == 0:
                 continue

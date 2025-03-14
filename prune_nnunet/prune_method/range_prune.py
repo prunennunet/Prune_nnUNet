@@ -105,7 +105,7 @@ def apply_range_pruning_to_model(model, min_val: float, max_val: float, prune_we
         # Only process the module if it should be pruned based on layer criteria
         if should_prune:
             # Prune weights if specified and if the module has weights
-            if prune_weights and hasattr(module, 'weight'):
+            if prune_weights and hasattr(module, 'weight') and module.weight is not None:
                 # Count weights before pruning
                 original_weight = module.weight.data.clone()
                 total_layer = original_weight.numel()
