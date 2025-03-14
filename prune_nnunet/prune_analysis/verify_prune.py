@@ -1,6 +1,101 @@
 import os
 
 
+def analyze_pruning_masks(model, output_path):
+    """
+    Analyze pruning masks in a model by counting parameters marked for pruning.
+    Save the results to a text file at output_path.
+
+    Args:
+        model: PyTorch model with pruning masks
+        output_path: Path to save the output text file
+
+    Returns:
+        A tuple of (weight_stats, bias_stats, total_stats) each containing:
+        (num_pruned, total_params, proportion_pruned)
+    """
+    output_path = os.path.join(output_path, "pruning_mask_analysis.txt")
+
+    # Count for pruned parameters (via masks)
+    weight_pruned = 0
+    bias_pruned = 0
+
+    # Count for all parameters in the model
+    weight_total = 0
+    bias_total = 0
+
+    # Prepare the output file
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    # Create a list to store all output lines (for both console and file)
+    output_lines = []
+
+    # Function to both print and store a line
+    def log_line(line):
+        print(line)
+        output_lines.append(line + "\n")
+
+    # First, count all parameters in the model
+    for name, module in model.named_modules():
+        # Count all weights
+        if hasattr(module, 'weight') and module.weight is not None:
+            w_total = module.weight.numel()
+            weight_total += w_total
+
+        # Count all biases
+        if hasattr(module, 'bias') and module.bias is not None:
+            b_total = module.bias.numel()
+            bias_total += b_total
+
+    # Now, analyze pruning masks
+    for name, module in model.named_modules():
+        # Handle weight masks
+        if hasattr(module, 'weight_mask') and module.weight_mask is not None:
+            weight_mask = module.weight_mask.data
+            # Count zeros in weight masks (pruned weights)
+            w_pruned = (weight_mask == 0).sum().item()
+            w_mask_total = weight_mask.numel()
+            weight_pruned += w_pruned
+            if w_pruned > 0:
+                log_line(f"{name}.weight_mask: {w_pruned}/{w_mask_total} pruned ({w_pruned / w_mask_total:.2%})")
+
+        # Handle bias masks
+        if hasattr(module, 'bias_mask') and module.bias_mask is not None:
+            bias_mask = module.bias_mask.data
+            # Count zeros in bias masks (pruned biases)
+            b_pruned = (bias_mask == 0).sum().item()
+            b_mask_total = bias_mask.numel()
+            bias_pruned += b_pruned
+            if b_pruned > 0:
+                log_line(f"{name}.bias_mask: {b_pruned}/{b_mask_total} pruned ({b_pruned / b_mask_total:.2%})")
+
+    # Calculate totals and proportions based on all parameters
+    total_pruned = weight_pruned + bias_pruned
+    total_params = weight_total + bias_total
+    weight_proportion = weight_pruned / weight_total if weight_total > 0 else 0
+    bias_proportion = bias_pruned / bias_total if bias_total > 0 else 0
+    total_proportion = total_pruned / total_params if total_params > 0 else 0
+
+    # Print and log summary
+    log_line("\nSUMMARY:")
+    log_line(f"Weights: {weight_pruned:,}/{weight_total:,} pruned ({weight_proportion:.2%})")
+    log_line(f"Biases:  {bias_pruned:,}/{bias_total:,} pruned ({bias_proportion:.2%})")
+    log_line(f"Total:   {total_pruned:,}/{total_params:,} pruned ({total_proportion:.2%})")
+
+    # Save all output to the file
+    try:
+        with open(output_path, 'w') as f:
+            f.writelines(output_lines)
+        print(f"\nPruning mask analysis saved to: {output_path}")
+    except Exception as e:
+        print(f"\nError saving pruning mask analysis to file: {e}")
+
+    weight_stats = (weight_pruned, weight_total, weight_proportion)
+    bias_stats = (bias_pruned, bias_total, bias_proportion)
+    total_stats = (total_pruned, total_params, total_proportion)
+
+    return weight_stats, bias_stats, total_stats
+
 
 def count_zero_parameters(model, output_path):
     """

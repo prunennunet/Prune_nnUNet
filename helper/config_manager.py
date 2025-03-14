@@ -13,6 +13,17 @@ class ConfigManager:
         self.backup_path = None
         self.original_config = None
 
+    def read_config(self) -> Dict:
+        """Read configuration from YAML file."""
+        try:
+            with open(self.config_path, 'r') as file:
+                config = yaml.safe_load(file)
+            return config
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Error: Config file '{self.config_path}' not found")
+        except yaml.YAMLError as e:
+            raise e
+
     def backup(self) -> Path:
         """
         Create a timestamped backup of the config file.

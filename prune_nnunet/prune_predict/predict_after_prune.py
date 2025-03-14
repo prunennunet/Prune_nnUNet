@@ -6,7 +6,7 @@ from torch.nn.utils import prune
 
 from helper.data_format import format_scientific
 from helper.load_model import load_predictor_from_folder
-from prune_nnunet.prune_analysis.verify_prune import verify_pruning, count_zero_parameters
+from prune_nnunet.prune_analysis.verify_prune import verify_pruning, count_zero_parameters, analyze_pruning_masks
 from prune_nnunet.prune_method.find_function import get_pruning_function
 from train_nnunet.predict.predict import process_fold_config
 
@@ -96,6 +96,8 @@ def predict_after_prune(config: dict):
         pred_dirs.append(output_folder)
 
         torch.save(model.state_dict(), os.path.join(output_folder, "pruned_model_with_masks.pth"))
+
+        weight_stats, bias_stats, total_stats = analyze_pruning_masks(predictor.network, output_folder)
 
         for name, module in model.named_modules():
             if hasattr(module, 'weight_orig'):
