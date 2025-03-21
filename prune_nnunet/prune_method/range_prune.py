@@ -192,7 +192,12 @@ def process_range_pruning_results(root_dir):
                 if not fold_dir.is_dir():
                     continue
 
-                fold_num = int(fold_dir.name.split('_')[1])
+                # fold_num = int(fold_dir.name.split('_')[1])
+                fold_part = fold_dir.name.split('_')[1]
+                if fold_part == 'all':
+                    fold_num = 'all'
+                else:
+                    fold_num = int(fold_part)
 
                 # Check both final_model and best_model
                 model_types = ["final_model", "best_model"]

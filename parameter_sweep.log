@@ -1,2070 +1,717 @@
-2025-03-13 15:19:14,387 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
-2025-03-13 15:19:14,387 - INFO - Starting parameter sweep with 336 combinations
-2025-03-13 15:19:14,387 - INFO - Running combination 1/336:
-2025-03-13 15:19:14,387 - INFO -   abs_val = 0
-2025-03-13 15:19:14,387 - INFO -   prune_bias = True
-2025-03-13 15:19:14,387 - INFO -   prune_weights = True
-2025-03-13 15:19:14,387 - INFO -   prune_layers = ['norm']
-2025-03-13 15:21:00,535 - INFO - Finished combination 1/336
-2025-03-13 15:21:00,535 - INFO - Running combination 2/336:
-2025-03-13 15:21:00,535 - INFO -   abs_val = 0
-2025-03-13 15:21:00,535 - INFO -   prune_bias = True
-2025-03-13 15:21:00,535 - INFO -   prune_weights = True
-2025-03-13 15:21:00,535 - INFO -   prune_layers = ['conv']
-2025-03-13 15:22:45,799 - INFO - Finished combination 2/336
-2025-03-13 15:22:45,799 - INFO - Running combination 3/336:
-2025-03-13 15:22:45,799 - INFO -   abs_val = 0
-2025-03-13 15:22:45,799 - INFO -   prune_bias = True
-2025-03-13 15:22:45,799 - INFO -   prune_weights = True
-2025-03-13 15:22:45,799 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 15:24:32,974 - INFO - Finished combination 3/336
-2025-03-13 15:24:32,974 - INFO - Running combination 4/336:
-2025-03-13 15:24:32,974 - INFO -   abs_val = 0
-2025-03-13 15:24:32,974 - INFO -   prune_bias = True
-2025-03-13 15:24:32,974 - INFO -   prune_weights = False
-2025-03-13 15:24:32,974 - INFO -   prune_layers = ['norm']
-2025-03-13 15:26:18,619 - INFO - Finished combination 4/336
-2025-03-13 15:26:18,619 - INFO - Running combination 5/336:
-2025-03-13 15:26:18,619 - INFO -   abs_val = 0
-2025-03-13 15:26:18,619 - INFO -   prune_bias = True
-2025-03-13 15:26:18,619 - INFO -   prune_weights = False
-2025-03-13 15:26:18,619 - INFO -   prune_layers = ['conv']
-2025-03-13 15:28:03,337 - INFO - Finished combination 5/336
-2025-03-13 15:28:03,337 - INFO - Running combination 6/336:
-2025-03-13 15:28:03,337 - INFO -   abs_val = 0
-2025-03-13 15:28:03,337 - INFO -   prune_bias = True
-2025-03-13 15:28:03,337 - INFO -   prune_weights = False
-2025-03-13 15:28:03,337 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 15:29:49,102 - INFO - Finished combination 6/336
-2025-03-13 15:29:49,102 - INFO - Running combination 7/336:
-2025-03-13 15:29:49,102 - INFO -   abs_val = 0
-2025-03-13 15:29:49,102 - INFO -   prune_bias = False
-2025-03-13 15:29:49,103 - INFO -   prune_weights = True
-2025-03-13 15:29:49,103 - INFO -   prune_layers = ['norm']
-2025-03-13 15:32:28,271 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
-2025-03-13 15:32:28,271 - INFO - Starting parameter sweep with 112 combinations
-2025-03-13 15:32:28,271 - INFO - Running combination 1/112:
-2025-03-13 15:32:28,271 - INFO -   abs_val = 0
-2025-03-13 15:32:28,271 - INFO -   prune_bias = True
-2025-03-13 15:32:28,271 - INFO -   prune_weights = True
-2025-03-13 15:32:28,271 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 15:33:29,247 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
-2025-03-13 15:33:29,247 - INFO - Starting parameter sweep with 336 combinations
-2025-03-13 15:33:29,247 - INFO - Running combination 1/336:
-2025-03-13 15:33:29,247 - INFO -   abs_val = 0
-2025-03-13 15:33:29,247 - INFO -   prune_bias = True
-2025-03-13 15:33:29,247 - INFO -   prune_weights = True
-2025-03-13 15:33:29,247 - INFO -   prune_layers = ['norm']
-2025-03-13 15:35:17,636 - INFO - Finished combination 1/336
-2025-03-13 15:35:17,636 - INFO - Running combination 2/336:
-2025-03-13 15:35:17,636 - INFO -   abs_val = 0
-2025-03-13 15:35:17,636 - INFO -   prune_bias = True
-2025-03-13 15:35:17,636 - INFO -   prune_weights = True
-2025-03-13 15:35:17,636 - INFO -   prune_layers = ['conv']
-2025-03-13 15:37:03,885 - INFO - Finished combination 2/336
-2025-03-13 15:37:03,885 - INFO - Running combination 3/336:
-2025-03-13 15:37:03,885 - INFO -   abs_val = 0
-2025-03-13 15:37:03,885 - INFO -   prune_bias = True
-2025-03-13 15:37:03,885 - INFO -   prune_weights = True
-2025-03-13 15:37:03,885 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 15:38:51,558 - INFO - Finished combination 3/336
-2025-03-13 15:38:51,558 - INFO - Running combination 4/336:
-2025-03-13 15:38:51,558 - INFO -   abs_val = 0
-2025-03-13 15:38:51,558 - INFO -   prune_bias = True
-2025-03-13 15:38:51,558 - INFO -   prune_weights = False
-2025-03-13 15:38:51,558 - INFO -   prune_layers = ['norm']
-2025-03-13 15:40:37,201 - INFO - Finished combination 4/336
-2025-03-13 15:40:37,201 - INFO - Running combination 5/336:
-2025-03-13 15:40:37,201 - INFO -   abs_val = 0
-2025-03-13 15:40:37,201 - INFO -   prune_bias = True
-2025-03-13 15:40:37,201 - INFO -   prune_weights = False
-2025-03-13 15:40:37,201 - INFO -   prune_layers = ['conv']
-2025-03-13 15:42:23,250 - INFO - Finished combination 5/336
-2025-03-13 15:42:23,250 - INFO - Running combination 6/336:
-2025-03-13 15:42:23,250 - INFO -   abs_val = 0
-2025-03-13 15:42:23,250 - INFO -   prune_bias = True
-2025-03-13 15:42:23,250 - INFO -   prune_weights = False
-2025-03-13 15:42:23,250 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 15:44:09,229 - INFO - Finished combination 6/336
-2025-03-13 15:44:09,229 - INFO - Running combination 7/336:
-2025-03-13 15:44:09,229 - INFO -   abs_val = 0
-2025-03-13 15:44:09,229 - INFO -   prune_bias = False
-2025-03-13 15:44:09,229 - INFO -   prune_weights = True
-2025-03-13 15:44:09,229 - INFO -   prune_layers = ['norm']
-2025-03-13 15:45:55,111 - INFO - Finished combination 7/336
-2025-03-13 15:45:55,111 - INFO - Running combination 8/336:
-2025-03-13 15:45:55,111 - INFO -   abs_val = 0
-2025-03-13 15:45:55,111 - INFO -   prune_bias = False
-2025-03-13 15:45:55,111 - INFO -   prune_weights = True
-2025-03-13 15:45:55,111 - INFO -   prune_layers = ['conv']
-2025-03-13 15:47:41,425 - INFO - Finished combination 8/336
-2025-03-13 15:47:41,426 - INFO - Running combination 9/336:
-2025-03-13 15:47:41,426 - INFO -   abs_val = 0
-2025-03-13 15:47:41,426 - INFO -   prune_bias = False
-2025-03-13 15:47:41,426 - INFO -   prune_weights = True
-2025-03-13 15:47:41,426 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 15:49:28,390 - INFO - Finished combination 9/336
-2025-03-13 15:49:28,390 - INFO - Running combination 10/336:
-2025-03-13 15:49:28,390 - INFO -   abs_val = 0
-2025-03-13 15:49:28,390 - INFO -   prune_bias = False
-2025-03-13 15:49:28,390 - INFO -   prune_weights = False
-2025-03-13 15:49:28,390 - INFO -   prune_layers = ['norm']
-2025-03-13 15:51:12,888 - INFO - Finished combination 10/336
-2025-03-13 15:51:12,888 - INFO - Running combination 11/336:
-2025-03-13 15:51:12,888 - INFO -   abs_val = 0
-2025-03-13 15:51:12,888 - INFO -   prune_bias = False
-2025-03-13 15:51:12,888 - INFO -   prune_weights = False
-2025-03-13 15:51:12,888 - INFO -   prune_layers = ['conv']
-2025-03-13 15:52:57,519 - INFO - Finished combination 11/336
-2025-03-13 15:52:57,519 - INFO - Running combination 12/336:
-2025-03-13 15:52:57,519 - INFO -   abs_val = 0
-2025-03-13 15:52:57,519 - INFO -   prune_bias = False
-2025-03-13 15:52:57,519 - INFO -   prune_weights = False
-2025-03-13 15:52:57,519 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 15:54:42,821 - INFO - Finished combination 12/336
-2025-03-13 15:54:42,821 - INFO - Running combination 13/336:
-2025-03-13 15:54:42,821 - INFO -   abs_val = 0.001
-2025-03-13 15:54:42,822 - INFO -   prune_bias = True
-2025-03-13 15:54:42,822 - INFO -   prune_weights = True
-2025-03-13 15:54:42,822 - INFO -   prune_layers = ['norm']
-2025-03-13 15:56:26,717 - INFO - Finished combination 13/336
-2025-03-13 15:56:26,717 - INFO - Running combination 14/336:
-2025-03-13 15:56:26,717 - INFO -   abs_val = 0.001
-2025-03-13 15:56:26,717 - INFO -   prune_bias = True
-2025-03-13 15:56:26,717 - INFO -   prune_weights = True
-2025-03-13 15:56:26,717 - INFO -   prune_layers = ['conv']
-2025-03-13 15:58:13,016 - INFO - Finished combination 14/336
-2025-03-13 15:58:13,016 - INFO - Running combination 15/336:
-2025-03-13 15:58:13,016 - INFO -   abs_val = 0.001
-2025-03-13 15:58:13,016 - INFO -   prune_bias = True
-2025-03-13 15:58:13,016 - INFO -   prune_weights = True
-2025-03-13 15:58:13,016 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 15:59:58,520 - INFO - Finished combination 15/336
-2025-03-13 15:59:58,520 - INFO - Running combination 16/336:
-2025-03-13 15:59:58,520 - INFO -   abs_val = 0.001
-2025-03-13 15:59:58,520 - INFO -   prune_bias = True
-2025-03-13 15:59:58,520 - INFO -   prune_weights = False
-2025-03-13 15:59:58,520 - INFO -   prune_layers = ['norm']
-2025-03-13 16:01:43,342 - INFO - Finished combination 16/336
-2025-03-13 16:01:43,342 - INFO - Running combination 17/336:
-2025-03-13 16:01:43,342 - INFO -   abs_val = 0.001
-2025-03-13 16:01:43,342 - INFO -   prune_bias = True
-2025-03-13 16:01:43,342 - INFO -   prune_weights = False
-2025-03-13 16:01:43,342 - INFO -   prune_layers = ['conv']
-2025-03-13 16:03:28,315 - INFO - Finished combination 17/336
-2025-03-13 16:03:28,315 - INFO - Running combination 18/336:
-2025-03-13 16:03:28,315 - INFO -   abs_val = 0.001
-2025-03-13 16:03:28,315 - INFO -   prune_bias = True
-2025-03-13 16:03:28,315 - INFO -   prune_weights = False
-2025-03-13 16:03:28,315 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:05:14,044 - INFO - Finished combination 18/336
-2025-03-13 16:05:14,044 - INFO - Running combination 19/336:
-2025-03-13 16:05:14,044 - INFO -   abs_val = 0.001
-2025-03-13 16:05:14,044 - INFO -   prune_bias = False
-2025-03-13 16:05:14,044 - INFO -   prune_weights = True
-2025-03-13 16:05:14,044 - INFO -   prune_layers = ['norm']
-2025-03-13 16:07:00,297 - INFO - Finished combination 19/336
-2025-03-13 16:07:00,297 - INFO - Running combination 20/336:
-2025-03-13 16:07:00,297 - INFO -   abs_val = 0.001
-2025-03-13 16:07:00,297 - INFO -   prune_bias = False
-2025-03-13 16:07:00,297 - INFO -   prune_weights = True
-2025-03-13 16:07:00,297 - INFO -   prune_layers = ['conv']
-2025-03-13 16:08:47,134 - INFO - Finished combination 20/336
-2025-03-13 16:08:47,135 - INFO - Running combination 21/336:
-2025-03-13 16:08:47,135 - INFO -   abs_val = 0.001
-2025-03-13 16:08:47,135 - INFO -   prune_bias = False
-2025-03-13 16:08:47,135 - INFO -   prune_weights = True
-2025-03-13 16:08:47,135 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:10:33,721 - INFO - Finished combination 21/336
-2025-03-13 16:10:33,721 - INFO - Running combination 22/336:
-2025-03-13 16:10:33,721 - INFO -   abs_val = 0.001
-2025-03-13 16:10:33,721 - INFO -   prune_bias = False
-2025-03-13 16:10:33,721 - INFO -   prune_weights = False
-2025-03-13 16:10:33,721 - INFO -   prune_layers = ['norm']
-2025-03-13 16:12:19,058 - INFO - Finished combination 22/336
-2025-03-13 16:12:19,058 - INFO - Running combination 23/336:
-2025-03-13 16:12:19,058 - INFO -   abs_val = 0.001
-2025-03-13 16:12:19,058 - INFO -   prune_bias = False
-2025-03-13 16:12:19,058 - INFO -   prune_weights = False
-2025-03-13 16:12:19,058 - INFO -   prune_layers = ['conv']
-2025-03-13 16:14:04,995 - INFO - Finished combination 23/336
-2025-03-13 16:14:04,995 - INFO - Running combination 24/336:
-2025-03-13 16:14:04,995 - INFO -   abs_val = 0.001
-2025-03-13 16:14:04,995 - INFO -   prune_bias = False
-2025-03-13 16:14:04,996 - INFO -   prune_weights = False
-2025-03-13 16:14:04,996 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:15:51,097 - INFO - Finished combination 24/336
-2025-03-13 16:15:51,097 - INFO - Running combination 25/336:
-2025-03-13 16:15:51,097 - INFO -   abs_val = 0.002
-2025-03-13 16:15:51,097 - INFO -   prune_bias = True
-2025-03-13 16:15:51,097 - INFO -   prune_weights = True
-2025-03-13 16:15:51,097 - INFO -   prune_layers = ['norm']
-2025-03-13 16:17:37,209 - INFO - Finished combination 25/336
-2025-03-13 16:17:37,209 - INFO - Running combination 26/336:
-2025-03-13 16:17:37,209 - INFO -   abs_val = 0.002
-2025-03-13 16:17:37,209 - INFO -   prune_bias = True
-2025-03-13 16:17:37,209 - INFO -   prune_weights = True
-2025-03-13 16:17:37,209 - INFO -   prune_layers = ['conv']
-2025-03-13 16:19:24,176 - INFO - Finished combination 26/336
-2025-03-13 16:19:24,176 - INFO - Running combination 27/336:
-2025-03-13 16:19:24,176 - INFO -   abs_val = 0.002
-2025-03-13 16:19:24,176 - INFO -   prune_bias = True
-2025-03-13 16:19:24,176 - INFO -   prune_weights = True
-2025-03-13 16:19:24,176 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:21:11,179 - INFO - Finished combination 27/336
-2025-03-13 16:21:11,179 - INFO - Running combination 28/336:
-2025-03-13 16:21:11,179 - INFO -   abs_val = 0.002
-2025-03-13 16:21:11,179 - INFO -   prune_bias = True
-2025-03-13 16:21:11,180 - INFO -   prune_weights = False
-2025-03-13 16:21:11,180 - INFO -   prune_layers = ['norm']
-2025-03-13 16:22:57,334 - INFO - Finished combination 28/336
-2025-03-13 16:22:57,334 - INFO - Running combination 29/336:
-2025-03-13 16:22:57,334 - INFO -   abs_val = 0.002
-2025-03-13 16:22:57,334 - INFO -   prune_bias = True
-2025-03-13 16:22:57,334 - INFO -   prune_weights = False
-2025-03-13 16:22:57,334 - INFO -   prune_layers = ['conv']
-2025-03-13 16:24:42,365 - INFO - Finished combination 29/336
-2025-03-13 16:24:42,365 - INFO - Running combination 30/336:
-2025-03-13 16:24:42,365 - INFO -   abs_val = 0.002
-2025-03-13 16:24:42,365 - INFO -   prune_bias = True
-2025-03-13 16:24:42,365 - INFO -   prune_weights = False
-2025-03-13 16:24:42,365 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:26:27,359 - INFO - Finished combination 30/336
-2025-03-13 16:26:27,359 - INFO - Running combination 31/336:
-2025-03-13 16:26:27,359 - INFO -   abs_val = 0.002
-2025-03-13 16:26:27,359 - INFO -   prune_bias = False
-2025-03-13 16:26:27,359 - INFO -   prune_weights = True
-2025-03-13 16:26:27,359 - INFO -   prune_layers = ['norm']
-2025-03-13 16:28:12,425 - INFO - Finished combination 31/336
-2025-03-13 16:28:12,425 - INFO - Running combination 32/336:
-2025-03-13 16:28:12,425 - INFO -   abs_val = 0.002
-2025-03-13 16:28:12,425 - INFO -   prune_bias = False
-2025-03-13 16:28:12,425 - INFO -   prune_weights = True
-2025-03-13 16:28:12,425 - INFO -   prune_layers = ['conv']
-2025-03-13 16:29:59,569 - INFO - Finished combination 32/336
-2025-03-13 16:29:59,569 - INFO - Running combination 33/336:
-2025-03-13 16:29:59,569 - INFO -   abs_val = 0.002
-2025-03-13 16:29:59,569 - INFO -   prune_bias = False
-2025-03-13 16:29:59,569 - INFO -   prune_weights = True
-2025-03-13 16:29:59,569 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:31:46,440 - INFO - Finished combination 33/336
-2025-03-13 16:31:46,440 - INFO - Running combination 34/336:
-2025-03-13 16:31:46,440 - INFO -   abs_val = 0.002
-2025-03-13 16:31:46,440 - INFO -   prune_bias = False
-2025-03-13 16:31:46,440 - INFO -   prune_weights = False
-2025-03-13 16:31:46,440 - INFO -   prune_layers = ['norm']
-2025-03-13 16:33:32,441 - INFO - Finished combination 34/336
-2025-03-13 16:33:32,441 - INFO - Running combination 35/336:
-2025-03-13 16:33:32,441 - INFO -   abs_val = 0.002
-2025-03-13 16:33:32,441 - INFO -   prune_bias = False
-2025-03-13 16:33:32,441 - INFO -   prune_weights = False
-2025-03-13 16:33:32,441 - INFO -   prune_layers = ['conv']
-2025-03-13 16:35:18,443 - INFO - Finished combination 35/336
-2025-03-13 16:35:18,443 - INFO - Running combination 36/336:
-2025-03-13 16:35:18,443 - INFO -   abs_val = 0.002
-2025-03-13 16:35:18,443 - INFO -   prune_bias = False
-2025-03-13 16:35:18,443 - INFO -   prune_weights = False
-2025-03-13 16:35:18,443 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:37:04,378 - INFO - Finished combination 36/336
-2025-03-13 16:37:04,378 - INFO - Running combination 37/336:
-2025-03-13 16:37:04,378 - INFO -   abs_val = 0.003
-2025-03-13 16:37:04,379 - INFO -   prune_bias = True
-2025-03-13 16:37:04,379 - INFO -   prune_weights = True
-2025-03-13 16:37:04,379 - INFO -   prune_layers = ['norm']
-2025-03-13 16:38:49,902 - INFO - Finished combination 37/336
-2025-03-13 16:38:49,903 - INFO - Running combination 38/336:
-2025-03-13 16:38:49,903 - INFO -   abs_val = 0.003
-2025-03-13 16:38:49,903 - INFO -   prune_bias = True
-2025-03-13 16:38:49,903 - INFO -   prune_weights = True
-2025-03-13 16:38:49,903 - INFO -   prune_layers = ['conv']
-2025-03-13 16:40:36,651 - INFO - Finished combination 38/336
-2025-03-13 16:40:36,651 - INFO - Running combination 39/336:
-2025-03-13 16:40:36,651 - INFO -   abs_val = 0.003
-2025-03-13 16:40:36,651 - INFO -   prune_bias = True
-2025-03-13 16:40:36,651 - INFO -   prune_weights = True
-2025-03-13 16:40:36,651 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:42:23,016 - INFO - Finished combination 39/336
-2025-03-13 16:42:23,016 - INFO - Running combination 40/336:
-2025-03-13 16:42:23,016 - INFO -   abs_val = 0.003
-2025-03-13 16:42:23,016 - INFO -   prune_bias = True
-2025-03-13 16:42:23,016 - INFO -   prune_weights = False
-2025-03-13 16:42:23,016 - INFO -   prune_layers = ['norm']
-2025-03-13 16:44:09,613 - INFO - Finished combination 40/336
-2025-03-13 16:44:09,613 - INFO - Running combination 41/336:
-2025-03-13 16:44:09,613 - INFO -   abs_val = 0.003
-2025-03-13 16:44:09,613 - INFO -   prune_bias = True
-2025-03-13 16:44:09,613 - INFO -   prune_weights = False
-2025-03-13 16:44:09,613 - INFO -   prune_layers = ['conv']
-2025-03-13 16:45:55,184 - INFO - Finished combination 41/336
-2025-03-13 16:45:55,185 - INFO - Running combination 42/336:
-2025-03-13 16:45:55,185 - INFO -   abs_val = 0.003
-2025-03-13 16:45:55,185 - INFO -   prune_bias = True
-2025-03-13 16:45:55,185 - INFO -   prune_weights = False
-2025-03-13 16:45:55,185 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:47:40,810 - INFO - Finished combination 42/336
-2025-03-13 16:47:40,810 - INFO - Running combination 43/336:
-2025-03-13 16:47:40,810 - INFO -   abs_val = 0.003
-2025-03-13 16:47:40,810 - INFO -   prune_bias = False
-2025-03-13 16:47:40,810 - INFO -   prune_weights = True
-2025-03-13 16:47:40,810 - INFO -   prune_layers = ['norm']
-2025-03-13 16:49:26,764 - INFO - Finished combination 43/336
-2025-03-13 16:49:26,764 - INFO - Running combination 44/336:
-2025-03-13 16:49:26,764 - INFO -   abs_val = 0.003
-2025-03-13 16:49:26,764 - INFO -   prune_bias = False
-2025-03-13 16:49:26,764 - INFO -   prune_weights = True
-2025-03-13 16:49:26,764 - INFO -   prune_layers = ['conv']
-2025-03-13 16:51:13,440 - INFO - Finished combination 44/336
-2025-03-13 16:51:13,440 - INFO - Running combination 45/336:
-2025-03-13 16:51:13,440 - INFO -   abs_val = 0.003
-2025-03-13 16:51:13,440 - INFO -   prune_bias = False
-2025-03-13 16:51:13,440 - INFO -   prune_weights = True
-2025-03-13 16:51:13,440 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:53:00,639 - INFO - Finished combination 45/336
-2025-03-13 16:53:00,639 - INFO - Running combination 46/336:
-2025-03-13 16:53:00,639 - INFO -   abs_val = 0.003
-2025-03-13 16:53:00,639 - INFO -   prune_bias = False
-2025-03-13 16:53:00,639 - INFO -   prune_weights = False
-2025-03-13 16:53:00,639 - INFO -   prune_layers = ['norm']
-2025-03-13 16:54:46,433 - INFO - Finished combination 46/336
-2025-03-13 16:54:46,433 - INFO - Running combination 47/336:
-2025-03-13 16:54:46,433 - INFO -   abs_val = 0.003
-2025-03-13 16:54:46,433 - INFO -   prune_bias = False
-2025-03-13 16:54:46,433 - INFO -   prune_weights = False
-2025-03-13 16:54:46,433 - INFO -   prune_layers = ['conv']
-2025-03-13 16:56:31,262 - INFO - Finished combination 47/336
-2025-03-13 16:56:31,262 - INFO - Running combination 48/336:
-2025-03-13 16:56:31,262 - INFO -   abs_val = 0.003
-2025-03-13 16:56:31,262 - INFO -   prune_bias = False
-2025-03-13 16:56:31,262 - INFO -   prune_weights = False
-2025-03-13 16:56:31,262 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 16:58:18,479 - INFO - Finished combination 48/336
-2025-03-13 16:58:18,479 - INFO - Running combination 49/336:
-2025-03-13 16:58:18,479 - INFO -   abs_val = 0.004
-2025-03-13 16:58:18,479 - INFO -   prune_bias = True
-2025-03-13 16:58:18,479 - INFO -   prune_weights = True
-2025-03-13 16:58:18,479 - INFO -   prune_layers = ['norm']
-2025-03-13 17:00:04,346 - INFO - Finished combination 49/336
-2025-03-13 17:00:04,346 - INFO - Running combination 50/336:
-2025-03-13 17:00:04,346 - INFO -   abs_val = 0.004
-2025-03-13 17:00:04,346 - INFO -   prune_bias = True
-2025-03-13 17:00:04,346 - INFO -   prune_weights = True
-2025-03-13 17:00:04,346 - INFO -   prune_layers = ['conv']
-2025-03-13 17:01:51,137 - INFO - Finished combination 50/336
-2025-03-13 17:01:51,137 - INFO - Running combination 51/336:
-2025-03-13 17:01:51,137 - INFO -   abs_val = 0.004
-2025-03-13 17:01:51,137 - INFO -   prune_bias = True
-2025-03-13 17:01:51,137 - INFO -   prune_weights = True
-2025-03-13 17:01:51,137 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:03:38,157 - INFO - Finished combination 51/336
-2025-03-13 17:03:38,157 - INFO - Running combination 52/336:
-2025-03-13 17:03:38,157 - INFO -   abs_val = 0.004
-2025-03-13 17:03:38,157 - INFO -   prune_bias = True
-2025-03-13 17:03:38,157 - INFO -   prune_weights = False
-2025-03-13 17:03:38,157 - INFO -   prune_layers = ['norm']
-2025-03-13 17:05:24,151 - INFO - Finished combination 52/336
-2025-03-13 17:05:24,151 - INFO - Running combination 53/336:
-2025-03-13 17:05:24,151 - INFO -   abs_val = 0.004
-2025-03-13 17:05:24,151 - INFO -   prune_bias = True
-2025-03-13 17:05:24,151 - INFO -   prune_weights = False
-2025-03-13 17:05:24,151 - INFO -   prune_layers = ['conv']
-2025-03-13 17:07:09,705 - INFO - Finished combination 53/336
-2025-03-13 17:07:09,705 - INFO - Running combination 54/336:
-2025-03-13 17:07:09,705 - INFO -   abs_val = 0.004
-2025-03-13 17:07:09,705 - INFO -   prune_bias = True
-2025-03-13 17:07:09,705 - INFO -   prune_weights = False
-2025-03-13 17:07:09,705 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:08:56,495 - INFO - Finished combination 54/336
-2025-03-13 17:08:56,495 - INFO - Running combination 55/336:
-2025-03-13 17:08:56,495 - INFO -   abs_val = 0.004
-2025-03-13 17:08:56,495 - INFO -   prune_bias = False
-2025-03-13 17:08:56,495 - INFO -   prune_weights = True
-2025-03-13 17:08:56,495 - INFO -   prune_layers = ['norm']
-2025-03-13 17:10:42,104 - INFO - Finished combination 55/336
-2025-03-13 17:10:42,104 - INFO - Running combination 56/336:
-2025-03-13 17:10:42,104 - INFO -   abs_val = 0.004
-2025-03-13 17:10:42,104 - INFO -   prune_bias = False
-2025-03-13 17:10:42,104 - INFO -   prune_weights = True
-2025-03-13 17:10:42,104 - INFO -   prune_layers = ['conv']
-2025-03-13 17:12:29,367 - INFO - Finished combination 56/336
-2025-03-13 17:12:29,367 - INFO - Running combination 57/336:
-2025-03-13 17:12:29,367 - INFO -   abs_val = 0.004
-2025-03-13 17:12:29,367 - INFO -   prune_bias = False
-2025-03-13 17:12:29,367 - INFO -   prune_weights = True
-2025-03-13 17:12:29,367 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:14:16,501 - INFO - Finished combination 57/336
-2025-03-13 17:14:16,502 - INFO - Running combination 58/336:
-2025-03-13 17:14:16,502 - INFO -   abs_val = 0.004
-2025-03-13 17:14:16,502 - INFO -   prune_bias = False
-2025-03-13 17:14:16,502 - INFO -   prune_weights = False
-2025-03-13 17:14:16,502 - INFO -   prune_layers = ['norm']
-2025-03-13 17:16:02,346 - INFO - Finished combination 58/336
-2025-03-13 17:16:02,347 - INFO - Running combination 59/336:
-2025-03-13 17:16:02,347 - INFO -   abs_val = 0.004
-2025-03-13 17:16:02,347 - INFO -   prune_bias = False
-2025-03-13 17:16:02,347 - INFO -   prune_weights = False
-2025-03-13 17:16:02,347 - INFO -   prune_layers = ['conv']
-2025-03-13 17:17:47,500 - INFO - Finished combination 59/336
-2025-03-13 17:17:47,500 - INFO - Running combination 60/336:
-2025-03-13 17:17:47,500 - INFO -   abs_val = 0.004
-2025-03-13 17:17:47,500 - INFO -   prune_bias = False
-2025-03-13 17:17:47,500 - INFO -   prune_weights = False
-2025-03-13 17:17:47,500 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:19:32,951 - INFO - Finished combination 60/336
-2025-03-13 17:19:32,951 - INFO - Running combination 61/336:
-2025-03-13 17:19:32,951 - INFO -   abs_val = 0.005
-2025-03-13 17:19:32,951 - INFO -   prune_bias = True
-2025-03-13 17:19:32,951 - INFO -   prune_weights = True
-2025-03-13 17:19:32,951 - INFO -   prune_layers = ['norm']
-2025-03-13 17:21:18,623 - INFO - Finished combination 61/336
-2025-03-13 17:21:18,623 - INFO - Running combination 62/336:
-2025-03-13 17:21:18,623 - INFO -   abs_val = 0.005
-2025-03-13 17:21:18,623 - INFO -   prune_bias = True
-2025-03-13 17:21:18,623 - INFO -   prune_weights = True
-2025-03-13 17:21:18,623 - INFO -   prune_layers = ['conv']
-2025-03-13 17:23:05,848 - INFO - Finished combination 62/336
-2025-03-13 17:23:05,848 - INFO - Running combination 63/336:
-2025-03-13 17:23:05,848 - INFO -   abs_val = 0.005
-2025-03-13 17:23:05,848 - INFO -   prune_bias = True
-2025-03-13 17:23:05,848 - INFO -   prune_weights = True
-2025-03-13 17:23:05,848 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:24:52,946 - INFO - Finished combination 63/336
-2025-03-13 17:24:52,947 - INFO - Running combination 64/336:
-2025-03-13 17:24:52,947 - INFO -   abs_val = 0.005
-2025-03-13 17:24:52,947 - INFO -   prune_bias = True
-2025-03-13 17:24:52,947 - INFO -   prune_weights = False
-2025-03-13 17:24:52,947 - INFO -   prune_layers = ['norm']
-2025-03-13 17:26:38,309 - INFO - Finished combination 64/336
-2025-03-13 17:26:38,309 - INFO - Running combination 65/336:
-2025-03-13 17:26:38,309 - INFO -   abs_val = 0.005
-2025-03-13 17:26:38,309 - INFO -   prune_bias = True
-2025-03-13 17:26:38,309 - INFO -   prune_weights = False
-2025-03-13 17:26:38,309 - INFO -   prune_layers = ['conv']
-2025-03-13 17:28:23,565 - INFO - Finished combination 65/336
-2025-03-13 17:28:23,565 - INFO - Running combination 66/336:
-2025-03-13 17:28:23,565 - INFO -   abs_val = 0.005
-2025-03-13 17:28:23,565 - INFO -   prune_bias = True
-2025-03-13 17:28:23,565 - INFO -   prune_weights = False
-2025-03-13 17:28:23,565 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:30:09,665 - INFO - Finished combination 66/336
-2025-03-13 17:30:09,665 - INFO - Running combination 67/336:
-2025-03-13 17:30:09,665 - INFO -   abs_val = 0.005
-2025-03-13 17:30:09,665 - INFO -   prune_bias = False
-2025-03-13 17:30:09,665 - INFO -   prune_weights = True
-2025-03-13 17:30:09,665 - INFO -   prune_layers = ['norm']
-2025-03-13 17:31:54,632 - INFO - Finished combination 67/336
-2025-03-13 17:31:54,632 - INFO - Running combination 68/336:
-2025-03-13 17:31:54,632 - INFO -   abs_val = 0.005
-2025-03-13 17:31:54,632 - INFO -   prune_bias = False
-2025-03-13 17:31:54,632 - INFO -   prune_weights = True
-2025-03-13 17:31:54,633 - INFO -   prune_layers = ['conv']
-2025-03-13 17:33:41,783 - INFO - Finished combination 68/336
-2025-03-13 17:33:41,783 - INFO - Running combination 69/336:
-2025-03-13 17:33:41,783 - INFO -   abs_val = 0.005
-2025-03-13 17:33:41,783 - INFO -   prune_bias = False
-2025-03-13 17:33:41,783 - INFO -   prune_weights = True
-2025-03-13 17:33:41,783 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:35:27,841 - INFO - Finished combination 69/336
-2025-03-13 17:35:27,841 - INFO - Running combination 70/336:
-2025-03-13 17:35:27,841 - INFO -   abs_val = 0.005
-2025-03-13 17:35:27,841 - INFO -   prune_bias = False
-2025-03-13 17:35:27,841 - INFO -   prune_weights = False
-2025-03-13 17:35:27,841 - INFO -   prune_layers = ['norm']
-2025-03-13 17:37:13,752 - INFO - Finished combination 70/336
-2025-03-13 17:37:13,752 - INFO - Running combination 71/336:
-2025-03-13 17:37:13,752 - INFO -   abs_val = 0.005
-2025-03-13 17:37:13,752 - INFO -   prune_bias = False
-2025-03-13 17:37:13,752 - INFO -   prune_weights = False
-2025-03-13 17:37:13,752 - INFO -   prune_layers = ['conv']
-2025-03-13 17:38:58,137 - INFO - Finished combination 71/336
-2025-03-13 17:38:58,137 - INFO - Running combination 72/336:
-2025-03-13 17:38:58,137 - INFO -   abs_val = 0.005
-2025-03-13 17:38:58,137 - INFO -   prune_bias = False
-2025-03-13 17:38:58,137 - INFO -   prune_weights = False
-2025-03-13 17:38:58,137 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:40:43,708 - INFO - Finished combination 72/336
-2025-03-13 17:40:43,708 - INFO - Running combination 73/336:
-2025-03-13 17:40:43,708 - INFO -   abs_val = 0.006
-2025-03-13 17:40:43,708 - INFO -   prune_bias = True
-2025-03-13 17:40:43,708 - INFO -   prune_weights = True
-2025-03-13 17:40:43,709 - INFO -   prune_layers = ['norm']
-2025-03-13 17:42:30,031 - INFO - Finished combination 73/336
-2025-03-13 17:42:30,031 - INFO - Running combination 74/336:
-2025-03-13 17:42:30,031 - INFO -   abs_val = 0.006
-2025-03-13 17:42:30,031 - INFO -   prune_bias = True
-2025-03-13 17:42:30,031 - INFO -   prune_weights = True
-2025-03-13 17:42:30,031 - INFO -   prune_layers = ['conv']
-2025-03-13 17:44:16,695 - INFO - Finished combination 74/336
-2025-03-13 17:44:16,696 - INFO - Running combination 75/336:
-2025-03-13 17:44:16,696 - INFO -   abs_val = 0.006
-2025-03-13 17:44:16,696 - INFO -   prune_bias = True
-2025-03-13 17:44:16,696 - INFO -   prune_weights = True
-2025-03-13 17:44:16,696 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:46:02,856 - INFO - Finished combination 75/336
-2025-03-13 17:46:02,856 - INFO - Running combination 76/336:
-2025-03-13 17:46:02,856 - INFO -   abs_val = 0.006
-2025-03-13 17:46:02,856 - INFO -   prune_bias = True
-2025-03-13 17:46:02,856 - INFO -   prune_weights = False
-2025-03-13 17:46:02,856 - INFO -   prune_layers = ['norm']
-2025-03-13 17:47:48,090 - INFO - Finished combination 76/336
-2025-03-13 17:47:48,090 - INFO - Running combination 77/336:
-2025-03-13 17:47:48,090 - INFO -   abs_val = 0.006
-2025-03-13 17:47:48,090 - INFO -   prune_bias = True
-2025-03-13 17:47:48,090 - INFO -   prune_weights = False
-2025-03-13 17:47:48,090 - INFO -   prune_layers = ['conv']
-2025-03-13 17:49:34,546 - INFO - Finished combination 77/336
-2025-03-13 17:49:34,547 - INFO - Running combination 78/336:
-2025-03-13 17:49:34,547 - INFO -   abs_val = 0.006
-2025-03-13 17:49:34,547 - INFO -   prune_bias = True
-2025-03-13 17:49:34,547 - INFO -   prune_weights = False
-2025-03-13 17:49:34,547 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:51:20,546 - INFO - Finished combination 78/336
-2025-03-13 17:51:20,547 - INFO - Running combination 79/336:
-2025-03-13 17:51:20,547 - INFO -   abs_val = 0.006
-2025-03-13 17:51:20,547 - INFO -   prune_bias = False
-2025-03-13 17:51:20,547 - INFO -   prune_weights = True
-2025-03-13 17:51:20,547 - INFO -   prune_layers = ['norm']
-2025-03-13 17:53:06,618 - INFO - Finished combination 79/336
-2025-03-13 17:53:06,618 - INFO - Running combination 80/336:
-2025-03-13 17:53:06,618 - INFO -   abs_val = 0.006
-2025-03-13 17:53:06,618 - INFO -   prune_bias = False
-2025-03-13 17:53:06,618 - INFO -   prune_weights = True
-2025-03-13 17:53:06,618 - INFO -   prune_layers = ['conv']
-2025-03-13 17:54:53,532 - INFO - Finished combination 80/336
-2025-03-13 17:54:53,533 - INFO - Running combination 81/336:
-2025-03-13 17:54:53,533 - INFO -   abs_val = 0.006
-2025-03-13 17:54:53,533 - INFO -   prune_bias = False
-2025-03-13 17:54:53,533 - INFO -   prune_weights = True
-2025-03-13 17:54:53,533 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 17:56:40,925 - INFO - Finished combination 81/336
-2025-03-13 17:56:40,926 - INFO - Running combination 82/336:
-2025-03-13 17:56:40,926 - INFO -   abs_val = 0.006
-2025-03-13 17:56:40,926 - INFO -   prune_bias = False
-2025-03-13 17:56:40,926 - INFO -   prune_weights = False
-2025-03-13 17:56:40,926 - INFO -   prune_layers = ['norm']
-2025-03-13 17:58:27,028 - INFO - Finished combination 82/336
-2025-03-13 17:58:27,028 - INFO - Running combination 83/336:
-2025-03-13 17:58:27,028 - INFO -   abs_val = 0.006
-2025-03-13 17:58:27,028 - INFO -   prune_bias = False
-2025-03-13 17:58:27,028 - INFO -   prune_weights = False
-2025-03-13 17:58:27,028 - INFO -   prune_layers = ['conv']
-2025-03-13 18:00:12,733 - INFO - Finished combination 83/336
-2025-03-13 18:00:12,733 - INFO - Running combination 84/336:
-2025-03-13 18:00:12,733 - INFO -   abs_val = 0.006
-2025-03-13 18:00:12,733 - INFO -   prune_bias = False
-2025-03-13 18:00:12,733 - INFO -   prune_weights = False
-2025-03-13 18:00:12,733 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:01:58,543 - INFO - Finished combination 84/336
-2025-03-13 18:01:58,543 - INFO - Running combination 85/336:
-2025-03-13 18:01:58,543 - INFO -   abs_val = 0.007
-2025-03-13 18:01:58,543 - INFO -   prune_bias = True
-2025-03-13 18:01:58,543 - INFO -   prune_weights = True
-2025-03-13 18:01:58,543 - INFO -   prune_layers = ['norm']
-2025-03-13 18:03:43,958 - INFO - Finished combination 85/336
-2025-03-13 18:03:43,958 - INFO - Running combination 86/336:
-2025-03-13 18:03:43,958 - INFO -   abs_val = 0.007
-2025-03-13 18:03:43,958 - INFO -   prune_bias = True
-2025-03-13 18:03:43,958 - INFO -   prune_weights = True
-2025-03-13 18:03:43,958 - INFO -   prune_layers = ['conv']
-2025-03-13 18:05:30,634 - INFO - Finished combination 86/336
-2025-03-13 18:05:30,634 - INFO - Running combination 87/336:
-2025-03-13 18:05:30,634 - INFO -   abs_val = 0.007
-2025-03-13 18:05:30,634 - INFO -   prune_bias = True
-2025-03-13 18:05:30,634 - INFO -   prune_weights = True
-2025-03-13 18:05:30,634 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:07:17,290 - INFO - Finished combination 87/336
-2025-03-13 18:07:17,290 - INFO - Running combination 88/336:
-2025-03-13 18:07:17,290 - INFO -   abs_val = 0.007
-2025-03-13 18:07:17,290 - INFO -   prune_bias = True
-2025-03-13 18:07:17,290 - INFO -   prune_weights = False
-2025-03-13 18:07:17,290 - INFO -   prune_layers = ['norm']
-2025-03-13 18:09:03,784 - INFO - Finished combination 88/336
-2025-03-13 18:09:03,784 - INFO - Running combination 89/336:
-2025-03-13 18:09:03,784 - INFO -   abs_val = 0.007
-2025-03-13 18:09:03,784 - INFO -   prune_bias = True
-2025-03-13 18:09:03,784 - INFO -   prune_weights = False
-2025-03-13 18:09:03,784 - INFO -   prune_layers = ['conv']
-2025-03-13 18:10:49,676 - INFO - Finished combination 89/336
-2025-03-13 18:10:49,676 - INFO - Running combination 90/336:
-2025-03-13 18:10:49,676 - INFO -   abs_val = 0.007
-2025-03-13 18:10:49,676 - INFO -   prune_bias = True
-2025-03-13 18:10:49,676 - INFO -   prune_weights = False
-2025-03-13 18:10:49,676 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:12:35,208 - INFO - Finished combination 90/336
-2025-03-13 18:12:35,208 - INFO - Running combination 91/336:
-2025-03-13 18:12:35,208 - INFO -   abs_val = 0.007
-2025-03-13 18:12:35,208 - INFO -   prune_bias = False
-2025-03-13 18:12:35,208 - INFO -   prune_weights = True
-2025-03-13 18:12:35,208 - INFO -   prune_layers = ['norm']
-2025-03-13 18:14:22,470 - INFO - Finished combination 91/336
-2025-03-13 18:14:22,471 - INFO - Running combination 92/336:
-2025-03-13 18:14:22,471 - INFO -   abs_val = 0.007
-2025-03-13 18:14:22,471 - INFO -   prune_bias = False
-2025-03-13 18:14:22,471 - INFO -   prune_weights = True
-2025-03-13 18:14:22,471 - INFO -   prune_layers = ['conv']
-2025-03-13 18:16:09,684 - INFO - Finished combination 92/336
-2025-03-13 18:16:09,684 - INFO - Running combination 93/336:
-2025-03-13 18:16:09,684 - INFO -   abs_val = 0.007
-2025-03-13 18:16:09,684 - INFO -   prune_bias = False
-2025-03-13 18:16:09,684 - INFO -   prune_weights = True
-2025-03-13 18:16:09,684 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:17:57,298 - INFO - Finished combination 93/336
-2025-03-13 18:17:57,298 - INFO - Running combination 94/336:
-2025-03-13 18:17:57,298 - INFO -   abs_val = 0.007
-2025-03-13 18:17:57,298 - INFO -   prune_bias = False
-2025-03-13 18:17:57,298 - INFO -   prune_weights = False
-2025-03-13 18:17:57,298 - INFO -   prune_layers = ['norm']
-2025-03-13 18:19:43,845 - INFO - Finished combination 94/336
-2025-03-13 18:19:43,845 - INFO - Running combination 95/336:
-2025-03-13 18:19:43,845 - INFO -   abs_val = 0.007
-2025-03-13 18:19:43,845 - INFO -   prune_bias = False
-2025-03-13 18:19:43,845 - INFO -   prune_weights = False
-2025-03-13 18:19:43,845 - INFO -   prune_layers = ['conv']
-2025-03-13 18:21:30,162 - INFO - Finished combination 95/336
-2025-03-13 18:21:30,163 - INFO - Running combination 96/336:
-2025-03-13 18:21:30,163 - INFO -   abs_val = 0.007
-2025-03-13 18:21:30,163 - INFO -   prune_bias = False
-2025-03-13 18:21:30,163 - INFO -   prune_weights = False
-2025-03-13 18:21:30,163 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:23:15,865 - INFO - Finished combination 96/336
-2025-03-13 18:23:15,865 - INFO - Running combination 97/336:
-2025-03-13 18:23:15,865 - INFO -   abs_val = 0.008
-2025-03-13 18:23:15,865 - INFO -   prune_bias = True
-2025-03-13 18:23:15,865 - INFO -   prune_weights = True
-2025-03-13 18:23:15,865 - INFO -   prune_layers = ['norm']
-2025-03-13 18:25:02,263 - INFO - Finished combination 97/336
-2025-03-13 18:25:02,263 - INFO - Running combination 98/336:
-2025-03-13 18:25:02,263 - INFO -   abs_val = 0.008
-2025-03-13 18:25:02,263 - INFO -   prune_bias = True
-2025-03-13 18:25:02,263 - INFO -   prune_weights = True
-2025-03-13 18:25:02,263 - INFO -   prune_layers = ['conv']
-2025-03-13 18:26:48,758 - INFO - Finished combination 98/336
-2025-03-13 18:26:48,758 - INFO - Running combination 99/336:
-2025-03-13 18:26:48,758 - INFO -   abs_val = 0.008
-2025-03-13 18:26:48,758 - INFO -   prune_bias = True
-2025-03-13 18:26:48,758 - INFO -   prune_weights = True
-2025-03-13 18:26:48,758 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:28:35,226 - INFO - Finished combination 99/336
-2025-03-13 18:28:35,226 - INFO - Running combination 100/336:
-2025-03-13 18:28:35,226 - INFO -   abs_val = 0.008
-2025-03-13 18:28:35,227 - INFO -   prune_bias = True
-2025-03-13 18:28:35,227 - INFO -   prune_weights = False
-2025-03-13 18:28:35,227 - INFO -   prune_layers = ['norm']
-2025-03-13 18:30:21,191 - INFO - Finished combination 100/336
-2025-03-13 18:30:21,191 - INFO - Running combination 101/336:
-2025-03-13 18:30:21,191 - INFO -   abs_val = 0.008
-2025-03-13 18:30:21,191 - INFO -   prune_bias = True
-2025-03-13 18:30:21,191 - INFO -   prune_weights = False
-2025-03-13 18:30:21,191 - INFO -   prune_layers = ['conv']
-2025-03-13 18:32:06,531 - INFO - Finished combination 101/336
-2025-03-13 18:32:06,532 - INFO - Running combination 102/336:
-2025-03-13 18:32:06,532 - INFO -   abs_val = 0.008
-2025-03-13 18:32:06,532 - INFO -   prune_bias = True
-2025-03-13 18:32:06,532 - INFO -   prune_weights = False
-2025-03-13 18:32:06,532 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:33:52,050 - INFO - Finished combination 102/336
-2025-03-13 18:33:52,050 - INFO - Running combination 103/336:
-2025-03-13 18:33:52,050 - INFO -   abs_val = 0.008
-2025-03-13 18:33:52,050 - INFO -   prune_bias = False
-2025-03-13 18:33:52,050 - INFO -   prune_weights = True
-2025-03-13 18:33:52,050 - INFO -   prune_layers = ['norm']
-2025-03-13 18:35:38,345 - INFO - Finished combination 103/336
-2025-03-13 18:35:38,345 - INFO - Running combination 104/336:
-2025-03-13 18:35:38,345 - INFO -   abs_val = 0.008
-2025-03-13 18:35:38,345 - INFO -   prune_bias = False
-2025-03-13 18:35:38,345 - INFO -   prune_weights = True
-2025-03-13 18:35:38,345 - INFO -   prune_layers = ['conv']
-2025-03-13 18:37:25,303 - INFO - Finished combination 104/336
-2025-03-13 18:37:25,304 - INFO - Running combination 105/336:
-2025-03-13 18:37:25,304 - INFO -   abs_val = 0.008
-2025-03-13 18:37:25,304 - INFO -   prune_bias = False
-2025-03-13 18:37:25,304 - INFO -   prune_weights = True
-2025-03-13 18:37:25,304 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:39:12,224 - INFO - Finished combination 105/336
-2025-03-13 18:39:12,224 - INFO - Running combination 106/336:
-2025-03-13 18:39:12,224 - INFO -   abs_val = 0.008
-2025-03-13 18:39:12,224 - INFO -   prune_bias = False
-2025-03-13 18:39:12,224 - INFO -   prune_weights = False
-2025-03-13 18:39:12,224 - INFO -   prune_layers = ['norm']
-2025-03-13 18:40:58,154 - INFO - Finished combination 106/336
-2025-03-13 18:40:58,154 - INFO - Running combination 107/336:
-2025-03-13 18:40:58,154 - INFO -   abs_val = 0.008
-2025-03-13 18:40:58,154 - INFO -   prune_bias = False
-2025-03-13 18:40:58,154 - INFO -   prune_weights = False
-2025-03-13 18:40:58,154 - INFO -   prune_layers = ['conv']
-2025-03-13 18:42:44,173 - INFO - Finished combination 107/336
-2025-03-13 18:42:44,173 - INFO - Running combination 108/336:
-2025-03-13 18:42:44,173 - INFO -   abs_val = 0.008
-2025-03-13 18:42:44,173 - INFO -   prune_bias = False
-2025-03-13 18:42:44,173 - INFO -   prune_weights = False
-2025-03-13 18:42:44,173 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:44:29,514 - INFO - Finished combination 108/336
-2025-03-13 18:44:29,514 - INFO - Running combination 109/336:
-2025-03-13 18:44:29,514 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:44:29,514 - INFO -   prune_bias = True
-2025-03-13 18:44:29,514 - INFO -   prune_weights = True
-2025-03-13 18:44:29,514 - INFO -   prune_layers = ['norm']
-2025-03-13 18:46:15,311 - INFO - Finished combination 109/336
-2025-03-13 18:46:15,311 - INFO - Running combination 110/336:
-2025-03-13 18:46:15,311 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:46:15,311 - INFO -   prune_bias = True
-2025-03-13 18:46:15,311 - INFO -   prune_weights = True
-2025-03-13 18:46:15,311 - INFO -   prune_layers = ['conv']
-2025-03-13 18:48:03,129 - INFO - Finished combination 110/336
-2025-03-13 18:48:03,129 - INFO - Running combination 111/336:
-2025-03-13 18:48:03,129 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:48:03,129 - INFO -   prune_bias = True
-2025-03-13 18:48:03,129 - INFO -   prune_weights = True
-2025-03-13 18:48:03,129 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:49:50,882 - INFO - Finished combination 111/336
-2025-03-13 18:49:50,882 - INFO - Running combination 112/336:
-2025-03-13 18:49:50,882 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:49:50,883 - INFO -   prune_bias = True
-2025-03-13 18:49:50,883 - INFO -   prune_weights = False
-2025-03-13 18:49:50,883 - INFO -   prune_layers = ['norm']
-2025-03-13 18:51:36,899 - INFO - Finished combination 112/336
-2025-03-13 18:51:36,899 - INFO - Running combination 113/336:
-2025-03-13 18:51:36,899 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:51:36,899 - INFO -   prune_bias = True
-2025-03-13 18:51:36,899 - INFO -   prune_weights = False
-2025-03-13 18:51:36,899 - INFO -   prune_layers = ['conv']
-2025-03-13 18:53:22,793 - INFO - Finished combination 113/336
-2025-03-13 18:53:22,793 - INFO - Running combination 114/336:
-2025-03-13 18:53:22,793 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:53:22,793 - INFO -   prune_bias = True
-2025-03-13 18:53:22,793 - INFO -   prune_weights = False
-2025-03-13 18:53:22,793 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 18:55:08,266 - INFO - Finished combination 114/336
-2025-03-13 18:55:08,266 - INFO - Running combination 115/336:
-2025-03-13 18:55:08,266 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:55:08,266 - INFO -   prune_bias = False
-2025-03-13 18:55:08,266 - INFO -   prune_weights = True
-2025-03-13 18:55:08,266 - INFO -   prune_layers = ['norm']
-2025-03-13 18:56:53,945 - INFO - Finished combination 115/336
-2025-03-13 18:56:53,945 - INFO - Running combination 116/336:
-2025-03-13 18:56:53,945 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:56:53,945 - INFO -   prune_bias = False
-2025-03-13 18:56:53,945 - INFO -   prune_weights = True
-2025-03-13 18:56:53,945 - INFO -   prune_layers = ['conv']
-2025-03-13 18:58:41,517 - INFO - Finished combination 116/336
-2025-03-13 18:58:41,517 - INFO - Running combination 117/336:
-2025-03-13 18:58:41,517 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 18:58:41,517 - INFO -   prune_bias = False
-2025-03-13 18:58:41,517 - INFO -   prune_weights = True
-2025-03-13 18:58:41,517 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:00:28,122 - INFO - Finished combination 117/336
-2025-03-13 19:00:28,122 - INFO - Running combination 118/336:
-2025-03-13 19:00:28,122 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 19:00:28,122 - INFO -   prune_bias = False
-2025-03-13 19:00:28,122 - INFO -   prune_weights = False
-2025-03-13 19:00:28,122 - INFO -   prune_layers = ['norm']
-2025-03-13 19:02:12,937 - INFO - Finished combination 118/336
-2025-03-13 19:02:12,937 - INFO - Running combination 119/336:
-2025-03-13 19:02:12,937 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 19:02:12,938 - INFO -   prune_bias = False
-2025-03-13 19:02:12,938 - INFO -   prune_weights = False
-2025-03-13 19:02:12,938 - INFO -   prune_layers = ['conv']
-2025-03-13 19:03:58,880 - INFO - Finished combination 119/336
-2025-03-13 19:03:58,880 - INFO - Running combination 120/336:
-2025-03-13 19:03:58,880 - INFO -   abs_val = 0.009000000000000001
-2025-03-13 19:03:58,880 - INFO -   prune_bias = False
-2025-03-13 19:03:58,880 - INFO -   prune_weights = False
-2025-03-13 19:03:58,880 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:05:45,637 - INFO - Finished combination 120/336
-2025-03-13 19:05:45,637 - INFO - Running combination 121/336:
-2025-03-13 19:05:45,637 - INFO -   abs_val = 0.01
-2025-03-13 19:05:45,637 - INFO -   prune_bias = True
-2025-03-13 19:05:45,637 - INFO -   prune_weights = True
-2025-03-13 19:05:45,637 - INFO -   prune_layers = ['norm']
-2025-03-13 19:07:31,534 - INFO - Finished combination 121/336
-2025-03-13 19:07:31,534 - INFO - Running combination 122/336:
-2025-03-13 19:07:31,534 - INFO -   abs_val = 0.01
-2025-03-13 19:07:31,534 - INFO -   prune_bias = True
-2025-03-13 19:07:31,534 - INFO -   prune_weights = True
-2025-03-13 19:07:31,534 - INFO -   prune_layers = ['conv']
-2025-03-13 19:09:18,434 - INFO - Finished combination 122/336
-2025-03-13 19:09:18,434 - INFO - Running combination 123/336:
-2025-03-13 19:09:18,434 - INFO -   abs_val = 0.01
-2025-03-13 19:09:18,434 - INFO -   prune_bias = True
-2025-03-13 19:09:18,434 - INFO -   prune_weights = True
-2025-03-13 19:09:18,435 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:11:05,714 - INFO - Finished combination 123/336
-2025-03-13 19:11:05,714 - INFO - Running combination 124/336:
-2025-03-13 19:11:05,714 - INFO -   abs_val = 0.01
-2025-03-13 19:11:05,714 - INFO -   prune_bias = True
-2025-03-13 19:11:05,714 - INFO -   prune_weights = False
-2025-03-13 19:11:05,714 - INFO -   prune_layers = ['norm']
-2025-03-13 19:12:51,703 - INFO - Finished combination 124/336
-2025-03-13 19:12:51,703 - INFO - Running combination 125/336:
-2025-03-13 19:12:51,703 - INFO -   abs_val = 0.01
-2025-03-13 19:12:51,703 - INFO -   prune_bias = True
-2025-03-13 19:12:51,703 - INFO -   prune_weights = False
-2025-03-13 19:12:51,703 - INFO -   prune_layers = ['conv']
-2025-03-13 19:14:37,295 - INFO - Finished combination 125/336
-2025-03-13 19:14:37,295 - INFO - Running combination 126/336:
-2025-03-13 19:14:37,295 - INFO -   abs_val = 0.01
-2025-03-13 19:14:37,295 - INFO -   prune_bias = True
-2025-03-13 19:14:37,295 - INFO -   prune_weights = False
-2025-03-13 19:14:37,295 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:16:22,684 - INFO - Finished combination 126/336
-2025-03-13 19:16:22,684 - INFO - Running combination 127/336:
-2025-03-13 19:16:22,684 - INFO -   abs_val = 0.01
-2025-03-13 19:16:22,684 - INFO -   prune_bias = False
-2025-03-13 19:16:22,684 - INFO -   prune_weights = True
-2025-03-13 19:16:22,684 - INFO -   prune_layers = ['norm']
-2025-03-13 19:18:07,673 - INFO - Finished combination 127/336
-2025-03-13 19:18:07,673 - INFO - Running combination 128/336:
-2025-03-13 19:18:07,673 - INFO -   abs_val = 0.01
-2025-03-13 19:18:07,673 - INFO -   prune_bias = False
-2025-03-13 19:18:07,674 - INFO -   prune_weights = True
-2025-03-13 19:18:07,674 - INFO -   prune_layers = ['conv']
-2025-03-13 19:19:54,899 - INFO - Finished combination 128/336
-2025-03-13 19:19:54,899 - INFO - Running combination 129/336:
-2025-03-13 19:19:54,899 - INFO -   abs_val = 0.01
-2025-03-13 19:19:54,899 - INFO -   prune_bias = False
-2025-03-13 19:19:54,899 - INFO -   prune_weights = True
-2025-03-13 19:19:54,899 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:21:41,006 - INFO - Finished combination 129/336
-2025-03-13 19:21:41,006 - INFO - Running combination 130/336:
-2025-03-13 19:21:41,006 - INFO -   abs_val = 0.01
-2025-03-13 19:21:41,006 - INFO -   prune_bias = False
-2025-03-13 19:21:41,006 - INFO -   prune_weights = False
-2025-03-13 19:21:41,006 - INFO -   prune_layers = ['norm']
-2025-03-13 19:23:26,248 - INFO - Finished combination 130/336
-2025-03-13 19:23:26,248 - INFO - Running combination 131/336:
-2025-03-13 19:23:26,248 - INFO -   abs_val = 0.01
-2025-03-13 19:23:26,248 - INFO -   prune_bias = False
-2025-03-13 19:23:26,248 - INFO -   prune_weights = False
-2025-03-13 19:23:26,248 - INFO -   prune_layers = ['conv']
-2025-03-13 19:25:11,676 - INFO - Finished combination 131/336
-2025-03-13 19:25:11,676 - INFO - Running combination 132/336:
-2025-03-13 19:25:11,676 - INFO -   abs_val = 0.01
-2025-03-13 19:25:11,676 - INFO -   prune_bias = False
-2025-03-13 19:25:11,676 - INFO -   prune_weights = False
-2025-03-13 19:25:11,676 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:26:57,477 - INFO - Finished combination 132/336
-2025-03-13 19:26:57,477 - INFO - Running combination 133/336:
-2025-03-13 19:26:57,477 - INFO -   abs_val = 0.02
-2025-03-13 19:26:57,477 - INFO -   prune_bias = True
-2025-03-13 19:26:57,477 - INFO -   prune_weights = True
-2025-03-13 19:26:57,477 - INFO -   prune_layers = ['norm']
-2025-03-13 19:28:43,804 - INFO - Finished combination 133/336
-2025-03-13 19:28:43,804 - INFO - Running combination 134/336:
-2025-03-13 19:28:43,804 - INFO -   abs_val = 0.02
-2025-03-13 19:28:43,804 - INFO -   prune_bias = True
-2025-03-13 19:28:43,804 - INFO -   prune_weights = True
-2025-03-13 19:28:43,804 - INFO -   prune_layers = ['conv']
-2025-03-13 19:30:31,054 - INFO - Finished combination 134/336
-2025-03-13 19:30:31,054 - INFO - Running combination 135/336:
-2025-03-13 19:30:31,054 - INFO -   abs_val = 0.02
-2025-03-13 19:30:31,054 - INFO -   prune_bias = True
-2025-03-13 19:30:31,054 - INFO -   prune_weights = True
-2025-03-13 19:30:31,054 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:32:18,605 - INFO - Finished combination 135/336
-2025-03-13 19:32:18,606 - INFO - Running combination 136/336:
-2025-03-13 19:32:18,606 - INFO -   abs_val = 0.02
-2025-03-13 19:32:18,606 - INFO -   prune_bias = True
-2025-03-13 19:32:18,606 - INFO -   prune_weights = False
-2025-03-13 19:32:18,606 - INFO -   prune_layers = ['norm']
-2025-03-13 19:34:04,295 - INFO - Finished combination 136/336
-2025-03-13 19:34:04,295 - INFO - Running combination 137/336:
-2025-03-13 19:34:04,295 - INFO -   abs_val = 0.02
-2025-03-13 19:34:04,295 - INFO -   prune_bias = True
-2025-03-13 19:34:04,295 - INFO -   prune_weights = False
-2025-03-13 19:34:04,295 - INFO -   prune_layers = ['conv']
-2025-03-13 19:35:50,443 - INFO - Finished combination 137/336
-2025-03-13 19:35:50,444 - INFO - Running combination 138/336:
-2025-03-13 19:35:50,444 - INFO -   abs_val = 0.02
-2025-03-13 19:35:50,444 - INFO -   prune_bias = True
-2025-03-13 19:35:50,444 - INFO -   prune_weights = False
-2025-03-13 19:35:50,444 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:37:36,381 - INFO - Finished combination 138/336
-2025-03-13 19:37:36,381 - INFO - Running combination 139/336:
-2025-03-13 19:37:36,381 - INFO -   abs_val = 0.02
-2025-03-13 19:37:36,381 - INFO -   prune_bias = False
-2025-03-13 19:37:36,381 - INFO -   prune_weights = True
-2025-03-13 19:37:36,381 - INFO -   prune_layers = ['norm']
-2025-03-13 19:39:21,871 - INFO - Finished combination 139/336
-2025-03-13 19:39:21,871 - INFO - Running combination 140/336:
-2025-03-13 19:39:21,871 - INFO -   abs_val = 0.02
-2025-03-13 19:39:21,871 - INFO -   prune_bias = False
-2025-03-13 19:39:21,871 - INFO -   prune_weights = True
-2025-03-13 19:39:21,871 - INFO -   prune_layers = ['conv']
-2025-03-13 19:41:09,948 - INFO - Finished combination 140/336
-2025-03-13 19:41:09,948 - INFO - Running combination 141/336:
-2025-03-13 19:41:09,948 - INFO -   abs_val = 0.02
-2025-03-13 19:41:09,948 - INFO -   prune_bias = False
-2025-03-13 19:41:09,948 - INFO -   prune_weights = True
-2025-03-13 19:41:09,948 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:42:57,100 - INFO - Finished combination 141/336
-2025-03-13 19:42:57,100 - INFO - Running combination 142/336:
-2025-03-13 19:42:57,100 - INFO -   abs_val = 0.02
-2025-03-13 19:42:57,100 - INFO -   prune_bias = False
-2025-03-13 19:42:57,100 - INFO -   prune_weights = False
-2025-03-13 19:42:57,100 - INFO -   prune_layers = ['norm']
-2025-03-13 19:44:42,746 - INFO - Finished combination 142/336
-2025-03-13 19:44:42,746 - INFO - Running combination 143/336:
-2025-03-13 19:44:42,746 - INFO -   abs_val = 0.02
-2025-03-13 19:44:42,746 - INFO -   prune_bias = False
-2025-03-13 19:44:42,746 - INFO -   prune_weights = False
-2025-03-13 19:44:42,746 - INFO -   prune_layers = ['conv']
-2025-03-13 19:46:29,725 - INFO - Finished combination 143/336
-2025-03-13 19:46:29,725 - INFO - Running combination 144/336:
-2025-03-13 19:46:29,725 - INFO -   abs_val = 0.02
-2025-03-13 19:46:29,725 - INFO -   prune_bias = False
-2025-03-13 19:46:29,725 - INFO -   prune_weights = False
-2025-03-13 19:46:29,725 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:48:16,106 - INFO - Finished combination 144/336
-2025-03-13 19:48:16,106 - INFO - Running combination 145/336:
-2025-03-13 19:48:16,106 - INFO -   abs_val = 0.03
-2025-03-13 19:48:16,106 - INFO -   prune_bias = True
-2025-03-13 19:48:16,106 - INFO -   prune_weights = True
-2025-03-13 19:48:16,106 - INFO -   prune_layers = ['norm']
-2025-03-13 19:50:02,146 - INFO - Finished combination 145/336
-2025-03-13 19:50:02,147 - INFO - Running combination 146/336:
-2025-03-13 19:50:02,147 - INFO -   abs_val = 0.03
-2025-03-13 19:50:02,147 - INFO -   prune_bias = True
-2025-03-13 19:50:02,147 - INFO -   prune_weights = True
-2025-03-13 19:50:02,147 - INFO -   prune_layers = ['conv']
-2025-03-13 19:51:50,107 - INFO - Finished combination 146/336
-2025-03-13 19:51:50,108 - INFO - Running combination 147/336:
-2025-03-13 19:51:50,108 - INFO -   abs_val = 0.03
-2025-03-13 19:51:50,108 - INFO -   prune_bias = True
-2025-03-13 19:51:50,108 - INFO -   prune_weights = True
-2025-03-13 19:51:50,108 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:53:36,525 - INFO - Finished combination 147/336
-2025-03-13 19:53:36,525 - INFO - Running combination 148/336:
-2025-03-13 19:53:36,525 - INFO -   abs_val = 0.03
-2025-03-13 19:53:36,525 - INFO -   prune_bias = True
-2025-03-13 19:53:36,525 - INFO -   prune_weights = False
-2025-03-13 19:53:36,525 - INFO -   prune_layers = ['norm']
-2025-03-13 19:55:21,898 - INFO - Finished combination 148/336
-2025-03-13 19:55:21,898 - INFO - Running combination 149/336:
-2025-03-13 19:55:21,898 - INFO -   abs_val = 0.03
-2025-03-13 19:55:21,898 - INFO -   prune_bias = True
-2025-03-13 19:55:21,898 - INFO -   prune_weights = False
-2025-03-13 19:55:21,898 - INFO -   prune_layers = ['conv']
-2025-03-13 19:57:07,169 - INFO - Finished combination 149/336
-2025-03-13 19:57:07,169 - INFO - Running combination 150/336:
-2025-03-13 19:57:07,169 - INFO -   abs_val = 0.03
-2025-03-13 19:57:07,169 - INFO -   prune_bias = True
-2025-03-13 19:57:07,169 - INFO -   prune_weights = False
-2025-03-13 19:57:07,169 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 19:58:54,085 - INFO - Finished combination 150/336
-2025-03-13 19:58:54,085 - INFO - Running combination 151/336:
-2025-03-13 19:58:54,085 - INFO -   abs_val = 0.03
-2025-03-13 19:58:54,085 - INFO -   prune_bias = False
-2025-03-13 19:58:54,085 - INFO -   prune_weights = True
-2025-03-13 19:58:54,085 - INFO -   prune_layers = ['norm']
-2025-03-13 20:00:39,123 - INFO - Finished combination 151/336
-2025-03-13 20:00:39,123 - INFO - Running combination 152/336:
-2025-03-13 20:00:39,123 - INFO -   abs_val = 0.03
-2025-03-13 20:00:39,123 - INFO -   prune_bias = False
-2025-03-13 20:00:39,123 - INFO -   prune_weights = True
-2025-03-13 20:00:39,123 - INFO -   prune_layers = ['conv']
-2025-03-13 20:02:26,683 - INFO - Finished combination 152/336
-2025-03-13 20:02:26,683 - INFO - Running combination 153/336:
-2025-03-13 20:02:26,683 - INFO -   abs_val = 0.03
-2025-03-13 20:02:26,684 - INFO -   prune_bias = False
-2025-03-13 20:02:26,684 - INFO -   prune_weights = True
-2025-03-13 20:02:26,684 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:04:14,245 - INFO - Finished combination 153/336
-2025-03-13 20:04:14,245 - INFO - Running combination 154/336:
-2025-03-13 20:04:14,245 - INFO -   abs_val = 0.03
-2025-03-13 20:04:14,245 - INFO -   prune_bias = False
-2025-03-13 20:04:14,245 - INFO -   prune_weights = False
-2025-03-13 20:04:14,245 - INFO -   prune_layers = ['norm']
-2025-03-13 20:05:59,442 - INFO - Finished combination 154/336
-2025-03-13 20:05:59,442 - INFO - Running combination 155/336:
-2025-03-13 20:05:59,442 - INFO -   abs_val = 0.03
-2025-03-13 20:05:59,442 - INFO -   prune_bias = False
-2025-03-13 20:05:59,442 - INFO -   prune_weights = False
-2025-03-13 20:05:59,442 - INFO -   prune_layers = ['conv']
-2025-03-13 20:07:44,764 - INFO - Finished combination 155/336
-2025-03-13 20:07:44,764 - INFO - Running combination 156/336:
-2025-03-13 20:07:44,764 - INFO -   abs_val = 0.03
-2025-03-13 20:07:44,764 - INFO -   prune_bias = False
-2025-03-13 20:07:44,764 - INFO -   prune_weights = False
-2025-03-13 20:07:44,764 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:09:31,600 - INFO - Finished combination 156/336
-2025-03-13 20:09:31,600 - INFO - Running combination 157/336:
-2025-03-13 20:09:31,600 - INFO -   abs_val = 0.04
-2025-03-13 20:09:31,600 - INFO -   prune_bias = True
-2025-03-13 20:09:31,600 - INFO -   prune_weights = True
-2025-03-13 20:09:31,600 - INFO -   prune_layers = ['norm']
-2025-03-13 20:11:17,040 - INFO - Finished combination 157/336
-2025-03-13 20:11:17,040 - INFO - Running combination 158/336:
-2025-03-13 20:11:17,040 - INFO -   abs_val = 0.04
-2025-03-13 20:11:17,040 - INFO -   prune_bias = True
-2025-03-13 20:11:17,040 - INFO -   prune_weights = True
-2025-03-13 20:11:17,040 - INFO -   prune_layers = ['conv']
-2025-03-13 20:13:04,973 - INFO - Finished combination 158/336
-2025-03-13 20:13:04,973 - INFO - Running combination 159/336:
-2025-03-13 20:13:04,973 - INFO -   abs_val = 0.04
-2025-03-13 20:13:04,973 - INFO -   prune_bias = True
-2025-03-13 20:13:04,973 - INFO -   prune_weights = True
-2025-03-13 20:13:04,973 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:14:52,328 - INFO - Finished combination 159/336
-2025-03-13 20:14:52,328 - INFO - Running combination 160/336:
-2025-03-13 20:14:52,328 - INFO -   abs_val = 0.04
-2025-03-13 20:14:52,328 - INFO -   prune_bias = True
-2025-03-13 20:14:52,328 - INFO -   prune_weights = False
-2025-03-13 20:14:52,328 - INFO -   prune_layers = ['norm']
-2025-03-13 20:16:39,711 - INFO - Finished combination 160/336
-2025-03-13 20:16:39,711 - INFO - Running combination 161/336:
-2025-03-13 20:16:39,711 - INFO -   abs_val = 0.04
-2025-03-13 20:16:39,711 - INFO -   prune_bias = True
-2025-03-13 20:16:39,711 - INFO -   prune_weights = False
-2025-03-13 20:16:39,711 - INFO -   prune_layers = ['conv']
-2025-03-13 20:18:26,230 - INFO - Finished combination 161/336
-2025-03-13 20:18:26,230 - INFO - Running combination 162/336:
-2025-03-13 20:18:26,230 - INFO -   abs_val = 0.04
-2025-03-13 20:18:26,230 - INFO -   prune_bias = True
-2025-03-13 20:18:26,230 - INFO -   prune_weights = False
-2025-03-13 20:18:26,230 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:20:12,287 - INFO - Finished combination 162/336
-2025-03-13 20:20:12,287 - INFO - Running combination 163/336:
-2025-03-13 20:20:12,287 - INFO -   abs_val = 0.04
-2025-03-13 20:20:12,287 - INFO -   prune_bias = False
-2025-03-13 20:20:12,287 - INFO -   prune_weights = True
-2025-03-13 20:20:12,287 - INFO -   prune_layers = ['norm']
-2025-03-13 20:21:58,190 - INFO - Finished combination 163/336
-2025-03-13 20:21:58,190 - INFO - Running combination 164/336:
-2025-03-13 20:21:58,190 - INFO -   abs_val = 0.04
-2025-03-13 20:21:58,190 - INFO -   prune_bias = False
-2025-03-13 20:21:58,190 - INFO -   prune_weights = True
-2025-03-13 20:21:58,190 - INFO -   prune_layers = ['conv']
-2025-03-13 20:23:44,547 - INFO - Finished combination 164/336
-2025-03-13 20:23:44,547 - INFO - Running combination 165/336:
-2025-03-13 20:23:44,547 - INFO -   abs_val = 0.04
-2025-03-13 20:23:44,547 - INFO -   prune_bias = False
-2025-03-13 20:23:44,547 - INFO -   prune_weights = True
-2025-03-13 20:23:44,547 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:25:31,751 - INFO - Finished combination 165/336
-2025-03-13 20:25:31,752 - INFO - Running combination 166/336:
-2025-03-13 20:25:31,752 - INFO -   abs_val = 0.04
-2025-03-13 20:25:31,752 - INFO -   prune_bias = False
-2025-03-13 20:25:31,752 - INFO -   prune_weights = False
-2025-03-13 20:25:31,752 - INFO -   prune_layers = ['norm']
-2025-03-13 20:27:17,692 - INFO - Finished combination 166/336
-2025-03-13 20:27:17,692 - INFO - Running combination 167/336:
-2025-03-13 20:27:17,692 - INFO -   abs_val = 0.04
-2025-03-13 20:27:17,692 - INFO -   prune_bias = False
-2025-03-13 20:27:17,692 - INFO -   prune_weights = False
-2025-03-13 20:27:17,692 - INFO -   prune_layers = ['conv']
-2025-03-13 20:29:04,328 - INFO - Finished combination 167/336
-2025-03-13 20:29:04,328 - INFO - Running combination 168/336:
-2025-03-13 20:29:04,328 - INFO -   abs_val = 0.04
-2025-03-13 20:29:04,328 - INFO -   prune_bias = False
-2025-03-13 20:29:04,328 - INFO -   prune_weights = False
-2025-03-13 20:29:04,328 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:30:49,931 - INFO - Finished combination 168/336
-2025-03-13 20:30:49,931 - INFO - Running combination 169/336:
-2025-03-13 20:30:49,931 - INFO -   abs_val = 0.05
-2025-03-13 20:30:49,931 - INFO -   prune_bias = True
-2025-03-13 20:30:49,931 - INFO -   prune_weights = True
-2025-03-13 20:30:49,932 - INFO -   prune_layers = ['norm']
-2025-03-13 20:32:36,460 - INFO - Finished combination 169/336
-2025-03-13 20:32:36,460 - INFO - Running combination 170/336:
-2025-03-13 20:32:36,460 - INFO -   abs_val = 0.05
-2025-03-13 20:32:36,460 - INFO -   prune_bias = True
-2025-03-13 20:32:36,460 - INFO -   prune_weights = True
-2025-03-13 20:32:36,460 - INFO -   prune_layers = ['conv']
-2025-03-13 20:34:22,690 - INFO - Finished combination 170/336
-2025-03-13 20:34:22,690 - INFO - Running combination 171/336:
-2025-03-13 20:34:22,690 - INFO -   abs_val = 0.05
-2025-03-13 20:34:22,690 - INFO -   prune_bias = True
-2025-03-13 20:34:22,690 - INFO -   prune_weights = True
-2025-03-13 20:34:22,691 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:36:09,604 - INFO - Finished combination 171/336
-2025-03-13 20:36:09,604 - INFO - Running combination 172/336:
-2025-03-13 20:36:09,604 - INFO -   abs_val = 0.05
-2025-03-13 20:36:09,605 - INFO -   prune_bias = True
-2025-03-13 20:36:09,605 - INFO -   prune_weights = False
-2025-03-13 20:36:09,605 - INFO -   prune_layers = ['norm']
-2025-03-13 20:37:55,231 - INFO - Finished combination 172/336
-2025-03-13 20:37:55,231 - INFO - Running combination 173/336:
-2025-03-13 20:37:55,231 - INFO -   abs_val = 0.05
-2025-03-13 20:37:55,231 - INFO -   prune_bias = True
-2025-03-13 20:37:55,231 - INFO -   prune_weights = False
-2025-03-13 20:37:55,231 - INFO -   prune_layers = ['conv']
-2025-03-13 20:39:41,527 - INFO - Finished combination 173/336
-2025-03-13 20:39:41,527 - INFO - Running combination 174/336:
-2025-03-13 20:39:41,527 - INFO -   abs_val = 0.05
-2025-03-13 20:39:41,527 - INFO -   prune_bias = True
-2025-03-13 20:39:41,527 - INFO -   prune_weights = False
-2025-03-13 20:39:41,527 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:41:27,208 - INFO - Finished combination 174/336
-2025-03-13 20:41:27,208 - INFO - Running combination 175/336:
-2025-03-13 20:41:27,208 - INFO -   abs_val = 0.05
-2025-03-13 20:41:27,208 - INFO -   prune_bias = False
-2025-03-13 20:41:27,208 - INFO -   prune_weights = True
-2025-03-13 20:41:27,208 - INFO -   prune_layers = ['norm']
-2025-03-13 20:43:13,227 - INFO - Finished combination 175/336
-2025-03-13 20:43:13,227 - INFO - Running combination 176/336:
-2025-03-13 20:43:13,227 - INFO -   abs_val = 0.05
-2025-03-13 20:43:13,227 - INFO -   prune_bias = False
-2025-03-13 20:43:13,227 - INFO -   prune_weights = True
-2025-03-13 20:43:13,227 - INFO -   prune_layers = ['conv']
-2025-03-13 20:45:00,994 - INFO - Finished combination 176/336
-2025-03-13 20:45:00,994 - INFO - Running combination 177/336:
-2025-03-13 20:45:00,995 - INFO -   abs_val = 0.05
-2025-03-13 20:45:00,995 - INFO -   prune_bias = False
-2025-03-13 20:45:00,995 - INFO -   prune_weights = True
-2025-03-13 20:45:00,995 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:46:48,825 - INFO - Finished combination 177/336
-2025-03-13 20:46:48,825 - INFO - Running combination 178/336:
-2025-03-13 20:46:48,825 - INFO -   abs_val = 0.05
-2025-03-13 20:46:48,825 - INFO -   prune_bias = False
-2025-03-13 20:46:48,825 - INFO -   prune_weights = False
-2025-03-13 20:46:48,825 - INFO -   prune_layers = ['norm']
-2025-03-13 20:48:34,514 - INFO - Finished combination 178/336
-2025-03-13 20:48:34,514 - INFO - Running combination 179/336:
-2025-03-13 20:48:34,514 - INFO -   abs_val = 0.05
-2025-03-13 20:48:34,514 - INFO -   prune_bias = False
-2025-03-13 20:48:34,514 - INFO -   prune_weights = False
-2025-03-13 20:48:34,514 - INFO -   prune_layers = ['conv']
-2025-03-13 20:50:20,892 - INFO - Finished combination 179/336
-2025-03-13 20:50:20,892 - INFO - Running combination 180/336:
-2025-03-13 20:50:20,892 - INFO -   abs_val = 0.05
-2025-03-13 20:50:20,892 - INFO -   prune_bias = False
-2025-03-13 20:50:20,892 - INFO -   prune_weights = False
-2025-03-13 20:50:20,892 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:52:07,362 - INFO - Finished combination 180/336
-2025-03-13 20:52:07,362 - INFO - Running combination 181/336:
-2025-03-13 20:52:07,362 - INFO -   abs_val = 0.06
-2025-03-13 20:52:07,362 - INFO -   prune_bias = True
-2025-03-13 20:52:07,362 - INFO -   prune_weights = True
-2025-03-13 20:52:07,362 - INFO -   prune_layers = ['norm']
-2025-03-13 20:53:53,133 - INFO - Finished combination 181/336
-2025-03-13 20:53:53,133 - INFO - Running combination 182/336:
-2025-03-13 20:53:53,133 - INFO -   abs_val = 0.06
-2025-03-13 20:53:53,133 - INFO -   prune_bias = True
-2025-03-13 20:53:53,133 - INFO -   prune_weights = True
-2025-03-13 20:53:53,133 - INFO -   prune_layers = ['conv']
-2025-03-13 20:55:40,533 - INFO - Finished combination 182/336
-2025-03-13 20:55:40,533 - INFO - Running combination 183/336:
-2025-03-13 20:55:40,533 - INFO -   abs_val = 0.06
-2025-03-13 20:55:40,533 - INFO -   prune_bias = True
-2025-03-13 20:55:40,534 - INFO -   prune_weights = True
-2025-03-13 20:55:40,534 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 20:57:27,336 - INFO - Finished combination 183/336
-2025-03-13 20:57:27,336 - INFO - Running combination 184/336:
-2025-03-13 20:57:27,336 - INFO -   abs_val = 0.06
-2025-03-13 20:57:27,336 - INFO -   prune_bias = True
-2025-03-13 20:57:27,336 - INFO -   prune_weights = False
-2025-03-13 20:57:27,336 - INFO -   prune_layers = ['norm']
-2025-03-13 20:59:12,692 - INFO - Finished combination 184/336
-2025-03-13 20:59:12,693 - INFO - Running combination 185/336:
-2025-03-13 20:59:12,693 - INFO -   abs_val = 0.06
-2025-03-13 20:59:12,693 - INFO -   prune_bias = True
-2025-03-13 20:59:12,693 - INFO -   prune_weights = False
-2025-03-13 20:59:12,693 - INFO -   prune_layers = ['conv']
-2025-03-13 21:00:57,689 - INFO - Finished combination 185/336
-2025-03-13 21:00:57,689 - INFO - Running combination 186/336:
-2025-03-13 21:00:57,689 - INFO -   abs_val = 0.06
-2025-03-13 21:00:57,689 - INFO -   prune_bias = True
-2025-03-13 21:00:57,689 - INFO -   prune_weights = False
-2025-03-13 21:00:57,689 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:02:43,449 - INFO - Finished combination 186/336
-2025-03-13 21:02:43,450 - INFO - Running combination 187/336:
-2025-03-13 21:02:43,450 - INFO -   abs_val = 0.06
-2025-03-13 21:02:43,450 - INFO -   prune_bias = False
-2025-03-13 21:02:43,450 - INFO -   prune_weights = True
-2025-03-13 21:02:43,450 - INFO -   prune_layers = ['norm']
-2025-03-13 21:04:29,622 - INFO - Finished combination 187/336
-2025-03-13 21:04:29,622 - INFO - Running combination 188/336:
-2025-03-13 21:04:29,622 - INFO -   abs_val = 0.06
-2025-03-13 21:04:29,622 - INFO -   prune_bias = False
-2025-03-13 21:04:29,622 - INFO -   prune_weights = True
-2025-03-13 21:04:29,622 - INFO -   prune_layers = ['conv']
-2025-03-13 21:06:16,838 - INFO - Finished combination 188/336
-2025-03-13 21:06:16,838 - INFO - Running combination 189/336:
-2025-03-13 21:06:16,838 - INFO -   abs_val = 0.06
-2025-03-13 21:06:16,838 - INFO -   prune_bias = False
-2025-03-13 21:06:16,838 - INFO -   prune_weights = True
-2025-03-13 21:06:16,838 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:08:04,136 - INFO - Finished combination 189/336
-2025-03-13 21:08:04,136 - INFO - Running combination 190/336:
-2025-03-13 21:08:04,136 - INFO -   abs_val = 0.06
-2025-03-13 21:08:04,136 - INFO -   prune_bias = False
-2025-03-13 21:08:04,136 - INFO -   prune_weights = False
-2025-03-13 21:08:04,136 - INFO -   prune_layers = ['norm']
-2025-03-13 21:09:49,820 - INFO - Finished combination 190/336
-2025-03-13 21:09:49,820 - INFO - Running combination 191/336:
-2025-03-13 21:09:49,820 - INFO -   abs_val = 0.06
-2025-03-13 21:09:49,820 - INFO -   prune_bias = False
-2025-03-13 21:09:49,820 - INFO -   prune_weights = False
-2025-03-13 21:09:49,820 - INFO -   prune_layers = ['conv']
-2025-03-13 21:11:35,803 - INFO - Finished combination 191/336
-2025-03-13 21:11:35,803 - INFO - Running combination 192/336:
-2025-03-13 21:11:35,803 - INFO -   abs_val = 0.06
-2025-03-13 21:11:35,803 - INFO -   prune_bias = False
-2025-03-13 21:11:35,803 - INFO -   prune_weights = False
-2025-03-13 21:11:35,803 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:13:20,902 - INFO - Finished combination 192/336
-2025-03-13 21:13:20,902 - INFO - Running combination 193/336:
-2025-03-13 21:13:20,902 - INFO -   abs_val = 0.07
-2025-03-13 21:13:20,903 - INFO -   prune_bias = True
-2025-03-13 21:13:20,903 - INFO -   prune_weights = True
-2025-03-13 21:13:20,903 - INFO -   prune_layers = ['norm']
-2025-03-13 21:15:06,274 - INFO - Finished combination 193/336
-2025-03-13 21:15:06,274 - INFO - Running combination 194/336:
-2025-03-13 21:15:06,274 - INFO -   abs_val = 0.07
-2025-03-13 21:15:06,274 - INFO -   prune_bias = True
-2025-03-13 21:15:06,274 - INFO -   prune_weights = True
-2025-03-13 21:15:06,274 - INFO -   prune_layers = ['conv']
-2025-03-13 21:16:53,203 - INFO - Finished combination 194/336
-2025-03-13 21:16:53,204 - INFO - Running combination 195/336:
-2025-03-13 21:16:53,204 - INFO -   abs_val = 0.07
-2025-03-13 21:16:53,204 - INFO -   prune_bias = True
-2025-03-13 21:16:53,204 - INFO -   prune_weights = True
-2025-03-13 21:16:53,204 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:18:40,483 - INFO - Finished combination 195/336
-2025-03-13 21:18:40,483 - INFO - Running combination 196/336:
-2025-03-13 21:18:40,483 - INFO -   abs_val = 0.07
-2025-03-13 21:18:40,483 - INFO -   prune_bias = True
-2025-03-13 21:18:40,483 - INFO -   prune_weights = False
-2025-03-13 21:18:40,483 - INFO -   prune_layers = ['norm']
-2025-03-13 21:20:26,263 - INFO - Finished combination 196/336
-2025-03-13 21:20:26,263 - INFO - Running combination 197/336:
-2025-03-13 21:20:26,263 - INFO -   abs_val = 0.07
-2025-03-13 21:20:26,263 - INFO -   prune_bias = True
-2025-03-13 21:20:26,263 - INFO -   prune_weights = False
-2025-03-13 21:20:26,263 - INFO -   prune_layers = ['conv']
-2025-03-13 21:22:11,746 - INFO - Finished combination 197/336
-2025-03-13 21:22:11,746 - INFO - Running combination 198/336:
-2025-03-13 21:22:11,746 - INFO -   abs_val = 0.07
-2025-03-13 21:22:11,746 - INFO -   prune_bias = True
-2025-03-13 21:22:11,746 - INFO -   prune_weights = False
-2025-03-13 21:22:11,746 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:23:57,976 - INFO - Finished combination 198/336
-2025-03-13 21:23:57,976 - INFO - Running combination 199/336:
-2025-03-13 21:23:57,976 - INFO -   abs_val = 0.07
-2025-03-13 21:23:57,976 - INFO -   prune_bias = False
-2025-03-13 21:23:57,976 - INFO -   prune_weights = True
-2025-03-13 21:23:57,976 - INFO -   prune_layers = ['norm']
-2025-03-13 21:25:44,328 - INFO - Finished combination 199/336
-2025-03-13 21:25:44,328 - INFO - Running combination 200/336:
-2025-03-13 21:25:44,328 - INFO -   abs_val = 0.07
-2025-03-13 21:25:44,328 - INFO -   prune_bias = False
-2025-03-13 21:25:44,328 - INFO -   prune_weights = True
-2025-03-13 21:25:44,328 - INFO -   prune_layers = ['conv']
-2025-03-13 21:27:31,523 - INFO - Finished combination 200/336
-2025-03-13 21:27:31,524 - INFO - Running combination 201/336:
-2025-03-13 21:27:31,524 - INFO -   abs_val = 0.07
-2025-03-13 21:27:31,524 - INFO -   prune_bias = False
-2025-03-13 21:27:31,524 - INFO -   prune_weights = True
-2025-03-13 21:27:31,524 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:29:18,194 - INFO - Finished combination 201/336
-2025-03-13 21:29:18,195 - INFO - Running combination 202/336:
-2025-03-13 21:29:18,195 - INFO -   abs_val = 0.07
-2025-03-13 21:29:18,195 - INFO -   prune_bias = False
-2025-03-13 21:29:18,195 - INFO -   prune_weights = False
-2025-03-13 21:29:18,195 - INFO -   prune_layers = ['norm']
-2025-03-13 21:31:04,393 - INFO - Finished combination 202/336
-2025-03-13 21:31:04,394 - INFO - Running combination 203/336:
-2025-03-13 21:31:04,394 - INFO -   abs_val = 0.07
-2025-03-13 21:31:04,394 - INFO -   prune_bias = False
-2025-03-13 21:31:04,394 - INFO -   prune_weights = False
-2025-03-13 21:31:04,394 - INFO -   prune_layers = ['conv']
-2025-03-13 21:32:50,645 - INFO - Finished combination 203/336
-2025-03-13 21:32:50,645 - INFO - Running combination 204/336:
-2025-03-13 21:32:50,645 - INFO -   abs_val = 0.07
-2025-03-13 21:32:50,645 - INFO -   prune_bias = False
-2025-03-13 21:32:50,645 - INFO -   prune_weights = False
-2025-03-13 21:32:50,645 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:34:36,459 - INFO - Finished combination 204/336
-2025-03-13 21:34:36,459 - INFO - Running combination 205/336:
-2025-03-13 21:34:36,459 - INFO -   abs_val = 0.08
-2025-03-13 21:34:36,459 - INFO -   prune_bias = True
-2025-03-13 21:34:36,459 - INFO -   prune_weights = True
-2025-03-13 21:34:36,459 - INFO -   prune_layers = ['norm']
-2025-03-13 21:36:22,955 - INFO - Finished combination 205/336
-2025-03-13 21:36:22,955 - INFO - Running combination 206/336:
-2025-03-13 21:36:22,955 - INFO -   abs_val = 0.08
-2025-03-13 21:36:22,955 - INFO -   prune_bias = True
-2025-03-13 21:36:22,955 - INFO -   prune_weights = True
-2025-03-13 21:36:22,955 - INFO -   prune_layers = ['conv']
-2025-03-13 21:38:10,512 - INFO - Finished combination 206/336
-2025-03-13 21:38:10,513 - INFO - Running combination 207/336:
-2025-03-13 21:38:10,513 - INFO -   abs_val = 0.08
-2025-03-13 21:38:10,513 - INFO -   prune_bias = True
-2025-03-13 21:38:10,513 - INFO -   prune_weights = True
-2025-03-13 21:38:10,513 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:39:57,314 - INFO - Finished combination 207/336
-2025-03-13 21:39:57,314 - INFO - Running combination 208/336:
-2025-03-13 21:39:57,314 - INFO -   abs_val = 0.08
-2025-03-13 21:39:57,314 - INFO -   prune_bias = True
-2025-03-13 21:39:57,314 - INFO -   prune_weights = False
-2025-03-13 21:39:57,314 - INFO -   prune_layers = ['norm']
-2025-03-13 21:41:42,564 - INFO - Finished combination 208/336
-2025-03-13 21:41:42,564 - INFO - Running combination 209/336:
-2025-03-13 21:41:42,564 - INFO -   abs_val = 0.08
-2025-03-13 21:41:42,564 - INFO -   prune_bias = True
-2025-03-13 21:41:42,564 - INFO -   prune_weights = False
-2025-03-13 21:41:42,564 - INFO -   prune_layers = ['conv']
-2025-03-13 21:43:29,063 - INFO - Finished combination 209/336
-2025-03-13 21:43:29,064 - INFO - Running combination 210/336:
-2025-03-13 21:43:29,064 - INFO -   abs_val = 0.08
-2025-03-13 21:43:29,064 - INFO -   prune_bias = True
-2025-03-13 21:43:29,064 - INFO -   prune_weights = False
-2025-03-13 21:43:29,064 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:45:14,917 - INFO - Finished combination 210/336
-2025-03-13 21:45:14,917 - INFO - Running combination 211/336:
-2025-03-13 21:45:14,917 - INFO -   abs_val = 0.08
-2025-03-13 21:45:14,917 - INFO -   prune_bias = False
-2025-03-13 21:45:14,917 - INFO -   prune_weights = True
-2025-03-13 21:45:14,917 - INFO -   prune_layers = ['norm']
-2025-03-13 21:47:00,959 - INFO - Finished combination 211/336
-2025-03-13 21:47:00,959 - INFO - Running combination 212/336:
-2025-03-13 21:47:00,959 - INFO -   abs_val = 0.08
-2025-03-13 21:47:00,959 - INFO -   prune_bias = False
-2025-03-13 21:47:00,959 - INFO -   prune_weights = True
-2025-03-13 21:47:00,959 - INFO -   prune_layers = ['conv']
-2025-03-13 21:48:47,935 - INFO - Finished combination 212/336
-2025-03-13 21:48:47,935 - INFO - Running combination 213/336:
-2025-03-13 21:48:47,935 - INFO -   abs_val = 0.08
-2025-03-13 21:48:47,935 - INFO -   prune_bias = False
-2025-03-13 21:48:47,935 - INFO -   prune_weights = True
-2025-03-13 21:48:47,936 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:50:35,694 - INFO - Finished combination 213/336
-2025-03-13 21:50:35,694 - INFO - Running combination 214/336:
-2025-03-13 21:50:35,694 - INFO -   abs_val = 0.08
-2025-03-13 21:50:35,694 - INFO -   prune_bias = False
-2025-03-13 21:50:35,694 - INFO -   prune_weights = False
-2025-03-13 21:50:35,694 - INFO -   prune_layers = ['norm']
-2025-03-13 21:52:20,903 - INFO - Finished combination 214/336
-2025-03-13 21:52:20,903 - INFO - Running combination 215/336:
-2025-03-13 21:52:20,903 - INFO -   abs_val = 0.08
-2025-03-13 21:52:20,903 - INFO -   prune_bias = False
-2025-03-13 21:52:20,903 - INFO -   prune_weights = False
-2025-03-13 21:52:20,903 - INFO -   prune_layers = ['conv']
-2025-03-13 21:54:06,983 - INFO - Finished combination 215/336
-2025-03-13 21:54:06,984 - INFO - Running combination 216/336:
-2025-03-13 21:54:06,984 - INFO -   abs_val = 0.08
-2025-03-13 21:54:06,984 - INFO -   prune_bias = False
-2025-03-13 21:54:06,984 - INFO -   prune_weights = False
-2025-03-13 21:54:06,984 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 21:55:52,415 - INFO - Finished combination 216/336
-2025-03-13 21:55:52,415 - INFO - Running combination 217/336:
-2025-03-13 21:55:52,415 - INFO -   abs_val = 0.09
-2025-03-13 21:55:52,415 - INFO -   prune_bias = True
-2025-03-13 21:55:52,415 - INFO -   prune_weights = True
-2025-03-13 21:55:52,415 - INFO -   prune_layers = ['norm']
-2025-03-13 21:57:38,891 - INFO - Finished combination 217/336
-2025-03-13 21:57:38,891 - INFO - Running combination 218/336:
-2025-03-13 21:57:38,891 - INFO -   abs_val = 0.09
-2025-03-13 21:57:38,891 - INFO -   prune_bias = True
-2025-03-13 21:57:38,891 - INFO -   prune_weights = True
-2025-03-13 21:57:38,891 - INFO -   prune_layers = ['conv']
-2025-03-13 21:59:26,632 - INFO - Finished combination 218/336
-2025-03-13 21:59:26,632 - INFO - Running combination 219/336:
-2025-03-13 21:59:26,632 - INFO -   abs_val = 0.09
-2025-03-13 21:59:26,632 - INFO -   prune_bias = True
-2025-03-13 21:59:26,632 - INFO -   prune_weights = True
-2025-03-13 21:59:26,632 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:01:13,698 - INFO - Finished combination 219/336
-2025-03-13 22:01:13,698 - INFO - Running combination 220/336:
-2025-03-13 22:01:13,698 - INFO -   abs_val = 0.09
-2025-03-13 22:01:13,698 - INFO -   prune_bias = True
-2025-03-13 22:01:13,698 - INFO -   prune_weights = False
-2025-03-13 22:01:13,699 - INFO -   prune_layers = ['norm']
-2025-03-13 22:02:59,757 - INFO - Finished combination 220/336
-2025-03-13 22:02:59,757 - INFO - Running combination 221/336:
-2025-03-13 22:02:59,757 - INFO -   abs_val = 0.09
-2025-03-13 22:02:59,757 - INFO -   prune_bias = True
-2025-03-13 22:02:59,758 - INFO -   prune_weights = False
-2025-03-13 22:02:59,758 - INFO -   prune_layers = ['conv']
-2025-03-13 22:04:45,895 - INFO - Finished combination 221/336
-2025-03-13 22:04:45,895 - INFO - Running combination 222/336:
-2025-03-13 22:04:45,895 - INFO -   abs_val = 0.09
-2025-03-13 22:04:45,895 - INFO -   prune_bias = True
-2025-03-13 22:04:45,895 - INFO -   prune_weights = False
-2025-03-13 22:04:45,895 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:06:32,864 - INFO - Finished combination 222/336
-2025-03-13 22:06:32,864 - INFO - Running combination 223/336:
-2025-03-13 22:06:32,865 - INFO -   abs_val = 0.09
-2025-03-13 22:06:32,865 - INFO -   prune_bias = False
-2025-03-13 22:06:32,865 - INFO -   prune_weights = True
-2025-03-13 22:06:32,865 - INFO -   prune_layers = ['norm']
-2025-03-13 22:08:19,799 - INFO - Finished combination 223/336
-2025-03-13 22:08:19,799 - INFO - Running combination 224/336:
-2025-03-13 22:08:19,799 - INFO -   abs_val = 0.09
-2025-03-13 22:08:19,799 - INFO -   prune_bias = False
-2025-03-13 22:08:19,799 - INFO -   prune_weights = True
-2025-03-13 22:08:19,799 - INFO -   prune_layers = ['conv']
-2025-03-13 22:10:07,200 - INFO - Finished combination 224/336
-2025-03-13 22:10:07,200 - INFO - Running combination 225/336:
-2025-03-13 22:10:07,200 - INFO -   abs_val = 0.09
-2025-03-13 22:10:07,200 - INFO -   prune_bias = False
-2025-03-13 22:10:07,200 - INFO -   prune_weights = True
-2025-03-13 22:10:07,200 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:11:55,767 - INFO - Finished combination 225/336
-2025-03-13 22:11:55,767 - INFO - Running combination 226/336:
-2025-03-13 22:11:55,767 - INFO -   abs_val = 0.09
-2025-03-13 22:11:55,767 - INFO -   prune_bias = False
-2025-03-13 22:11:55,767 - INFO -   prune_weights = False
-2025-03-13 22:11:55,767 - INFO -   prune_layers = ['norm']
-2025-03-13 22:13:41,074 - INFO - Finished combination 226/336
-2025-03-13 22:13:41,075 - INFO - Running combination 227/336:
-2025-03-13 22:13:41,075 - INFO -   abs_val = 0.09
-2025-03-13 22:13:41,075 - INFO -   prune_bias = False
-2025-03-13 22:13:41,075 - INFO -   prune_weights = False
-2025-03-13 22:13:41,075 - INFO -   prune_layers = ['conv']
-2025-03-13 22:15:28,004 - INFO - Finished combination 227/336
-2025-03-13 22:15:28,004 - INFO - Running combination 228/336:
-2025-03-13 22:15:28,004 - INFO -   abs_val = 0.09
-2025-03-13 22:15:28,004 - INFO -   prune_bias = False
-2025-03-13 22:15:28,004 - INFO -   prune_weights = False
-2025-03-13 22:15:28,004 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:17:13,598 - INFO - Finished combination 228/336
-2025-03-13 22:17:13,598 - INFO - Running combination 229/336:
-2025-03-13 22:17:13,598 - INFO -   abs_val = 0.1
-2025-03-13 22:17:13,598 - INFO -   prune_bias = True
-2025-03-13 22:17:13,598 - INFO -   prune_weights = True
-2025-03-13 22:17:13,598 - INFO -   prune_layers = ['norm']
-2025-03-13 22:18:58,733 - INFO - Finished combination 229/336
-2025-03-13 22:18:58,733 - INFO - Running combination 230/336:
-2025-03-13 22:18:58,733 - INFO -   abs_val = 0.1
-2025-03-13 22:18:58,733 - INFO -   prune_bias = True
-2025-03-13 22:18:58,733 - INFO -   prune_weights = True
-2025-03-13 22:18:58,733 - INFO -   prune_layers = ['conv']
-2025-03-13 22:20:46,168 - INFO - Finished combination 230/336
-2025-03-13 22:20:46,169 - INFO - Running combination 231/336:
-2025-03-13 22:20:46,169 - INFO -   abs_val = 0.1
-2025-03-13 22:20:46,169 - INFO -   prune_bias = True
-2025-03-13 22:20:46,169 - INFO -   prune_weights = True
-2025-03-13 22:20:46,169 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:22:33,557 - INFO - Finished combination 231/336
-2025-03-13 22:22:33,557 - INFO - Running combination 232/336:
-2025-03-13 22:22:33,557 - INFO -   abs_val = 0.1
-2025-03-13 22:22:33,557 - INFO -   prune_bias = True
-2025-03-13 22:22:33,557 - INFO -   prune_weights = False
-2025-03-13 22:22:33,557 - INFO -   prune_layers = ['norm']
-2025-03-13 22:24:19,662 - INFO - Finished combination 232/336
-2025-03-13 22:24:19,662 - INFO - Running combination 233/336:
-2025-03-13 22:24:19,662 - INFO -   abs_val = 0.1
-2025-03-13 22:24:19,662 - INFO -   prune_bias = True
-2025-03-13 22:24:19,662 - INFO -   prune_weights = False
-2025-03-13 22:24:19,662 - INFO -   prune_layers = ['conv']
-2025-03-13 22:26:05,267 - INFO - Finished combination 233/336
-2025-03-13 22:26:05,267 - INFO - Running combination 234/336:
-2025-03-13 22:26:05,267 - INFO -   abs_val = 0.1
-2025-03-13 22:26:05,267 - INFO -   prune_bias = True
-2025-03-13 22:26:05,267 - INFO -   prune_weights = False
-2025-03-13 22:26:05,267 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:27:51,856 - INFO - Finished combination 234/336
-2025-03-13 22:27:51,857 - INFO - Running combination 235/336:
-2025-03-13 22:27:51,857 - INFO -   abs_val = 0.1
-2025-03-13 22:27:51,857 - INFO -   prune_bias = False
-2025-03-13 22:27:51,857 - INFO -   prune_weights = True
-2025-03-13 22:27:51,857 - INFO -   prune_layers = ['norm']
-2025-03-13 22:29:37,654 - INFO - Finished combination 235/336
-2025-03-13 22:29:37,654 - INFO - Running combination 236/336:
-2025-03-13 22:29:37,654 - INFO -   abs_val = 0.1
-2025-03-13 22:29:37,654 - INFO -   prune_bias = False
-2025-03-13 22:29:37,654 - INFO -   prune_weights = True
-2025-03-13 22:29:37,655 - INFO -   prune_layers = ['conv']
-2025-03-13 22:31:25,233 - INFO - Finished combination 236/336
-2025-03-13 22:31:25,233 - INFO - Running combination 237/336:
-2025-03-13 22:31:25,233 - INFO -   abs_val = 0.1
-2025-03-13 22:31:25,233 - INFO -   prune_bias = False
-2025-03-13 22:31:25,233 - INFO -   prune_weights = True
-2025-03-13 22:31:25,233 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:33:12,752 - INFO - Finished combination 237/336
-2025-03-13 22:33:12,753 - INFO - Running combination 238/336:
-2025-03-13 22:33:12,753 - INFO -   abs_val = 0.1
-2025-03-13 22:33:12,753 - INFO -   prune_bias = False
-2025-03-13 22:33:12,753 - INFO -   prune_weights = False
-2025-03-13 22:33:12,753 - INFO -   prune_layers = ['norm']
-2025-03-13 22:34:58,665 - INFO - Finished combination 238/336
-2025-03-13 22:34:58,666 - INFO - Running combination 239/336:
-2025-03-13 22:34:58,666 - INFO -   abs_val = 0.1
-2025-03-13 22:34:58,666 - INFO -   prune_bias = False
-2025-03-13 22:34:58,666 - INFO -   prune_weights = False
-2025-03-13 22:34:58,666 - INFO -   prune_layers = ['conv']
-2025-03-13 22:36:45,498 - INFO - Finished combination 239/336
-2025-03-13 22:36:45,498 - INFO - Running combination 240/336:
-2025-03-13 22:36:45,498 - INFO -   abs_val = 0.1
-2025-03-13 22:36:45,498 - INFO -   prune_bias = False
-2025-03-13 22:36:45,498 - INFO -   prune_weights = False
-2025-03-13 22:36:45,498 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:38:31,405 - INFO - Finished combination 240/336
-2025-03-13 22:38:31,405 - INFO - Running combination 241/336:
-2025-03-13 22:38:31,405 - INFO -   abs_val = 0.2
-2025-03-13 22:38:31,405 - INFO -   prune_bias = True
-2025-03-13 22:38:31,405 - INFO -   prune_weights = True
-2025-03-13 22:38:31,405 - INFO -   prune_layers = ['norm']
-2025-03-13 22:40:18,050 - INFO - Finished combination 241/336
-2025-03-13 22:40:18,051 - INFO - Running combination 242/336:
-2025-03-13 22:40:18,051 - INFO -   abs_val = 0.2
-2025-03-13 22:40:18,051 - INFO -   prune_bias = True
-2025-03-13 22:40:18,051 - INFO -   prune_weights = True
-2025-03-13 22:40:18,051 - INFO -   prune_layers = ['conv']
-2025-03-13 22:42:06,855 - INFO - Finished combination 242/336
-2025-03-13 22:42:06,855 - INFO - Running combination 243/336:
-2025-03-13 22:42:06,855 - INFO -   abs_val = 0.2
-2025-03-13 22:42:06,855 - INFO -   prune_bias = True
-2025-03-13 22:42:06,855 - INFO -   prune_weights = True
-2025-03-13 22:42:06,855 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:43:56,383 - INFO - Finished combination 243/336
-2025-03-13 22:43:56,383 - INFO - Running combination 244/336:
-2025-03-13 22:43:56,383 - INFO -   abs_val = 0.2
-2025-03-13 22:43:56,383 - INFO -   prune_bias = True
-2025-03-13 22:43:56,383 - INFO -   prune_weights = False
-2025-03-13 22:43:56,383 - INFO -   prune_layers = ['norm']
-2025-03-13 22:45:44,144 - INFO - Finished combination 244/336
-2025-03-13 22:45:44,144 - INFO - Running combination 245/336:
-2025-03-13 22:45:44,144 - INFO -   abs_val = 0.2
-2025-03-13 22:45:44,144 - INFO -   prune_bias = True
-2025-03-13 22:45:44,144 - INFO -   prune_weights = False
-2025-03-13 22:45:44,144 - INFO -   prune_layers = ['conv']
-2025-03-13 22:47:30,298 - INFO - Finished combination 245/336
-2025-03-13 22:47:30,298 - INFO - Running combination 246/336:
-2025-03-13 22:47:30,298 - INFO -   abs_val = 0.2
-2025-03-13 22:47:30,298 - INFO -   prune_bias = True
-2025-03-13 22:47:30,298 - INFO -   prune_weights = False
-2025-03-13 22:47:30,298 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:49:17,411 - INFO - Finished combination 246/336
-2025-03-13 22:49:17,411 - INFO - Running combination 247/336:
-2025-03-13 22:49:17,411 - INFO -   abs_val = 0.2
-2025-03-13 22:49:17,411 - INFO -   prune_bias = False
-2025-03-13 22:49:17,411 - INFO -   prune_weights = True
-2025-03-13 22:49:17,411 - INFO -   prune_layers = ['norm']
-2025-03-13 22:51:04,526 - INFO - Finished combination 247/336
-2025-03-13 22:51:04,526 - INFO - Running combination 248/336:
-2025-03-13 22:51:04,526 - INFO -   abs_val = 0.2
-2025-03-13 22:51:04,526 - INFO -   prune_bias = False
-2025-03-13 22:51:04,526 - INFO -   prune_weights = True
-2025-03-13 22:51:04,526 - INFO -   prune_layers = ['conv']
-2025-03-13 22:52:51,611 - INFO - Finished combination 248/336
-2025-03-13 22:52:51,611 - INFO - Running combination 249/336:
-2025-03-13 22:52:51,611 - INFO -   abs_val = 0.2
-2025-03-13 22:52:51,611 - INFO -   prune_bias = False
-2025-03-13 22:52:51,611 - INFO -   prune_weights = True
-2025-03-13 22:52:51,611 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 22:54:39,984 - INFO - Finished combination 249/336
-2025-03-13 22:54:39,984 - INFO - Running combination 250/336:
-2025-03-13 22:54:39,984 - INFO -   abs_val = 0.2
-2025-03-13 22:54:39,984 - INFO -   prune_bias = False
-2025-03-13 22:54:39,984 - INFO -   prune_weights = False
-2025-03-13 22:54:39,984 - INFO -   prune_layers = ['norm']
-2025-03-13 22:56:27,045 - INFO - Finished combination 250/336
-2025-03-13 22:56:27,045 - INFO - Running combination 251/336:
-2025-03-13 22:56:27,045 - INFO -   abs_val = 0.2
-2025-03-13 22:56:27,045 - INFO -   prune_bias = False
-2025-03-13 22:56:27,045 - INFO -   prune_weights = False
-2025-03-13 22:56:27,045 - INFO -   prune_layers = ['conv']
-2025-03-13 22:58:15,103 - INFO - Finished combination 251/336
-2025-03-13 22:58:15,103 - INFO - Running combination 252/336:
-2025-03-13 22:58:15,103 - INFO -   abs_val = 0.2
-2025-03-13 22:58:15,103 - INFO -   prune_bias = False
-2025-03-13 22:58:15,103 - INFO -   prune_weights = False
-2025-03-13 22:58:15,103 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:00:03,649 - INFO - Finished combination 252/336
-2025-03-13 23:00:03,649 - INFO - Running combination 253/336:
-2025-03-13 23:00:03,649 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:00:03,649 - INFO -   prune_bias = True
-2025-03-13 23:00:03,649 - INFO -   prune_weights = True
-2025-03-13 23:00:03,649 - INFO -   prune_layers = ['norm']
-2025-03-13 23:01:51,749 - INFO - Finished combination 253/336
-2025-03-13 23:01:51,749 - INFO - Running combination 254/336:
-2025-03-13 23:01:51,749 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:01:51,749 - INFO -   prune_bias = True
-2025-03-13 23:01:51,749 - INFO -   prune_weights = True
-2025-03-13 23:01:51,749 - INFO -   prune_layers = ['conv']
-2025-03-13 23:03:41,898 - INFO - Finished combination 254/336
-2025-03-13 23:03:41,898 - INFO - Running combination 255/336:
-2025-03-13 23:03:41,898 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:03:41,898 - INFO -   prune_bias = True
-2025-03-13 23:03:41,898 - INFO -   prune_weights = True
-2025-03-13 23:03:41,898 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:05:30,729 - INFO - Finished combination 255/336
-2025-03-13 23:05:30,729 - INFO - Running combination 256/336:
-2025-03-13 23:05:30,729 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:05:30,729 - INFO -   prune_bias = True
-2025-03-13 23:05:30,729 - INFO -   prune_weights = False
-2025-03-13 23:05:30,729 - INFO -   prune_layers = ['norm']
-2025-03-13 23:07:19,987 - INFO - Finished combination 256/336
-2025-03-13 23:07:19,987 - INFO - Running combination 257/336:
-2025-03-13 23:07:19,988 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:07:19,988 - INFO -   prune_bias = True
-2025-03-13 23:07:19,988 - INFO -   prune_weights = False
-2025-03-13 23:07:19,988 - INFO -   prune_layers = ['conv']
-2025-03-13 23:09:07,905 - INFO - Finished combination 257/336
-2025-03-13 23:09:07,905 - INFO - Running combination 258/336:
-2025-03-13 23:09:07,905 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:09:07,905 - INFO -   prune_bias = True
-2025-03-13 23:09:07,905 - INFO -   prune_weights = False
-2025-03-13 23:09:07,905 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:10:55,957 - INFO - Finished combination 258/336
-2025-03-13 23:10:55,957 - INFO - Running combination 259/336:
-2025-03-13 23:10:55,957 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:10:55,957 - INFO -   prune_bias = False
-2025-03-13 23:10:55,957 - INFO -   prune_weights = True
-2025-03-13 23:10:55,957 - INFO -   prune_layers = ['norm']
-2025-03-13 23:12:43,436 - INFO - Finished combination 259/336
-2025-03-13 23:12:43,436 - INFO - Running combination 260/336:
-2025-03-13 23:12:43,436 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:12:43,436 - INFO -   prune_bias = False
-2025-03-13 23:12:43,436 - INFO -   prune_weights = True
-2025-03-13 23:12:43,436 - INFO -   prune_layers = ['conv']
-2025-03-13 23:14:31,811 - INFO - Finished combination 260/336
-2025-03-13 23:14:31,811 - INFO - Running combination 261/336:
-2025-03-13 23:14:31,811 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:14:31,811 - INFO -   prune_bias = False
-2025-03-13 23:14:31,811 - INFO -   prune_weights = True
-2025-03-13 23:14:31,811 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:16:22,023 - INFO - Finished combination 261/336
-2025-03-13 23:16:22,023 - INFO - Running combination 262/336:
-2025-03-13 23:16:22,023 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:16:22,023 - INFO -   prune_bias = False
-2025-03-13 23:16:22,023 - INFO -   prune_weights = False
-2025-03-13 23:16:22,023 - INFO -   prune_layers = ['norm']
-2025-03-13 23:18:10,088 - INFO - Finished combination 262/336
-2025-03-13 23:18:10,088 - INFO - Running combination 263/336:
-2025-03-13 23:18:10,088 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:18:10,088 - INFO -   prune_bias = False
-2025-03-13 23:18:10,088 - INFO -   prune_weights = False
-2025-03-13 23:18:10,088 - INFO -   prune_layers = ['conv']
-2025-03-13 23:19:58,174 - INFO - Finished combination 263/336
-2025-03-13 23:19:58,174 - INFO - Running combination 264/336:
-2025-03-13 23:19:58,174 - INFO -   abs_val = 0.30000000000000004
-2025-03-13 23:19:58,174 - INFO -   prune_bias = False
-2025-03-13 23:19:58,174 - INFO -   prune_weights = False
-2025-03-13 23:19:58,174 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:21:46,283 - INFO - Finished combination 264/336
-2025-03-13 23:21:46,283 - INFO - Running combination 265/336:
-2025-03-13 23:21:46,283 - INFO -   abs_val = 0.4
-2025-03-13 23:21:46,283 - INFO -   prune_bias = True
-2025-03-13 23:21:46,283 - INFO -   prune_weights = True
-2025-03-13 23:21:46,283 - INFO -   prune_layers = ['norm']
-2025-03-13 23:23:33,616 - INFO - Finished combination 265/336
-2025-03-13 23:23:33,617 - INFO - Running combination 266/336:
-2025-03-13 23:23:33,617 - INFO -   abs_val = 0.4
-2025-03-13 23:23:33,617 - INFO -   prune_bias = True
-2025-03-13 23:23:33,617 - INFO -   prune_weights = True
-2025-03-13 23:23:33,617 - INFO -   prune_layers = ['conv']
-2025-03-13 23:25:23,448 - INFO - Finished combination 266/336
-2025-03-13 23:25:23,448 - INFO - Running combination 267/336:
-2025-03-13 23:25:23,449 - INFO -   abs_val = 0.4
-2025-03-13 23:25:23,449 - INFO -   prune_bias = True
-2025-03-13 23:25:23,449 - INFO -   prune_weights = True
-2025-03-13 23:25:23,449 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:27:11,791 - INFO - Finished combination 267/336
-2025-03-13 23:27:11,792 - INFO - Running combination 268/336:
-2025-03-13 23:27:11,792 - INFO -   abs_val = 0.4
-2025-03-13 23:27:11,792 - INFO -   prune_bias = True
-2025-03-13 23:27:11,792 - INFO -   prune_weights = False
-2025-03-13 23:27:11,792 - INFO -   prune_layers = ['norm']
-2025-03-13 23:28:58,579 - INFO - Finished combination 268/336
-2025-03-13 23:28:58,579 - INFO - Running combination 269/336:
-2025-03-13 23:28:58,579 - INFO -   abs_val = 0.4
-2025-03-13 23:28:58,579 - INFO -   prune_bias = True
-2025-03-13 23:28:58,579 - INFO -   prune_weights = False
-2025-03-13 23:28:58,579 - INFO -   prune_layers = ['conv']
-2025-03-13 23:30:45,291 - INFO - Finished combination 269/336
-2025-03-13 23:30:45,291 - INFO - Running combination 270/336:
-2025-03-13 23:30:45,291 - INFO -   abs_val = 0.4
-2025-03-13 23:30:45,291 - INFO -   prune_bias = True
-2025-03-13 23:30:45,291 - INFO -   prune_weights = False
-2025-03-13 23:30:45,291 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:32:31,467 - INFO - Finished combination 270/336
-2025-03-13 23:32:31,468 - INFO - Running combination 271/336:
-2025-03-13 23:32:31,468 - INFO -   abs_val = 0.4
-2025-03-13 23:32:31,468 - INFO -   prune_bias = False
-2025-03-13 23:32:31,468 - INFO -   prune_weights = True
-2025-03-13 23:32:31,468 - INFO -   prune_layers = ['norm']
-2025-03-13 23:34:18,653 - INFO - Finished combination 271/336
-2025-03-13 23:34:18,654 - INFO - Running combination 272/336:
-2025-03-13 23:34:18,654 - INFO -   abs_val = 0.4
-2025-03-13 23:34:18,654 - INFO -   prune_bias = False
-2025-03-13 23:34:18,654 - INFO -   prune_weights = True
-2025-03-13 23:34:18,654 - INFO -   prune_layers = ['conv']
-2025-03-13 23:36:06,547 - INFO - Finished combination 272/336
-2025-03-13 23:36:06,547 - INFO - Running combination 273/336:
-2025-03-13 23:36:06,547 - INFO -   abs_val = 0.4
-2025-03-13 23:36:06,547 - INFO -   prune_bias = False
-2025-03-13 23:36:06,547 - INFO -   prune_weights = True
-2025-03-13 23:36:06,547 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:37:53,317 - INFO - Finished combination 273/336
-2025-03-13 23:37:53,317 - INFO - Running combination 274/336:
-2025-03-13 23:37:53,317 - INFO -   abs_val = 0.4
-2025-03-13 23:37:53,317 - INFO -   prune_bias = False
-2025-03-13 23:37:53,317 - INFO -   prune_weights = False
-2025-03-13 23:37:53,317 - INFO -   prune_layers = ['norm']
-2025-03-13 23:39:38,842 - INFO - Finished combination 274/336
-2025-03-13 23:39:38,842 - INFO - Running combination 275/336:
-2025-03-13 23:39:38,842 - INFO -   abs_val = 0.4
-2025-03-13 23:39:38,842 - INFO -   prune_bias = False
-2025-03-13 23:39:38,842 - INFO -   prune_weights = False
-2025-03-13 23:39:38,842 - INFO -   prune_layers = ['conv']
-2025-03-13 23:41:25,384 - INFO - Finished combination 275/336
-2025-03-13 23:41:25,384 - INFO - Running combination 276/336:
-2025-03-13 23:41:25,384 - INFO -   abs_val = 0.4
-2025-03-13 23:41:25,384 - INFO -   prune_bias = False
-2025-03-13 23:41:25,384 - INFO -   prune_weights = False
-2025-03-13 23:41:25,384 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:43:10,888 - INFO - Finished combination 276/336
-2025-03-13 23:43:10,888 - INFO - Running combination 277/336:
-2025-03-13 23:43:10,888 - INFO -   abs_val = 0.5
-2025-03-13 23:43:10,888 - INFO -   prune_bias = True
-2025-03-13 23:43:10,888 - INFO -   prune_weights = True
-2025-03-13 23:43:10,888 - INFO -   prune_layers = ['norm']
-2025-03-13 23:44:57,960 - INFO - Finished combination 277/336
-2025-03-13 23:44:57,960 - INFO - Running combination 278/336:
-2025-03-13 23:44:57,960 - INFO -   abs_val = 0.5
-2025-03-13 23:44:57,960 - INFO -   prune_bias = True
-2025-03-13 23:44:57,960 - INFO -   prune_weights = True
-2025-03-13 23:44:57,960 - INFO -   prune_layers = ['conv']
-2025-03-13 23:46:44,701 - INFO - Finished combination 278/336
-2025-03-13 23:46:44,701 - INFO - Running combination 279/336:
-2025-03-13 23:46:44,701 - INFO -   abs_val = 0.5
-2025-03-13 23:46:44,701 - INFO -   prune_bias = True
-2025-03-13 23:46:44,701 - INFO -   prune_weights = True
-2025-03-13 23:46:44,701 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:48:32,138 - INFO - Finished combination 279/336
-2025-03-13 23:48:32,138 - INFO - Running combination 280/336:
-2025-03-13 23:48:32,138 - INFO -   abs_val = 0.5
-2025-03-13 23:48:32,138 - INFO -   prune_bias = True
-2025-03-13 23:48:32,138 - INFO -   prune_weights = False
-2025-03-13 23:48:32,138 - INFO -   prune_layers = ['norm']
-2025-03-13 23:50:17,976 - INFO - Finished combination 280/336
-2025-03-13 23:50:17,976 - INFO - Running combination 281/336:
-2025-03-13 23:50:17,976 - INFO -   abs_val = 0.5
-2025-03-13 23:50:17,976 - INFO -   prune_bias = True
-2025-03-13 23:50:17,977 - INFO -   prune_weights = False
-2025-03-13 23:50:17,977 - INFO -   prune_layers = ['conv']
-2025-03-13 23:52:04,684 - INFO - Finished combination 281/336
-2025-03-13 23:52:04,684 - INFO - Running combination 282/336:
-2025-03-13 23:52:04,684 - INFO -   abs_val = 0.5
-2025-03-13 23:52:04,684 - INFO -   prune_bias = True
-2025-03-13 23:52:04,684 - INFO -   prune_weights = False
-2025-03-13 23:52:04,684 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:53:50,975 - INFO - Finished combination 282/336
-2025-03-13 23:53:50,975 - INFO - Running combination 283/336:
-2025-03-13 23:53:50,975 - INFO -   abs_val = 0.5
-2025-03-13 23:53:50,975 - INFO -   prune_bias = False
-2025-03-13 23:53:50,975 - INFO -   prune_weights = True
-2025-03-13 23:53:50,975 - INFO -   prune_layers = ['norm']
-2025-03-13 23:55:37,374 - INFO - Finished combination 283/336
-2025-03-13 23:55:37,374 - INFO - Running combination 284/336:
-2025-03-13 23:55:37,374 - INFO -   abs_val = 0.5
-2025-03-13 23:55:37,374 - INFO -   prune_bias = False
-2025-03-13 23:55:37,374 - INFO -   prune_weights = True
-2025-03-13 23:55:37,374 - INFO -   prune_layers = ['conv']
-2025-03-13 23:57:25,345 - INFO - Finished combination 284/336
-2025-03-13 23:57:25,346 - INFO - Running combination 285/336:
-2025-03-13 23:57:25,346 - INFO -   abs_val = 0.5
-2025-03-13 23:57:25,346 - INFO -   prune_bias = False
-2025-03-13 23:57:25,346 - INFO -   prune_weights = True
-2025-03-13 23:57:25,346 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-13 23:59:12,860 - INFO - Finished combination 285/336
-2025-03-13 23:59:12,860 - INFO - Running combination 286/336:
-2025-03-13 23:59:12,860 - INFO -   abs_val = 0.5
-2025-03-13 23:59:12,860 - INFO -   prune_bias = False
-2025-03-13 23:59:12,860 - INFO -   prune_weights = False
-2025-03-13 23:59:12,860 - INFO -   prune_layers = ['norm']
-2025-03-14 00:00:59,532 - INFO - Finished combination 286/336
-2025-03-14 00:00:59,532 - INFO - Running combination 287/336:
-2025-03-14 00:00:59,532 - INFO -   abs_val = 0.5
-2025-03-14 00:00:59,532 - INFO -   prune_bias = False
-2025-03-14 00:00:59,532 - INFO -   prune_weights = False
-2025-03-14 00:00:59,532 - INFO -   prune_layers = ['conv']
-2025-03-14 00:02:45,204 - INFO - Finished combination 287/336
-2025-03-14 00:02:45,204 - INFO - Running combination 288/336:
-2025-03-14 00:02:45,204 - INFO -   abs_val = 0.5
-2025-03-14 00:02:45,204 - INFO -   prune_bias = False
-2025-03-14 00:02:45,204 - INFO -   prune_weights = False
-2025-03-14 00:02:45,204 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:04:31,543 - INFO - Finished combination 288/336
-2025-03-14 00:04:31,543 - INFO - Running combination 289/336:
-2025-03-14 00:04:31,543 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:04:31,543 - INFO -   prune_bias = True
-2025-03-14 00:04:31,543 - INFO -   prune_weights = True
-2025-03-14 00:04:31,543 - INFO -   prune_layers = ['norm']
-2025-03-14 00:06:17,703 - INFO - Finished combination 289/336
-2025-03-14 00:06:17,703 - INFO - Running combination 290/336:
-2025-03-14 00:06:17,703 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:06:17,703 - INFO -   prune_bias = True
-2025-03-14 00:06:17,703 - INFO -   prune_weights = True
-2025-03-14 00:06:17,703 - INFO -   prune_layers = ['conv']
-2025-03-14 00:08:04,857 - INFO - Finished combination 290/336
-2025-03-14 00:08:04,858 - INFO - Running combination 291/336:
-2025-03-14 00:08:04,858 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:08:04,858 - INFO -   prune_bias = True
-2025-03-14 00:08:04,858 - INFO -   prune_weights = True
-2025-03-14 00:08:04,858 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:09:52,402 - INFO - Finished combination 291/336
-2025-03-14 00:09:52,402 - INFO - Running combination 292/336:
-2025-03-14 00:09:52,402 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:09:52,402 - INFO -   prune_bias = True
-2025-03-14 00:09:52,402 - INFO -   prune_weights = False
-2025-03-14 00:09:52,402 - INFO -   prune_layers = ['norm']
-2025-03-14 00:11:37,819 - INFO - Finished combination 292/336
-2025-03-14 00:11:37,820 - INFO - Running combination 293/336:
-2025-03-14 00:11:37,820 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:11:37,820 - INFO -   prune_bias = True
-2025-03-14 00:11:37,820 - INFO -   prune_weights = False
-2025-03-14 00:11:37,820 - INFO -   prune_layers = ['conv']
-2025-03-14 00:13:23,832 - INFO - Finished combination 293/336
-2025-03-14 00:13:23,832 - INFO - Running combination 294/336:
-2025-03-14 00:13:23,832 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:13:23,832 - INFO -   prune_bias = True
-2025-03-14 00:13:23,832 - INFO -   prune_weights = False
-2025-03-14 00:13:23,832 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:15:10,308 - INFO - Finished combination 294/336
-2025-03-14 00:15:10,308 - INFO - Running combination 295/336:
-2025-03-14 00:15:10,308 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:15:10,308 - INFO -   prune_bias = False
-2025-03-14 00:15:10,308 - INFO -   prune_weights = True
-2025-03-14 00:15:10,308 - INFO -   prune_layers = ['norm']
-2025-03-14 00:16:56,862 - INFO - Finished combination 295/336
-2025-03-14 00:16:56,862 - INFO - Running combination 296/336:
-2025-03-14 00:16:56,862 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:16:56,862 - INFO -   prune_bias = False
-2025-03-14 00:16:56,862 - INFO -   prune_weights = True
-2025-03-14 00:16:56,862 - INFO -   prune_layers = ['conv']
-2025-03-14 00:18:45,671 - INFO - Finished combination 296/336
-2025-03-14 00:18:45,671 - INFO - Running combination 297/336:
-2025-03-14 00:18:45,671 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:18:45,671 - INFO -   prune_bias = False
-2025-03-14 00:18:45,671 - INFO -   prune_weights = True
-2025-03-14 00:18:45,672 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:20:32,367 - INFO - Finished combination 297/336
-2025-03-14 00:20:32,367 - INFO - Running combination 298/336:
-2025-03-14 00:20:32,367 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:20:32,367 - INFO -   prune_bias = False
-2025-03-14 00:20:32,367 - INFO -   prune_weights = False
-2025-03-14 00:20:32,367 - INFO -   prune_layers = ['norm']
-2025-03-14 00:22:18,524 - INFO - Finished combination 298/336
-2025-03-14 00:22:18,525 - INFO - Running combination 299/336:
-2025-03-14 00:22:18,525 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:22:18,525 - INFO -   prune_bias = False
-2025-03-14 00:22:18,525 - INFO -   prune_weights = False
-2025-03-14 00:22:18,525 - INFO -   prune_layers = ['conv']
-2025-03-14 00:24:04,885 - INFO - Finished combination 299/336
-2025-03-14 00:24:04,885 - INFO - Running combination 300/336:
-2025-03-14 00:24:04,885 - INFO -   abs_val = 0.6000000000000001
-2025-03-14 00:24:04,885 - INFO -   prune_bias = False
-2025-03-14 00:24:04,885 - INFO -   prune_weights = False
-2025-03-14 00:24:04,885 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:25:50,751 - INFO - Finished combination 300/336
-2025-03-14 00:25:50,751 - INFO - Running combination 301/336:
-2025-03-14 00:25:50,752 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:25:50,752 - INFO -   prune_bias = True
-2025-03-14 00:25:50,752 - INFO -   prune_weights = True
-2025-03-14 00:25:50,752 - INFO -   prune_layers = ['norm']
-2025-03-14 00:27:36,839 - INFO - Finished combination 301/336
-2025-03-14 00:27:36,839 - INFO - Running combination 302/336:
-2025-03-14 00:27:36,839 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:27:36,839 - INFO -   prune_bias = True
-2025-03-14 00:27:36,839 - INFO -   prune_weights = True
-2025-03-14 00:27:36,840 - INFO -   prune_layers = ['conv']
-2025-03-14 00:29:23,958 - INFO - Finished combination 302/336
-2025-03-14 00:29:23,958 - INFO - Running combination 303/336:
-2025-03-14 00:29:23,958 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:29:23,958 - INFO -   prune_bias = True
-2025-03-14 00:29:23,958 - INFO -   prune_weights = True
-2025-03-14 00:29:23,958 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:31:12,350 - INFO - Finished combination 303/336
-2025-03-14 00:31:12,350 - INFO - Running combination 304/336:
-2025-03-14 00:31:12,350 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:31:12,350 - INFO -   prune_bias = True
-2025-03-14 00:31:12,350 - INFO -   prune_weights = False
-2025-03-14 00:31:12,350 - INFO -   prune_layers = ['norm']
-2025-03-14 00:32:58,378 - INFO - Finished combination 304/336
-2025-03-14 00:32:58,378 - INFO - Running combination 305/336:
-2025-03-14 00:32:58,378 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:32:58,378 - INFO -   prune_bias = True
-2025-03-14 00:32:58,378 - INFO -   prune_weights = False
-2025-03-14 00:32:58,379 - INFO -   prune_layers = ['conv']
-2025-03-14 00:34:44,183 - INFO - Finished combination 305/336
-2025-03-14 00:34:44,183 - INFO - Running combination 306/336:
-2025-03-14 00:34:44,183 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:34:44,183 - INFO -   prune_bias = True
-2025-03-14 00:34:44,183 - INFO -   prune_weights = False
-2025-03-14 00:34:44,183 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:36:30,772 - INFO - Finished combination 306/336
-2025-03-14 00:36:30,772 - INFO - Running combination 307/336:
-2025-03-14 00:36:30,772 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:36:30,772 - INFO -   prune_bias = False
-2025-03-14 00:36:30,772 - INFO -   prune_weights = True
-2025-03-14 00:36:30,772 - INFO -   prune_layers = ['norm']
-2025-03-14 00:38:17,098 - INFO - Finished combination 307/336
-2025-03-14 00:38:17,099 - INFO - Running combination 308/336:
-2025-03-14 00:38:17,099 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:38:17,099 - INFO -   prune_bias = False
-2025-03-14 00:38:17,099 - INFO -   prune_weights = True
-2025-03-14 00:38:17,099 - INFO -   prune_layers = ['conv']
-2025-03-14 00:40:04,324 - INFO - Finished combination 308/336
-2025-03-14 00:40:04,324 - INFO - Running combination 309/336:
-2025-03-14 00:40:04,324 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:40:04,324 - INFO -   prune_bias = False
-2025-03-14 00:40:04,324 - INFO -   prune_weights = True
-2025-03-14 00:40:04,324 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:41:52,315 - INFO - Finished combination 309/336
-2025-03-14 00:41:52,315 - INFO - Running combination 310/336:
-2025-03-14 00:41:52,315 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:41:52,316 - INFO -   prune_bias = False
-2025-03-14 00:41:52,316 - INFO -   prune_weights = False
-2025-03-14 00:41:52,316 - INFO -   prune_layers = ['norm']
-2025-03-14 00:43:38,160 - INFO - Finished combination 310/336
-2025-03-14 00:43:38,160 - INFO - Running combination 311/336:
-2025-03-14 00:43:38,160 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:43:38,160 - INFO -   prune_bias = False
-2025-03-14 00:43:38,160 - INFO -   prune_weights = False
-2025-03-14 00:43:38,160 - INFO -   prune_layers = ['conv']
-2025-03-14 00:45:23,453 - INFO - Finished combination 311/336
-2025-03-14 00:45:23,453 - INFO - Running combination 312/336:
-2025-03-14 00:45:23,453 - INFO -   abs_val = 0.7000000000000001
-2025-03-14 00:45:23,453 - INFO -   prune_bias = False
-2025-03-14 00:45:23,453 - INFO -   prune_weights = False
-2025-03-14 00:45:23,453 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:47:09,850 - INFO - Finished combination 312/336
-2025-03-14 00:47:09,850 - INFO - Running combination 313/336:
-2025-03-14 00:47:09,851 - INFO -   abs_val = 0.8
-2025-03-14 00:47:09,851 - INFO -   prune_bias = True
-2025-03-14 00:47:09,851 - INFO -   prune_weights = True
-2025-03-14 00:47:09,851 - INFO -   prune_layers = ['norm']
-2025-03-14 00:48:55,282 - INFO - Finished combination 313/336
-2025-03-14 00:48:55,283 - INFO - Running combination 314/336:
-2025-03-14 00:48:55,283 - INFO -   abs_val = 0.8
-2025-03-14 00:48:55,283 - INFO -   prune_bias = True
-2025-03-14 00:48:55,283 - INFO -   prune_weights = True
-2025-03-14 00:48:55,283 - INFO -   prune_layers = ['conv']
-2025-03-14 00:50:43,041 - INFO - Finished combination 314/336
-2025-03-14 00:50:43,041 - INFO - Running combination 315/336:
-2025-03-14 00:50:43,041 - INFO -   abs_val = 0.8
-2025-03-14 00:50:43,041 - INFO -   prune_bias = True
-2025-03-14 00:50:43,041 - INFO -   prune_weights = True
-2025-03-14 00:50:43,041 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:52:30,780 - INFO - Finished combination 315/336
-2025-03-14 00:52:30,780 - INFO - Running combination 316/336:
-2025-03-14 00:52:30,780 - INFO -   abs_val = 0.8
-2025-03-14 00:52:30,780 - INFO -   prune_bias = True
-2025-03-14 00:52:30,780 - INFO -   prune_weights = False
-2025-03-14 00:52:30,780 - INFO -   prune_layers = ['norm']
-2025-03-14 00:54:17,016 - INFO - Finished combination 316/336
-2025-03-14 00:54:17,016 - INFO - Running combination 317/336:
-2025-03-14 00:54:17,016 - INFO -   abs_val = 0.8
-2025-03-14 00:54:17,016 - INFO -   prune_bias = True
-2025-03-14 00:54:17,016 - INFO -   prune_weights = False
-2025-03-14 00:54:17,016 - INFO -   prune_layers = ['conv']
-2025-03-14 00:56:02,528 - INFO - Finished combination 317/336
-2025-03-14 00:56:02,528 - INFO - Running combination 318/336:
-2025-03-14 00:56:02,528 - INFO -   abs_val = 0.8
-2025-03-14 00:56:02,528 - INFO -   prune_bias = True
-2025-03-14 00:56:02,528 - INFO -   prune_weights = False
-2025-03-14 00:56:02,528 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 00:57:48,936 - INFO - Finished combination 318/336
-2025-03-14 00:57:48,936 - INFO - Running combination 319/336:
-2025-03-14 00:57:48,936 - INFO -   abs_val = 0.8
-2025-03-14 00:57:48,936 - INFO -   prune_bias = False
-2025-03-14 00:57:48,936 - INFO -   prune_weights = True
-2025-03-14 00:57:48,936 - INFO -   prune_layers = ['norm']
-2025-03-14 00:59:34,696 - INFO - Finished combination 319/336
-2025-03-14 00:59:34,697 - INFO - Running combination 320/336:
-2025-03-14 00:59:34,697 - INFO -   abs_val = 0.8
-2025-03-14 00:59:34,697 - INFO -   prune_bias = False
-2025-03-14 00:59:34,697 - INFO -   prune_weights = True
-2025-03-14 00:59:34,697 - INFO -   prune_layers = ['conv']
-2025-03-14 01:01:21,525 - INFO - Finished combination 320/336
-2025-03-14 01:01:21,526 - INFO - Running combination 321/336:
-2025-03-14 01:01:21,526 - INFO -   abs_val = 0.8
-2025-03-14 01:01:21,526 - INFO -   prune_bias = False
-2025-03-14 01:01:21,526 - INFO -   prune_weights = True
-2025-03-14 01:01:21,526 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 01:03:09,585 - INFO - Finished combination 321/336
-2025-03-14 01:03:09,585 - INFO - Running combination 322/336:
-2025-03-14 01:03:09,585 - INFO -   abs_val = 0.8
-2025-03-14 01:03:09,585 - INFO -   prune_bias = False
-2025-03-14 01:03:09,585 - INFO -   prune_weights = False
-2025-03-14 01:03:09,586 - INFO -   prune_layers = ['norm']
-2025-03-14 01:04:56,310 - INFO - Finished combination 322/336
-2025-03-14 01:04:56,310 - INFO - Running combination 323/336:
-2025-03-14 01:04:56,310 - INFO -   abs_val = 0.8
-2025-03-14 01:04:56,310 - INFO -   prune_bias = False
-2025-03-14 01:04:56,310 - INFO -   prune_weights = False
-2025-03-14 01:04:56,310 - INFO -   prune_layers = ['conv']
-2025-03-14 01:06:42,488 - INFO - Finished combination 323/336
-2025-03-14 01:06:42,488 - INFO - Running combination 324/336:
-2025-03-14 01:06:42,488 - INFO -   abs_val = 0.8
-2025-03-14 01:06:42,488 - INFO -   prune_bias = False
-2025-03-14 01:06:42,488 - INFO -   prune_weights = False
-2025-03-14 01:06:42,488 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 01:08:28,114 - INFO - Finished combination 324/336
-2025-03-14 01:08:28,114 - INFO - Running combination 325/336:
-2025-03-14 01:08:28,114 - INFO -   abs_val = 0.9
-2025-03-14 01:08:28,114 - INFO -   prune_bias = True
-2025-03-14 01:08:28,114 - INFO -   prune_weights = True
-2025-03-14 01:08:28,114 - INFO -   prune_layers = ['norm']
-2025-03-14 01:10:13,862 - INFO - Finished combination 325/336
-2025-03-14 01:10:13,863 - INFO - Running combination 326/336:
-2025-03-14 01:10:13,863 - INFO -   abs_val = 0.9
-2025-03-14 01:10:13,863 - INFO -   prune_bias = True
-2025-03-14 01:10:13,863 - INFO -   prune_weights = True
-2025-03-14 01:10:13,863 - INFO -   prune_layers = ['conv']
-2025-03-14 01:12:01,653 - INFO - Finished combination 326/336
-2025-03-14 01:12:01,653 - INFO - Running combination 327/336:
-2025-03-14 01:12:01,653 - INFO -   abs_val = 0.9
-2025-03-14 01:12:01,653 - INFO -   prune_bias = True
-2025-03-14 01:12:01,653 - INFO -   prune_weights = True
-2025-03-14 01:12:01,653 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 01:13:49,781 - INFO - Finished combination 327/336
-2025-03-14 01:13:49,781 - INFO - Running combination 328/336:
-2025-03-14 01:13:49,781 - INFO -   abs_val = 0.9
-2025-03-14 01:13:49,781 - INFO -   prune_bias = True
-2025-03-14 01:13:49,781 - INFO -   prune_weights = False
-2025-03-14 01:13:49,781 - INFO -   prune_layers = ['norm']
-2025-03-14 01:15:36,099 - INFO - Finished combination 328/336
-2025-03-14 01:15:36,099 - INFO - Running combination 329/336:
-2025-03-14 01:15:36,099 - INFO -   abs_val = 0.9
-2025-03-14 01:15:36,099 - INFO -   prune_bias = True
-2025-03-14 01:15:36,099 - INFO -   prune_weights = False
-2025-03-14 01:15:36,099 - INFO -   prune_layers = ['conv']
-2025-03-14 01:17:22,671 - INFO - Finished combination 329/336
-2025-03-14 01:17:22,671 - INFO - Running combination 330/336:
-2025-03-14 01:17:22,671 - INFO -   abs_val = 0.9
-2025-03-14 01:17:22,671 - INFO -   prune_bias = True
-2025-03-14 01:17:22,671 - INFO -   prune_weights = False
-2025-03-14 01:17:22,671 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 01:19:08,868 - INFO - Finished combination 330/336
-2025-03-14 01:19:08,869 - INFO - Running combination 331/336:
-2025-03-14 01:19:08,869 - INFO -   abs_val = 0.9
-2025-03-14 01:19:08,869 - INFO -   prune_bias = False
-2025-03-14 01:19:08,869 - INFO -   prune_weights = True
-2025-03-14 01:19:08,869 - INFO -   prune_layers = ['norm']
-2025-03-14 01:20:54,474 - INFO - Finished combination 331/336
-2025-03-14 01:20:54,475 - INFO - Running combination 332/336:
-2025-03-14 01:20:54,475 - INFO -   abs_val = 0.9
-2025-03-14 01:20:54,475 - INFO -   prune_bias = False
-2025-03-14 01:20:54,475 - INFO -   prune_weights = True
-2025-03-14 01:20:54,475 - INFO -   prune_layers = ['conv']
-2025-03-14 01:22:42,768 - INFO - Finished combination 332/336
-2025-03-14 01:22:42,768 - INFO - Running combination 333/336:
-2025-03-14 01:22:42,768 - INFO -   abs_val = 0.9
-2025-03-14 01:22:42,768 - INFO -   prune_bias = False
-2025-03-14 01:22:42,768 - INFO -   prune_weights = True
-2025-03-14 01:22:42,768 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 01:24:29,534 - INFO - Finished combination 333/336
-2025-03-14 01:24:29,534 - INFO - Running combination 334/336:
-2025-03-14 01:24:29,534 - INFO -   abs_val = 0.9
-2025-03-14 01:24:29,534 - INFO -   prune_bias = False
-2025-03-14 01:24:29,534 - INFO -   prune_weights = False
-2025-03-14 01:24:29,534 - INFO -   prune_layers = ['norm']
-2025-03-14 01:26:16,285 - INFO - Finished combination 334/336
-2025-03-14 01:26:16,285 - INFO - Running combination 335/336:
-2025-03-14 01:26:16,285 - INFO -   abs_val = 0.9
-2025-03-14 01:26:16,285 - INFO -   prune_bias = False
-2025-03-14 01:26:16,285 - INFO -   prune_weights = False
-2025-03-14 01:26:16,285 - INFO -   prune_layers = ['conv']
-2025-03-14 01:28:02,206 - INFO - Finished combination 335/336
-2025-03-14 01:28:02,206 - INFO - Running combination 336/336:
-2025-03-14 01:28:02,206 - INFO -   abs_val = 0.9
-2025-03-14 01:28:02,206 - INFO -   prune_bias = False
-2025-03-14 01:28:02,206 - INFO -   prune_weights = False
-2025-03-14 01:28:02,206 - INFO -   prune_layers = ['norm', 'conv']
-2025-03-14 01:29:49,181 - INFO - Finished combination 336/336
-2025-03-14 01:29:49,181 - INFO - Restored original config from prune_nnunet/config.yaml.backup
-2025-03-14 01:29:49,181 - INFO - Parameter sweep completed
+2025-03-20 12:03:36,036 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 12:03:36,036 - INFO - Starting parameter sweep with 2 combinations
+2025-03-20 12:03:36,036 - INFO - Running combination 1/2:
+2025-03-20 12:03:36,036 - INFO -   abs_val = 0
+2025-03-20 12:03:36,036 - INFO -   prune_bias = True
+2025-03-20 12:03:36,036 - INFO -   prune_weights = True
+2025-03-20 12:03:36,036 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv']
+2025-03-20 12:05:23,440 - INFO - Finished combination 1/2
+2025-03-20 12:05:23,440 - INFO - Running combination 2/2:
+2025-03-20 12:05:23,440 - INFO -   abs_val = 0.1
+2025-03-20 12:05:23,441 - INFO -   prune_bias = True
+2025-03-20 12:05:23,441 - INFO -   prune_weights = True
+2025-03-20 12:05:23,441 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv']
+2025-03-20 12:07:11,297 - INFO - Finished combination 2/2
+2025-03-20 12:07:11,297 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-20 12:07:11,297 - INFO - Parameter sweep completed
+2025-03-20 12:46:45,350 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 12:46:45,350 - INFO - Starting parameter sweep with 2 combinations
+2025-03-20 12:46:45,350 - INFO - Running combination 1/2:
+2025-03-20 12:46:45,350 - INFO -   abs_val = 0
+2025-03-20 12:46:45,350 - INFO -   prune_bias = True
+2025-03-20 12:46:45,350 - INFO -   prune_weights = True
+2025-03-20 12:46:45,350 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 12:48:35,442 - INFO - Finished combination 1/2
+2025-03-20 12:48:35,442 - INFO - Running combination 2/2:
+2025-03-20 12:48:35,442 - INFO -   abs_val = 0.1
+2025-03-20 12:48:35,442 - INFO -   prune_bias = True
+2025-03-20 12:48:35,442 - INFO -   prune_weights = True
+2025-03-20 12:48:35,442 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 12:50:22,772 - INFO - Finished combination 2/2
+2025-03-20 12:50:22,773 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-20 12:50:22,773 - INFO - Parameter sweep completed
+2025-03-20 13:08:53,451 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 13:08:53,451 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 13:08:53,451 - INFO - Running combination 1/10:
+2025-03-20 13:08:53,451 - INFO -   abs_val = 0
+2025-03-20 13:08:53,451 - INFO -   prune_bias = True
+2025-03-20 13:08:53,451 - INFO -   prune_weights = True
+2025-03-20 13:08:53,451 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 13:10:39,092 - INFO - Finished combination 1/10
+2025-03-20 13:10:39,092 - INFO - Running combination 2/10:
+2025-03-20 13:10:39,092 - INFO -   abs_val = 0
+2025-03-20 13:10:39,092 - INFO -   prune_bias = True
+2025-03-20 13:10:39,092 - INFO -   prune_weights = True
+2025-03-20 13:10:39,092 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 13:12:25,873 - INFO - Finished combination 2/10
+2025-03-20 13:12:25,873 - INFO - Running combination 3/10:
+2025-03-20 13:12:25,873 - INFO -   abs_val = 0
+2025-03-20 13:12:25,873 - INFO -   prune_bias = True
+2025-03-20 13:12:25,873 - INFO -   prune_weights = True
+2025-03-20 13:12:25,873 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2']
+2025-03-20 13:14:13,090 - INFO - Finished combination 3/10
+2025-03-20 13:14:13,090 - INFO - Running combination 4/10:
+2025-03-20 13:14:13,090 - INFO -   abs_val = 0
+2025-03-20 13:14:13,090 - INFO -   prune_bias = True
+2025-03-20 13:14:13,091 - INFO -   prune_weights = True
+2025-03-20 13:14:13,091 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3']
+2025-03-20 13:16:02,038 - INFO - Finished combination 4/10
+2025-03-20 13:16:02,039 - INFO - Running combination 5/10:
+2025-03-20 13:16:02,039 - INFO -   abs_val = 0
+2025-03-20 13:16:02,039 - INFO -   prune_bias = True
+2025-03-20 13:16:02,039 - INFO -   prune_weights = True
+2025-03-20 13:16:02,039 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3', 'decoder.transpconvs.4']
+2025-03-20 13:17:49,295 - INFO - Finished combination 5/10
+2025-03-20 13:17:49,296 - INFO - Running combination 6/10:
+2025-03-20 13:17:49,296 - INFO -   abs_val = 9
+2025-03-20 13:17:49,296 - INFO -   prune_bias = True
+2025-03-20 13:17:49,296 - INFO -   prune_weights = True
+2025-03-20 13:17:49,296 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 13:19:38,133 - INFO - Finished combination 6/10
+2025-03-20 13:19:38,133 - INFO - Running combination 7/10:
+2025-03-20 13:19:38,133 - INFO -   abs_val = 9
+2025-03-20 13:19:38,133 - INFO -   prune_bias = True
+2025-03-20 13:19:38,133 - INFO -   prune_weights = True
+2025-03-20 13:19:38,133 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 13:21:28,446 - INFO - Finished combination 7/10
+2025-03-20 13:21:28,446 - INFO - Running combination 8/10:
+2025-03-20 13:21:28,446 - INFO -   abs_val = 9
+2025-03-20 13:21:28,446 - INFO -   prune_bias = True
+2025-03-20 13:21:28,446 - INFO -   prune_weights = True
+2025-03-20 13:21:28,446 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2']
+2025-03-20 13:23:16,856 - INFO - Finished combination 8/10
+2025-03-20 13:23:16,856 - INFO - Running combination 9/10:
+2025-03-20 13:23:16,856 - INFO -   abs_val = 9
+2025-03-20 13:23:16,856 - INFO -   prune_bias = True
+2025-03-20 13:23:16,856 - INFO -   prune_weights = True
+2025-03-20 13:23:16,856 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3']
+2025-03-20 13:25:06,920 - INFO - Finished combination 9/10
+2025-03-20 13:25:06,921 - INFO - Running combination 10/10:
+2025-03-20 13:25:06,921 - INFO -   abs_val = 9
+2025-03-20 13:25:06,921 - INFO -   prune_bias = True
+2025-03-20 13:25:06,921 - INFO -   prune_weights = True
+2025-03-20 13:25:06,921 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3', 'decoder.transpconvs.4']
+2025-03-20 13:26:56,316 - INFO - Finished combination 10/10
+2025-03-20 13:26:56,316 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-20 13:26:56,316 - INFO - Parameter sweep completed
+2025-03-20 14:55:11,281 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 14:55:11,281 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 14:55:11,282 - INFO - Running combination 1/10:
+2025-03-20 14:55:11,282 - INFO -   prune_data_flow = encoder
+2025-03-20 14:55:11,282 - INFO -   prune_bias = True
+2025-03-20 14:55:11,282 - INFO -   prune_weights = True
+2025-03-20 14:55:11,282 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-20 14:56:59,900 - INFO - Finished combination 1/10
+2025-03-20 14:56:59,900 - INFO - Running combination 2/10:
+2025-03-20 14:56:59,900 - INFO -   prune_data_flow = encoder
+2025-03-20 14:56:59,900 - INFO -   prune_bias = True
+2025-03-20 14:56:59,900 - INFO -   prune_weights = True
+2025-03-20 14:56:59,900 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-20 14:58:48,178 - INFO - Finished combination 2/10
+2025-03-20 14:58:48,178 - INFO - Running combination 3/10:
+2025-03-20 14:58:48,178 - INFO -   prune_data_flow = encoder
+2025-03-20 14:58:48,178 - INFO -   prune_bias = True
+2025-03-20 14:58:48,178 - INFO -   prune_weights = True
+2025-03-20 14:58:48,178 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-20 15:00:36,149 - INFO - Finished combination 3/10
+2025-03-20 15:00:36,150 - INFO - Running combination 4/10:
+2025-03-20 15:00:36,150 - INFO -   prune_data_flow = encoder
+2025-03-20 15:00:36,150 - INFO -   prune_bias = True
+2025-03-20 15:00:36,150 - INFO -   prune_weights = True
+2025-03-20 15:00:36,150 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-20 15:02:25,679 - INFO - Finished combination 4/10
+2025-03-20 15:02:25,679 - INFO - Running combination 5/10:
+2025-03-20 15:02:25,679 - INFO -   prune_data_flow = encoder
+2025-03-20 15:02:25,679 - INFO -   prune_bias = True
+2025-03-20 15:02:25,679 - INFO -   prune_weights = True
+2025-03-20 15:02:25,679 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-20 15:04:13,359 - INFO - Finished combination 5/10
+2025-03-20 15:04:13,359 - INFO - Running combination 6/10:
+2025-03-20 15:04:13,359 - INFO -   prune_data_flow = decoder
+2025-03-20 15:04:13,359 - INFO -   prune_bias = True
+2025-03-20 15:04:13,359 - INFO -   prune_weights = True
+2025-03-20 15:04:13,359 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-20 15:06:03,493 - INFO - Finished combination 6/10
+2025-03-20 15:06:03,494 - INFO - Running combination 7/10:
+2025-03-20 15:06:03,494 - INFO -   prune_data_flow = decoder
+2025-03-20 15:06:03,494 - INFO -   prune_bias = True
+2025-03-20 15:06:03,494 - INFO -   prune_weights = True
+2025-03-20 15:06:03,494 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-20 15:13:36,418 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 15:13:36,418 - INFO - Starting parameter sweep with 15 combinations
+2025-03-20 15:13:36,418 - INFO - Running combination 1/15:
+2025-03-20 15:13:36,418 - INFO -   prune_data_flow = encoder
+2025-03-20 15:13:36,418 - INFO -   prune_bias = True
+2025-03-20 15:13:36,418 - INFO -   prune_weights = True
+2025-03-20 15:13:36,418 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-20 15:15:25,680 - INFO - Finished combination 1/15
+2025-03-20 15:15:25,681 - INFO - Running combination 2/15:
+2025-03-20 15:15:25,681 - INFO -   prune_data_flow = encoder
+2025-03-20 15:15:25,681 - INFO -   prune_bias = True
+2025-03-20 15:15:25,681 - INFO -   prune_weights = True
+2025-03-20 15:15:25,681 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-20 15:17:17,108 - INFO - Finished combination 2/15
+2025-03-20 15:17:17,108 - INFO - Running combination 3/15:
+2025-03-20 15:17:17,108 - INFO -   prune_data_flow = encoder
+2025-03-20 15:17:17,108 - INFO -   prune_bias = True
+2025-03-20 15:17:17,108 - INFO -   prune_weights = True
+2025-03-20 15:17:17,108 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-20 15:17:19,932 - INFO - Finished combination 3/15
+2025-03-20 15:17:19,932 - INFO - Running combination 4/15:
+2025-03-20 15:17:19,932 - INFO -   prune_data_flow = encoder
+2025-03-20 15:17:19,932 - INFO -   prune_bias = True
+2025-03-20 15:17:19,932 - INFO -   prune_weights = True
+2025-03-20 15:17:19,932 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-20 15:17:22,774 - INFO - Finished combination 4/15
+2025-03-20 15:17:22,775 - INFO - Running combination 5/15:
+2025-03-20 15:17:22,775 - INFO -   prune_data_flow = encoder
+2025-03-20 15:17:22,775 - INFO -   prune_bias = True
+2025-03-20 15:17:22,775 - INFO -   prune_weights = True
+2025-03-20 15:17:22,775 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-20 15:17:25,583 - INFO - Finished combination 5/15
+2025-03-20 15:17:25,584 - INFO - Running combination 6/15:
+2025-03-20 15:17:25,584 - INFO -   prune_data_flow = decoder
+2025-03-20 15:17:25,584 - INFO -   prune_bias = True
+2025-03-20 15:17:25,584 - INFO -   prune_weights = True
+2025-03-20 15:17:25,584 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-20 15:17:28,393 - INFO - Finished combination 6/15
+2025-03-20 15:17:28,393 - INFO - Running combination 7/15:
+2025-03-20 15:17:28,394 - INFO -   prune_data_flow = decoder
+2025-03-20 15:17:28,394 - INFO -   prune_bias = True
+2025-03-20 15:17:28,394 - INFO -   prune_weights = True
+2025-03-20 15:17:28,394 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-20 15:17:31,188 - INFO - Finished combination 7/15
+2025-03-20 15:17:31,188 - INFO - Running combination 8/15:
+2025-03-20 15:17:31,188 - INFO -   prune_data_flow = decoder
+2025-03-20 15:17:31,188 - INFO -   prune_bias = True
+2025-03-20 15:17:31,188 - INFO -   prune_weights = True
+2025-03-20 15:17:31,188 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-20 15:17:34,053 - INFO - Finished combination 8/15
+2025-03-20 15:17:34,053 - INFO - Running combination 9/15:
+2025-03-20 15:17:34,053 - INFO -   prune_data_flow = decoder
+2025-03-20 15:17:34,053 - INFO -   prune_bias = True
+2025-03-20 15:17:34,053 - INFO -   prune_weights = True
+2025-03-20 15:17:34,053 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-20 15:17:36,850 - INFO - Finished combination 9/15
+2025-03-20 15:17:36,850 - INFO - Running combination 10/15:
+2025-03-20 15:17:36,850 - INFO -   prune_data_flow = decoder
+2025-03-20 15:17:36,850 - INFO -   prune_bias = True
+2025-03-20 15:17:36,850 - INFO -   prune_weights = True
+2025-03-20 15:17:36,850 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-20 15:17:39,681 - INFO - Finished combination 10/15
+2025-03-20 15:17:39,681 - INFO - Running combination 11/15:
+2025-03-20 15:17:39,681 - INFO -   prune_data_flow = None
+2025-03-20 15:17:39,681 - INFO -   prune_bias = True
+2025-03-20 15:17:39,681 - INFO -   prune_weights = True
+2025-03-20 15:17:39,681 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-20 15:17:42,508 - INFO - Finished combination 11/15
+2025-03-20 15:17:42,509 - INFO - Running combination 12/15:
+2025-03-20 15:17:42,509 - INFO -   prune_data_flow = None
+2025-03-20 15:17:42,509 - INFO -   prune_bias = True
+2025-03-20 15:17:42,509 - INFO -   prune_weights = True
+2025-03-20 15:17:42,509 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-20 15:17:45,341 - INFO - Finished combination 12/15
+2025-03-20 15:17:45,341 - INFO - Running combination 13/15:
+2025-03-20 15:17:45,341 - INFO -   prune_data_flow = None
+2025-03-20 15:17:45,341 - INFO -   prune_bias = True
+2025-03-20 15:17:45,341 - INFO -   prune_weights = True
+2025-03-20 15:17:45,342 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-20 15:17:48,153 - INFO - Finished combination 13/15
+2025-03-20 15:17:48,153 - INFO - Running combination 14/15:
+2025-03-20 15:17:48,153 - INFO -   prune_data_flow = None
+2025-03-20 15:17:48,153 - INFO -   prune_bias = True
+2025-03-20 15:17:48,153 - INFO -   prune_weights = True
+2025-03-20 15:17:48,153 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-20 15:17:51,000 - INFO - Finished combination 14/15
+2025-03-20 15:17:51,000 - INFO - Running combination 15/15:
+2025-03-20 15:17:51,000 - INFO -   prune_data_flow = None
+2025-03-20 15:17:51,000 - INFO -   prune_bias = True
+2025-03-20 15:17:51,000 - INFO -   prune_weights = True
+2025-03-20 15:17:51,000 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-20 15:17:53,874 - INFO - Finished combination 15/15
+2025-03-20 15:17:53,874 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-20 15:17:53,874 - INFO - Parameter sweep completed
+2025-03-20 15:25:36,173 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 15:25:36,174 - INFO - Starting parameter sweep with 15 combinations
+2025-03-20 15:25:36,174 - INFO - Running combination 1/15:
+2025-03-20 15:25:36,174 - INFO -   prune_data_flow = encoder
+2025-03-20 15:25:36,174 - INFO -   prune_bias = True
+2025-03-20 15:25:36,174 - INFO -   prune_weights = True
+2025-03-20 15:25:36,174 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-20 15:27:24,661 - INFO - Finished combination 1/15
+2025-03-20 15:27:24,661 - INFO - Running combination 2/15:
+2025-03-20 15:27:24,661 - INFO -   prune_data_flow = encoder
+2025-03-20 15:27:24,661 - INFO -   prune_bias = True
+2025-03-20 15:27:24,661 - INFO -   prune_weights = True
+2025-03-20 15:27:24,661 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-20 15:29:13,055 - INFO - Finished combination 2/15
+2025-03-20 15:29:13,055 - INFO - Running combination 3/15:
+2025-03-20 15:29:13,055 - INFO -   prune_data_flow = encoder
+2025-03-20 15:29:13,056 - INFO -   prune_bias = True
+2025-03-20 15:29:13,056 - INFO -   prune_weights = True
+2025-03-20 15:29:13,056 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-20 15:31:00,208 - INFO - Finished combination 3/15
+2025-03-20 15:31:00,208 - INFO - Running combination 4/15:
+2025-03-20 15:31:00,208 - INFO -   prune_data_flow = encoder
+2025-03-20 15:31:00,208 - INFO -   prune_bias = True
+2025-03-20 15:31:00,208 - INFO -   prune_weights = True
+2025-03-20 15:31:00,208 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-20 15:32:48,624 - INFO - Finished combination 4/15
+2025-03-20 15:32:48,624 - INFO - Running combination 5/15:
+2025-03-20 15:32:48,624 - INFO -   prune_data_flow = encoder
+2025-03-20 15:32:48,624 - INFO -   prune_bias = True
+2025-03-20 15:32:48,624 - INFO -   prune_weights = True
+2025-03-20 15:32:48,624 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-20 15:34:36,541 - INFO - Finished combination 5/15
+2025-03-20 15:34:36,542 - INFO - Running combination 6/15:
+2025-03-20 15:34:36,542 - INFO -   prune_data_flow = decoder
+2025-03-20 15:34:36,542 - INFO -   prune_bias = True
+2025-03-20 15:34:36,542 - INFO -   prune_weights = True
+2025-03-20 15:34:36,542 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-20 15:36:23,670 - INFO - Finished combination 6/15
+2025-03-20 15:36:23,670 - INFO - Running combination 7/15:
+2025-03-20 15:36:23,670 - INFO -   prune_data_flow = decoder
+2025-03-20 15:36:23,670 - INFO -   prune_bias = True
+2025-03-20 15:36:23,670 - INFO -   prune_weights = True
+2025-03-20 15:36:23,670 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-20 15:38:10,034 - INFO - Finished combination 7/15
+2025-03-20 15:38:10,034 - INFO - Running combination 8/15:
+2025-03-20 15:38:10,035 - INFO -   prune_data_flow = decoder
+2025-03-20 15:38:10,035 - INFO -   prune_bias = True
+2025-03-20 15:38:10,035 - INFO -   prune_weights = True
+2025-03-20 15:38:10,035 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-20 15:39:57,164 - INFO - Finished combination 8/15
+2025-03-20 15:39:57,164 - INFO - Running combination 9/15:
+2025-03-20 15:39:57,164 - INFO -   prune_data_flow = decoder
+2025-03-20 15:39:57,164 - INFO -   prune_bias = True
+2025-03-20 15:39:57,165 - INFO -   prune_weights = True
+2025-03-20 15:39:57,165 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-20 15:41:44,700 - INFO - Finished combination 9/15
+2025-03-20 15:41:44,700 - INFO - Running combination 10/15:
+2025-03-20 15:41:44,700 - INFO -   prune_data_flow = decoder
+2025-03-20 15:41:44,700 - INFO -   prune_bias = True
+2025-03-20 15:41:44,700 - INFO -   prune_weights = True
+2025-03-20 15:41:44,700 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-20 15:43:35,002 - INFO - Finished combination 10/15
+2025-03-20 15:43:35,003 - INFO - Running combination 11/15:
+2025-03-20 15:43:35,003 - INFO -   prune_data_flow = None
+2025-03-20 15:43:35,003 - INFO -   prune_bias = True
+2025-03-20 15:43:35,003 - INFO -   prune_weights = True
+2025-03-20 15:43:35,003 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-20 15:45:25,578 - INFO - Finished combination 11/15
+2025-03-20 15:45:25,578 - INFO - Running combination 12/15:
+2025-03-20 15:45:25,578 - INFO -   prune_data_flow = None
+2025-03-20 15:45:25,578 - INFO -   prune_bias = True
+2025-03-20 15:45:25,578 - INFO -   prune_weights = True
+2025-03-20 15:45:25,578 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-20 15:47:11,445 - INFO - Finished combination 12/15
+2025-03-20 15:47:11,445 - INFO - Running combination 13/15:
+2025-03-20 15:47:11,445 - INFO -   prune_data_flow = None
+2025-03-20 15:47:11,445 - INFO -   prune_bias = True
+2025-03-20 15:47:11,445 - INFO -   prune_weights = True
+2025-03-20 15:47:11,445 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-20 15:48:58,243 - INFO - Finished combination 13/15
+2025-03-20 15:48:58,244 - INFO - Running combination 14/15:
+2025-03-20 15:48:58,244 - INFO -   prune_data_flow = None
+2025-03-20 15:48:58,244 - INFO -   prune_bias = True
+2025-03-20 15:48:58,244 - INFO -   prune_weights = True
+2025-03-20 15:48:58,244 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-20 15:50:44,396 - INFO - Finished combination 14/15
+2025-03-20 15:50:44,396 - INFO - Running combination 15/15:
+2025-03-20 15:50:44,396 - INFO -   prune_data_flow = None
+2025-03-20 15:50:44,396 - INFO -   prune_bias = True
+2025-03-20 15:50:44,396 - INFO -   prune_weights = True
+2025-03-20 15:50:44,396 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-20 15:52:31,313 - INFO - Finished combination 15/15
+2025-03-20 15:52:31,313 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-20 15:52:31,313 - INFO - Parameter sweep completed
+2025-03-20 23:13:41,536 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:13:41,536 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:13:41,536 - INFO - Running combination 1/10:
+2025-03-20 23:13:41,536 - INFO -   abs_val = 0
+2025-03-20 23:13:41,536 - INFO -   prune_bias = True
+2025-03-20 23:13:41,536 - INFO -   prune_weights = True
+2025-03-20 23:13:41,536 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:13:44,342 - INFO - Finished combination 1/10
+2025-03-20 23:13:44,342 - INFO - Running combination 2/10:
+2025-03-20 23:13:44,342 - INFO -   abs_val = 0
+2025-03-20 23:13:44,342 - INFO -   prune_bias = True
+2025-03-20 23:13:44,342 - INFO -   prune_weights = True
+2025-03-20 23:13:44,342 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 23:13:47,087 - INFO - Finished combination 2/10
+2025-03-20 23:13:47,087 - INFO - Running combination 3/10:
+2025-03-20 23:13:47,088 - INFO -   abs_val = 0
+2025-03-20 23:13:47,088 - INFO -   prune_bias = True
+2025-03-20 23:13:47,088 - INFO -   prune_weights = True
+2025-03-20 23:13:47,088 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2']
+2025-03-20 23:14:40,930 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:14:40,930 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:14:40,930 - INFO - Running combination 1/10:
+2025-03-20 23:14:40,930 - INFO -   abs_val = 0
+2025-03-20 23:14:40,930 - INFO -   prune_bias = True
+2025-03-20 23:14:40,930 - INFO -   prune_weights = True
+2025-03-20 23:14:40,930 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:14:43,723 - INFO - Finished combination 1/10
+2025-03-20 23:14:43,723 - INFO - Running combination 2/10:
+2025-03-20 23:14:43,723 - INFO -   abs_val = 0
+2025-03-20 23:14:43,723 - INFO -   prune_bias = True
+2025-03-20 23:14:43,723 - INFO -   prune_weights = True
+2025-03-20 23:14:43,723 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 23:16:20,053 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:16:20,054 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:16:20,054 - INFO - Running combination 1/10:
+2025-03-20 23:16:20,054 - INFO -   abs_val = 0
+2025-03-20 23:16:20,054 - INFO -   prune_bias = True
+2025-03-20 23:16:20,054 - INFO -   prune_weights = True
+2025-03-20 23:16:20,054 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:16:22,871 - INFO - Finished combination 1/10
+2025-03-20 23:16:22,871 - INFO - Running combination 2/10:
+2025-03-20 23:16:22,871 - INFO -   abs_val = 0
+2025-03-20 23:16:22,872 - INFO -   prune_bias = True
+2025-03-20 23:16:22,872 - INFO -   prune_weights = True
+2025-03-20 23:16:22,872 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 23:19:10,938 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:19:10,938 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:19:10,938 - INFO - Running combination 1/10:
+2025-03-20 23:19:10,938 - INFO -   abs_val = 0
+2025-03-20 23:19:10,938 - INFO -   prune_bias = True
+2025-03-20 23:19:10,938 - INFO -   prune_weights = True
+2025-03-20 23:19:10,938 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:19:13,870 - INFO - Finished combination 1/10
+2025-03-20 23:19:13,871 - INFO - Running combination 2/10:
+2025-03-20 23:19:13,871 - INFO -   abs_val = 0
+2025-03-20 23:19:13,871 - INFO -   prune_bias = True
+2025-03-20 23:19:13,871 - INFO -   prune_weights = True
+2025-03-20 23:19:13,871 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 23:19:16,724 - INFO - Finished combination 2/10
+2025-03-20 23:19:16,724 - INFO - Running combination 3/10:
+2025-03-20 23:19:16,724 - INFO -   abs_val = 0
+2025-03-20 23:19:16,724 - INFO -   prune_bias = True
+2025-03-20 23:19:16,724 - INFO -   prune_weights = True
+2025-03-20 23:19:16,724 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2']
+2025-03-20 23:19:19,601 - INFO - Finished combination 3/10
+2025-03-20 23:19:19,601 - INFO - Running combination 4/10:
+2025-03-20 23:19:19,601 - INFO -   abs_val = 0
+2025-03-20 23:19:19,601 - INFO -   prune_bias = True
+2025-03-20 23:19:19,601 - INFO -   prune_weights = True
+2025-03-20 23:19:19,601 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3']
+2025-03-20 23:19:22,581 - INFO - Finished combination 4/10
+2025-03-20 23:19:22,582 - INFO - Running combination 5/10:
+2025-03-20 23:19:22,582 - INFO -   abs_val = 0
+2025-03-20 23:19:22,582 - INFO -   prune_bias = True
+2025-03-20 23:19:22,582 - INFO -   prune_weights = True
+2025-03-20 23:19:22,582 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3', 'decoder.transpconvs.4']
+2025-03-20 23:21:10,221 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:21:10,222 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:21:10,222 - INFO - Running combination 1/10:
+2025-03-20 23:21:10,222 - INFO -   abs_val = 0
+2025-03-20 23:21:10,222 - INFO -   prune_bias = True
+2025-03-20 23:21:10,222 - INFO -   prune_weights = True
+2025-03-20 23:21:10,222 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:30:36,571 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:30:36,571 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:30:36,571 - INFO - Running combination 1/10:
+2025-03-20 23:30:36,571 - INFO -   abs_val = 0
+2025-03-20 23:30:36,571 - INFO -   prune_bias = True
+2025-03-20 23:30:36,571 - INFO -   prune_weights = True
+2025-03-20 23:30:36,572 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:30:39,533 - INFO - Finished combination 1/10
+2025-03-20 23:30:39,533 - INFO - Running combination 2/10:
+2025-03-20 23:30:39,533 - INFO -   abs_val = 0
+2025-03-20 23:30:39,533 - INFO -   prune_bias = True
+2025-03-20 23:30:39,533 - INFO -   prune_weights = True
+2025-03-20 23:30:39,533 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 23:33:16,895 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:33:16,895 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:33:16,895 - INFO - Running combination 1/10:
+2025-03-20 23:33:16,895 - INFO -   abs_val = 0
+2025-03-20 23:33:16,895 - INFO -   prune_bias = True
+2025-03-20 23:33:16,895 - INFO -   prune_weights = True
+2025-03-20 23:33:16,895 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:33:20,545 - INFO - Finished combination 1/10
+2025-03-20 23:33:20,545 - INFO - Running combination 2/10:
+2025-03-20 23:33:20,545 - INFO -   abs_val = 0
+2025-03-20 23:33:20,545 - INFO -   prune_bias = True
+2025-03-20 23:33:20,545 - INFO -   prune_weights = True
+2025-03-20 23:33:20,545 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 23:34:28,465 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:34:28,465 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:34:28,465 - INFO - Running combination 1/10:
+2025-03-20 23:34:28,465 - INFO -   abs_val = 0
+2025-03-20 23:34:28,465 - INFO -   prune_bias = True
+2025-03-20 23:34:28,465 - INFO -   prune_weights = True
+2025-03-20 23:34:28,465 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:34:31,868 - INFO - Finished combination 1/10
+2025-03-20 23:34:31,868 - INFO - Running combination 2/10:
+2025-03-20 23:34:31,868 - INFO -   abs_val = 0
+2025-03-20 23:34:31,868 - INFO -   prune_bias = True
+2025-03-20 23:34:31,868 - INFO -   prune_weights = True
+2025-03-20 23:34:31,868 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 23:46:40,317 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:46:40,317 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:46:40,317 - INFO - Running combination 1/10:
+2025-03-20 23:46:40,317 - INFO -   abs_val = 0
+2025-03-20 23:46:40,317 - INFO -   prune_bias = True
+2025-03-20 23:46:40,318 - INFO -   prune_weights = True
+2025-03-20 23:46:40,318 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:47:00,769 - INFO - Finished combination 1/10
+2025-03-20 23:47:00,769 - INFO - Running combination 2/10:
+2025-03-20 23:47:00,769 - INFO -   abs_val = 0
+2025-03-20 23:47:00,769 - INFO -   prune_bias = True
+2025-03-20 23:47:00,769 - INFO -   prune_weights = True
+2025-03-20 23:47:00,769 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-20 23:50:19,361 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:50:19,361 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:50:19,361 - INFO - Running combination 1/10:
+2025-03-20 23:50:19,361 - INFO -   abs_val = 0
+2025-03-20 23:50:19,361 - INFO -   prune_bias = True
+2025-03-20 23:50:19,361 - INFO -   prune_weights = True
+2025-03-20 23:50:19,361 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-20 23:53:19,299 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-20 23:53:19,299 - INFO - Starting parameter sweep with 10 combinations
+2025-03-20 23:53:19,299 - INFO - Running combination 1/10:
+2025-03-20 23:53:19,299 - INFO -   abs_val = 0
+2025-03-20 23:53:19,299 - INFO -   prune_bias = True
+2025-03-20 23:53:19,299 - INFO -   prune_weights = True
+2025-03-20 23:53:19,299 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-21 00:05:31,649 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-21 00:05:31,649 - INFO - Starting parameter sweep with 10 combinations
+2025-03-21 00:05:31,649 - INFO - Running combination 1/10:
+2025-03-21 00:05:31,649 - INFO -   abs_val = 0
+2025-03-21 00:05:31,649 - INFO -   prune_bias = True
+2025-03-21 00:05:31,649 - INFO -   prune_weights = True
+2025-03-21 00:05:31,649 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-21 00:05:35,250 - INFO - Finished combination 1/10
+2025-03-21 00:05:35,250 - INFO - Running combination 2/10:
+2025-03-21 00:05:35,250 - INFO -   abs_val = 0
+2025-03-21 00:05:35,250 - INFO -   prune_bias = True
+2025-03-21 00:05:35,250 - INFO -   prune_weights = True
+2025-03-21 00:05:35,250 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-21 00:06:14,225 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-21 00:06:14,225 - INFO - Starting parameter sweep with 10 combinations
+2025-03-21 00:06:14,225 - INFO - Running combination 1/10:
+2025-03-21 00:06:14,225 - INFO -   abs_val = 0
+2025-03-21 00:06:14,226 - INFO -   prune_bias = True
+2025-03-21 00:06:14,226 - INFO -   prune_weights = True
+2025-03-21 00:06:14,226 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-21 00:06:35,741 - INFO - Finished combination 1/10
+2025-03-21 00:06:35,742 - INFO - Running combination 2/10:
+2025-03-21 00:06:35,742 - INFO -   abs_val = 0
+2025-03-21 00:06:35,742 - INFO -   prune_bias = True
+2025-03-21 00:06:35,742 - INFO -   prune_weights = True
+2025-03-21 00:06:35,742 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-21 00:06:56,114 - INFO - Finished combination 2/10
+2025-03-21 00:06:56,114 - INFO - Running combination 3/10:
+2025-03-21 00:06:56,114 - INFO -   abs_val = 0
+2025-03-21 00:06:56,114 - INFO -   prune_bias = True
+2025-03-21 00:06:56,114 - INFO -   prune_weights = True
+2025-03-21 00:06:56,114 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2']
+2025-03-21 00:15:10,971 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-21 00:15:10,971 - INFO - Starting parameter sweep with 10 combinations
+2025-03-21 00:15:10,971 - INFO - Running combination 1/10:
+2025-03-21 00:15:10,971 - INFO -   abs_val = 0
+2025-03-21 00:15:10,971 - INFO -   prune_bias = True
+2025-03-21 00:15:10,971 - INFO -   prune_weights = True
+2025-03-21 00:15:10,971 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-21 00:15:31,739 - INFO - Finished combination 1/10
+2025-03-21 00:15:31,739 - INFO - Running combination 2/10:
+2025-03-21 00:15:31,739 - INFO -   abs_val = 0
+2025-03-21 00:15:31,739 - INFO -   prune_bias = True
+2025-03-21 00:15:31,739 - INFO -   prune_weights = True
+2025-03-21 00:15:31,739 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-21 00:15:52,351 - INFO - Finished combination 2/10
+2025-03-21 00:15:52,352 - INFO - Running combination 3/10:
+2025-03-21 00:15:52,352 - INFO -   abs_val = 0
+2025-03-21 00:15:52,352 - INFO -   prune_bias = True
+2025-03-21 00:15:52,352 - INFO -   prune_weights = True
+2025-03-21 00:15:52,352 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2']
+2025-03-21 00:16:12,683 - INFO - Finished combination 3/10
+2025-03-21 00:16:12,683 - INFO - Running combination 4/10:
+2025-03-21 00:16:12,683 - INFO -   abs_val = 0
+2025-03-21 00:16:12,683 - INFO -   prune_bias = True
+2025-03-21 00:16:12,683 - INFO -   prune_weights = True
+2025-03-21 00:16:12,684 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3']
+2025-03-21 00:16:33,070 - INFO - Finished combination 4/10
+2025-03-21 00:16:33,070 - INFO - Running combination 5/10:
+2025-03-21 00:16:33,070 - INFO -   abs_val = 0
+2025-03-21 00:16:33,070 - INFO -   prune_bias = True
+2025-03-21 00:16:33,070 - INFO -   prune_weights = True
+2025-03-21 00:16:33,070 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3', 'decoder.transpconvs.4']
+2025-03-21 00:24:00,058 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-21 00:24:00,058 - INFO - Starting parameter sweep with 10 combinations
+2025-03-21 00:24:00,058 - INFO - Running combination 1/10:
+2025-03-21 00:24:00,058 - INFO -   abs_val = 0
+2025-03-21 00:24:00,058 - INFO -   prune_bias = True
+2025-03-21 00:24:00,058 - INFO -   prune_weights = True
+2025-03-21 00:24:00,058 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-21 00:25:10,138 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-21 00:25:10,138 - INFO - Starting parameter sweep with 10 combinations
+2025-03-21 00:25:10,138 - INFO - Running combination 1/10:
+2025-03-21 00:25:10,138 - INFO -   abs_val = 0
+2025-03-21 00:25:10,138 - INFO -   prune_bias = True
+2025-03-21 00:25:10,138 - INFO -   prune_weights = True
+2025-03-21 00:25:10,138 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-21 00:26:59,274 - INFO - Finished combination 1/10
+2025-03-21 00:26:59,274 - INFO - Running combination 2/10:
+2025-03-21 00:26:59,274 - INFO -   abs_val = 0
+2025-03-21 00:26:59,274 - INFO -   prune_bias = True
+2025-03-21 00:26:59,274 - INFO -   prune_weights = True
+2025-03-21 00:26:59,274 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-21 00:28:46,799 - INFO - Finished combination 2/10
+2025-03-21 00:28:46,799 - INFO - Running combination 3/10:
+2025-03-21 00:28:46,799 - INFO -   abs_val = 0
+2025-03-21 00:28:46,799 - INFO -   prune_bias = True
+2025-03-21 00:28:46,799 - INFO -   prune_weights = True
+2025-03-21 00:28:46,799 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2']
+2025-03-21 00:30:34,065 - INFO - Finished combination 3/10
+2025-03-21 00:30:34,065 - INFO - Running combination 4/10:
+2025-03-21 00:30:34,065 - INFO -   abs_val = 0
+2025-03-21 00:30:34,065 - INFO -   prune_bias = True
+2025-03-21 00:30:34,065 - INFO -   prune_weights = True
+2025-03-21 00:30:34,065 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3']
+2025-03-21 00:32:22,426 - INFO - Finished combination 4/10
+2025-03-21 00:32:22,426 - INFO - Running combination 5/10:
+2025-03-21 00:32:22,426 - INFO -   abs_val = 0
+2025-03-21 00:32:22,427 - INFO -   prune_bias = True
+2025-03-21 00:32:22,427 - INFO -   prune_weights = True
+2025-03-21 00:32:22,427 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3', 'decoder.transpconvs.4']
+2025-03-21 00:34:09,769 - INFO - Finished combination 5/10
+2025-03-21 00:34:09,769 - INFO - Running combination 6/10:
+2025-03-21 00:34:09,769 - INFO -   abs_val = 9
+2025-03-21 00:34:09,769 - INFO -   prune_bias = True
+2025-03-21 00:34:09,769 - INFO -   prune_weights = True
+2025-03-21 00:34:09,769 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0']
+2025-03-21 00:35:57,453 - INFO - Finished combination 6/10
+2025-03-21 00:35:57,453 - INFO - Running combination 7/10:
+2025-03-21 00:35:57,453 - INFO -   abs_val = 9
+2025-03-21 00:35:57,453 - INFO -   prune_bias = True
+2025-03-21 00:35:57,453 - INFO -   prune_weights = True
+2025-03-21 00:35:57,453 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1']
+2025-03-21 00:37:45,634 - INFO - Finished combination 7/10
+2025-03-21 00:37:45,634 - INFO - Running combination 8/10:
+2025-03-21 00:37:45,634 - INFO -   abs_val = 9
+2025-03-21 00:37:45,634 - INFO -   prune_bias = True
+2025-03-21 00:37:45,634 - INFO -   prune_weights = True
+2025-03-21 00:37:45,634 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2']
+2025-03-21 00:39:33,198 - INFO - Finished combination 8/10
+2025-03-21 00:39:33,198 - INFO - Running combination 9/10:
+2025-03-21 00:39:33,198 - INFO -   abs_val = 9
+2025-03-21 00:39:33,198 - INFO -   prune_bias = True
+2025-03-21 00:39:33,198 - INFO -   prune_weights = True
+2025-03-21 00:39:33,198 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3']
+2025-03-21 00:41:20,964 - INFO - Finished combination 9/10
+2025-03-21 00:41:20,964 - INFO - Running combination 10/10:
+2025-03-21 00:41:20,964 - INFO -   abs_val = 9
+2025-03-21 00:41:20,964 - INFO -   prune_bias = True
+2025-03-21 00:41:20,964 - INFO -   prune_weights = True
+2025-03-21 00:41:20,964 - INFO -   prune_layers = ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3', 'decoder.transpconvs.4']
+2025-03-21 00:43:08,425 - INFO - Finished combination 10/10
+2025-03-21 00:43:08,425 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-21 00:43:08,425 - INFO - Parameter sweep completed
+2025-03-21 10:10:59,554 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-21 10:10:59,554 - INFO - Starting parameter sweep with 15 combinations
+2025-03-21 10:10:59,554 - INFO - Running combination 1/15:
+2025-03-21 10:10:59,554 - INFO -   prune_data_flow = encoder
+2025-03-21 10:10:59,554 - INFO -   prune_bias = True
+2025-03-21 10:10:59,554 - INFO -   prune_weights = True
+2025-03-21 10:10:59,554 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-21 10:12:48,587 - INFO - Finished combination 1/15
+2025-03-21 10:12:48,587 - INFO - Running combination 2/15:
+2025-03-21 10:12:48,587 - INFO -   prune_data_flow = encoder
+2025-03-21 10:12:48,587 - INFO -   prune_bias = True
+2025-03-21 10:12:48,587 - INFO -   prune_weights = True
+2025-03-21 10:12:48,587 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-21 10:14:52,807 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-21 10:14:52,807 - INFO - Starting parameter sweep with 15 combinations
+2025-03-21 10:14:52,807 - INFO - Running combination 1/15:
+2025-03-21 10:14:52,807 - INFO -   prune_data_flow = encoder
+2025-03-21 10:14:52,807 - INFO -   prune_bias = True
+2025-03-21 10:14:52,807 - INFO -   prune_weights = True
+2025-03-21 10:14:52,807 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-21 10:16:39,852 - INFO - Finished combination 1/15
+2025-03-21 10:16:39,852 - INFO - Running combination 2/15:
+2025-03-21 10:16:39,852 - INFO -   prune_data_flow = encoder
+2025-03-21 10:16:39,852 - INFO -   prune_bias = True
+2025-03-21 10:16:39,852 - INFO -   prune_weights = True
+2025-03-21 10:16:39,852 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-21 10:18:27,667 - INFO - Finished combination 2/15
+2025-03-21 10:18:27,668 - INFO - Running combination 3/15:
+2025-03-21 10:18:27,668 - INFO -   prune_data_flow = encoder
+2025-03-21 10:18:27,668 - INFO -   prune_bias = True
+2025-03-21 10:18:27,668 - INFO -   prune_weights = True
+2025-03-21 10:18:27,668 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-21 10:20:14,845 - INFO - Finished combination 3/15
+2025-03-21 10:20:14,846 - INFO - Running combination 4/15:
+2025-03-21 10:20:14,846 - INFO -   prune_data_flow = encoder
+2025-03-21 10:20:14,846 - INFO -   prune_bias = True
+2025-03-21 10:20:14,846 - INFO -   prune_weights = True
+2025-03-21 10:20:14,846 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-21 10:22:02,973 - INFO - Finished combination 4/15
+2025-03-21 10:22:02,973 - INFO - Running combination 5/15:
+2025-03-21 10:22:02,973 - INFO -   prune_data_flow = encoder
+2025-03-21 10:22:02,973 - INFO -   prune_bias = True
+2025-03-21 10:22:02,973 - INFO -   prune_weights = True
+2025-03-21 10:22:02,973 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-21 10:23:50,780 - INFO - Finished combination 5/15
+2025-03-21 10:23:50,781 - INFO - Running combination 6/15:
+2025-03-21 10:23:50,781 - INFO -   prune_data_flow = decoder
+2025-03-21 10:23:50,781 - INFO -   prune_bias = True
+2025-03-21 10:23:50,781 - INFO -   prune_weights = True
+2025-03-21 10:23:50,781 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-21 10:25:37,946 - INFO - Finished combination 6/15
+2025-03-21 10:25:37,946 - INFO - Running combination 7/15:
+2025-03-21 10:25:37,946 - INFO -   prune_data_flow = decoder
+2025-03-21 10:25:37,946 - INFO -   prune_bias = True
+2025-03-21 10:25:37,946 - INFO -   prune_weights = True
+2025-03-21 10:25:37,946 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-21 10:27:25,090 - INFO - Finished combination 7/15
+2025-03-21 10:27:25,090 - INFO - Running combination 8/15:
+2025-03-21 10:27:25,090 - INFO -   prune_data_flow = decoder
+2025-03-21 10:27:25,090 - INFO -   prune_bias = True
+2025-03-21 10:27:25,090 - INFO -   prune_weights = True
+2025-03-21 10:27:25,090 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-21 10:29:12,079 - INFO - Finished combination 8/15
+2025-03-21 10:29:12,079 - INFO - Running combination 9/15:
+2025-03-21 10:29:12,079 - INFO -   prune_data_flow = decoder
+2025-03-21 10:29:12,079 - INFO -   prune_bias = True
+2025-03-21 10:29:12,079 - INFO -   prune_weights = True
+2025-03-21 10:29:12,079 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-21 10:30:58,426 - INFO - Finished combination 9/15
+2025-03-21 10:30:58,426 - INFO - Running combination 10/15:
+2025-03-21 10:30:58,426 - INFO -   prune_data_flow = decoder
+2025-03-21 10:30:58,426 - INFO -   prune_bias = True
+2025-03-21 10:30:58,426 - INFO -   prune_weights = True
+2025-03-21 10:30:58,426 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-21 10:32:44,782 - INFO - Finished combination 10/15
+2025-03-21 10:32:44,782 - INFO - Running combination 11/15:
+2025-03-21 10:32:44,782 - INFO -   prune_data_flow = None
+2025-03-21 10:32:44,782 - INFO -   prune_bias = True
+2025-03-21 10:32:44,782 - INFO -   prune_weights = True
+2025-03-21 10:32:44,782 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-21 10:34:31,281 - INFO - Finished combination 11/15
+2025-03-21 10:34:31,281 - INFO - Running combination 12/15:
+2025-03-21 10:34:31,281 - INFO -   prune_data_flow = None
+2025-03-21 10:34:31,281 - INFO -   prune_bias = True
+2025-03-21 10:34:31,281 - INFO -   prune_weights = True
+2025-03-21 10:34:31,281 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-21 10:36:19,799 - INFO - Finished combination 12/15
+2025-03-21 10:36:19,799 - INFO - Running combination 13/15:
+2025-03-21 10:36:19,799 - INFO -   prune_data_flow = None
+2025-03-21 10:36:19,799 - INFO -   prune_bias = True
+2025-03-21 10:36:19,799 - INFO -   prune_weights = True
+2025-03-21 10:36:19,799 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-21 10:38:06,551 - INFO - Finished combination 13/15
+2025-03-21 10:38:06,551 - INFO - Running combination 14/15:
+2025-03-21 10:38:06,551 - INFO -   prune_data_flow = None
+2025-03-21 10:38:06,551 - INFO -   prune_bias = True
+2025-03-21 10:38:06,551 - INFO -   prune_weights = True
+2025-03-21 10:38:06,551 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-21 10:39:53,469 - INFO - Finished combination 14/15
+2025-03-21 10:39:53,469 - INFO - Running combination 15/15:
+2025-03-21 10:39:53,469 - INFO -   prune_data_flow = None
+2025-03-21 10:39:53,469 - INFO -   prune_bias = True
+2025-03-21 10:39:53,469 - INFO -   prune_weights = True
+2025-03-21 10:39:53,470 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-21 10:41:40,697 - INFO - Finished combination 15/15
+2025-03-21 10:41:40,697 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-21 10:41:40,697 - INFO - Parameter sweep completed

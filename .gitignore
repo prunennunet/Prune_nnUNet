@@ -6,3 +6,5 @@
 /nnUNet_results_prune_test
 /parameter_distributions
 /nnUNet_results_norm_on
+/nnUNet_results_norm_off
+/weight_distribution

@@ -11,12 +11,7 @@ from scipy.stats import norm, kurtosis
 import argparse
 import yaml
 
-
-def read_config(config_path):
-    """Read configuration from YAML file"""
-    with open(config_path, 'r') as f:
-        config = yaml.safe_load(f)
-    return config
+from helper.read_config import read_config
 
 
 def setup_output_dirs(base_output_dir, fold, components):
@@ -453,6 +448,7 @@ def plot_component_distributions(params, output_dir, component, plot_config):
 
 
 def analyze_parameter_distributions(state_dict, filtered_layers, output_dir, fold, plot_config):
+    # TODO: This function is kinda hard coded
     """Main function to analyze and plot parameter distributions"""
     base_dir = setup_output_dirs(output_dir, fold, plot_config['components'])
     params = collect_parameters(state_dict, filtered_layers)
@@ -466,6 +462,7 @@ def analyze_parameter_distributions(state_dict, filtered_layers, output_dir, fol
 
 
 def filter_unique_layers(state_dict):
+    # TODO: This function is kinda hard coded
     """
     Filter and organize unique layers from the network state dict by stage.
 
@@ -575,6 +572,52 @@ def load_model_weights(base_dir, dataset_id, fold, model_version, checkpoint_nam
     base_path = Path(base_dir)
     dataset_dir = base_path / f'Dataset{dataset_id:03d}_ACDC'
     model_path = dataset_dir / model_version / f'fold_{fold}' / checkpoint_name
+
+    print(f"\nLoading checkpoint from: {model_path}")
+
+    if not model_path.exists():
+        raise FileNotFoundError(f"Checkpoint not found at {model_path}")
+
+    checkpoint = torch.load(model_path, weights_only=False, map_location=torch.device('cpu'))
+
+    print("\nCheckpoint contents:")
+    print("Keys in checkpoint:", checkpoint.keys())
+
+    # Print detailed information for each key
+    for key, value in checkpoint.items():
+        if isinstance(value, dict):
+            print(f"\n{key}:")
+            print("  Nested dictionary with keys:", value.keys())
+        elif isinstance(value, torch.Tensor):
+            print(f"\n{key}:")
+            print(f"  Tensor shape: {value.shape}")
+            print(f"  Tensor dtype: {value.dtype}")
+        elif isinstance(value, (int, float, str, bool)):
+            print(f"\n{key}:")
+            print(f"  Value: {value}")
+        else:
+            print(f"\n{key}:")
+            print(f"  Type: {type(value)}")
+
+    # Return the network weights
+    return checkpoint['network_weights']
+
+
+def load_model_weights_with_path(model_path: str):
+    """
+    Load model weights from checkpoint.
+
+    Args:
+        base_dir (str or Path): Base directory for model results
+        dataset_id (int): Dataset ID
+        fold (int): Fold number
+        model_version (str): Model version/trainer name
+        checkpoint_name (str): Name of the checkpoint file
+
+    Returns:
+        OrderedDict: Model weights
+    """
+    model_path = Path(model_path)
 
     print(f"\nLoading checkpoint from: {model_path}")
 

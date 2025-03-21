@@ -1,0 +1,66 @@
+evaluate:
+  checkpoint_name: null
+  chill: false
+  gt_folder: nnUNet_raw/Dataset027_ACDC/labelsTs
+  num_processes: 8
+  output_file: null
+  pred_folder: null
+  pruned: true
+  result_base_dir: null
+predict:
+  checkpoint_name: checkpoint_final.pth
+  continue_prediction: false
+  device: cuda
+  disable_progress_bar: false
+  disable_tta: false
+  fold:
+  - - 0
+  - - 1
+  - - 2
+  - - 3
+  - - 4
+  - - all
+  input_folder: nnUNet_raw/Dataset027_ACDC/imagesTs
+  num_processes_preprocessing: 3
+  num_processes_segmentation_export: 3
+  output_folder: nnUNet_results/Dataset027_ACDC/FlexibleTrainerV1__nnUNetPlans__2d/predictions
+  save_probabilities: false
+  step_size: 0.5
+  verbose: true
+train:
+  c: false
+  configuration: 2d
+  dataset_name_or_id: 27
+  device: cuda
+  fold:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - all
+  npz: false
+  num_gpus: 1
+  p: nnUNetPlans
+  pretrained_weights: null
+  tr: FlexibleTrainerV1
+  val: false
+  val_best: false
+plot:
+  dataset_name_or_id: 27
+  base_dir: nnUNet_results
+  trainer_plan_version: FlexibleTrainerV1__nnUNetPlans__2d
+  checkpoint_name: checkpoint_final.pth
+  fold:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - all
+  output_dir: weight_distribution
+  components:
+    - encoder
+    - decoder
+
+

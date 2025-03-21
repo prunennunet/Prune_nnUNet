@@ -1,0 +1,21 @@
+prune:
+  checkpoint_name: checkpoint_final.pth
+  fold:
+  - - 0
+  - - 1
+  - - 2
+  - - 3
+  - - 4
+  - - all
+  gt_folder: nnUNet_raw/Dataset027_ACDC/labelsTs
+  input_folder: nnUNet_raw/Dataset027_ACDC/imagesTs
+  model_folder: nnUNet_results_norm_off/Dataset027_ACDC/FlexibleTrainerV1__nnUNetPlans__2d
+  output_folder: /media/tonguyunyang/tony_data/data/pruning_nnunet_experiment_storage/prune_predictions_norm_off
+  prune_method: RangePruning
+  prune_parameters:
+    max_val: 0.007
+    min_val: -0.007
+    prune_bias: false
+    prune_layers:
+    - conv
+    prune_weights: true

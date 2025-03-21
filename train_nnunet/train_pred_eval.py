@@ -1,4 +1,3 @@
-import subprocess
 import sys
 
 from helper.execute_cmd import execute_command
