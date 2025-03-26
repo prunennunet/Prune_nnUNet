@@ -85,6 +85,8 @@ class PlainConvEncoder(nn.Module):
     def forward(self, x, return_intermediates: bool = False):
         ret = []
         intermediates = {}
+        # Also put the input in the intermediates
+        intermediates[f'input_x'] = x
 
         for i, stage in enumerate(self.stages):
             stage_intermediates = {}

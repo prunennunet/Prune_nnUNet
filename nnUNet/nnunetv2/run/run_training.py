@@ -11,6 +11,7 @@ from batchgenerators.utilities.file_and_folder_operations import join, isfile, l
 from nnunetv2.paths import nnUNet_preprocessed
 from nnunetv2.run.load_pretrained_weights import load_pretrained_weights
 from nnunetv2.training.nnUNetTrainer.nnUNetTrainer import nnUNetTrainer
+from nnunetv2.training.nnUNetTrainer.variants.pruning.dynamic_net_trainer import FlexibleTrainerV1
 from nnunetv2.utilities.dataset_name_id_conversion import maybe_convert_to_dataset_name
 from nnunetv2.utilities.find_class_by_name import recursive_find_python_class
 from torch.backends import cudnn
@@ -34,7 +35,8 @@ def get_trainer_from_args(dataset_name_or_id: Union[int, str],
                           fold: int,
                           trainer_name: str = 'nnUNetTrainer',
                           plans_identifier: str = 'nnUNetPlans',
-                          device: torch.device = torch.device('cuda')):
+                          device: torch.device = torch.device('cuda'),
+                          bottleneck_removal_layers: Optional[int] = None):
     # load nnunet class and do sanity checks
     nnunet_trainer = recursive_find_python_class(join(nnunetv2.__path__[0], "training", "nnUNetTrainer"),
                                                 trainer_name, 'nnunetv2.training.nnUNetTrainer')
@@ -62,10 +64,86 @@ def get_trainer_from_args(dataset_name_or_id: Union[int, str],
     plans_file = join(preprocessed_dataset_folder_base, plans_identifier + '.json')
     plans = load_json(plans_file)
     dataset_json = load_json(join(preprocessed_dataset_folder_base, 'dataset.json'))
-    nnunet_trainer = nnunet_trainer(plans=plans, configuration=configuration, fold=fold,
-                                    dataset_json=dataset_json, device=device)
+
+    if bottleneck_removal_layers and bottleneck_removal_layers > 0:
+        remove_bottleneck_in_dict(plans, bottleneck_removal_layers)
+
+    nnunet_trainer = nnunet_trainer(plans=plans, configuration=configuration, fold=fold, dataset_json=dataset_json,
+                                    device=device)
+
     return nnunet_trainer
 
+
+def remove_bottleneck_in_dict(plans_dict: dict, bottleneck_removal_layers: int):
+    """
+    Directly modifies the raw 'plans_dict' in-place by slicing off the
+    specified number of bottleneck stages.
+    """
+    print("\n" + "#" * 80)
+    print("#" * 23 + "  MOVING BOTTLENECK UPWARDS  " + "#" * 23)
+    print("#" * 80 + "\n")
+
+    if 'configurations' not in plans_dict:
+        print("No 'configurations' found in plans_dict. Skipping bottleneck removal.")
+        return
+
+    for config_name, config_dict in plans_dict['configurations'].items():
+        arch = config_dict.get('architecture', {})
+        arch_kwargs = arch.get('arch_kwargs', None)
+        if arch_kwargs is None:
+            # skip if there's no 'arch_kwargs'
+            continue
+
+        n_stages = arch_kwargs.get('n_stages')
+        if n_stages is None:
+            continue
+
+        if bottleneck_removal_layers <= 0:
+            raise ValueError("bottleneck_removal_layers must be > 0.")
+
+        if bottleneck_removal_layers >= n_stages:
+            raise ValueError(
+                f"bottleneck_removal_layers ({bottleneck_removal_layers}) >= n_stages ({n_stages}) "
+                f"in configuration '{config_name}'"
+            )
+
+        remove_stages = min(bottleneck_removal_layers, n_stages - 1)
+
+        features_per_stage = arch_kwargs.get('features_per_stage')
+        kernel_sizes = arch_kwargs.get('kernel_sizes')
+        strides = arch_kwargs.get('strides')
+        n_conv_per_stage = arch_kwargs.get('n_conv_per_stage')
+        n_conv_per_stage_decoder = arch_kwargs.get('n_conv_per_stage_decoder')
+
+        # Remove from the END (encoder)
+        if isinstance(features_per_stage, (list, tuple)):
+            features_per_stage = features_per_stage[:-remove_stages]
+        if isinstance(kernel_sizes, (list, tuple)):
+            kernel_sizes = kernel_sizes[:-remove_stages]
+        if isinstance(strides, (list, tuple)):
+            strides = strides[:-remove_stages]
+        if isinstance(n_conv_per_stage, (list, tuple)):
+            n_conv_per_stage = n_conv_per_stage[:-remove_stages]
+
+        # Decrement n_stages
+        n_stages -= remove_stages
+
+        # Remove from the FRONT (decoder)
+        if isinstance(n_conv_per_stage_decoder, (list, tuple)):
+            if len(n_conv_per_stage_decoder) >= remove_stages:
+                n_conv_per_stage_decoder = n_conv_per_stage_decoder[remove_stages:]
+
+        # Write updated values back
+        arch_kwargs['n_stages'] = n_stages
+        arch_kwargs['features_per_stage'] = features_per_stage
+        arch_kwargs['kernel_sizes'] = kernel_sizes
+        arch_kwargs['strides'] = strides
+        arch_kwargs['n_conv_per_stage'] = n_conv_per_stage
+        arch_kwargs['n_conv_per_stage_decoder'] = n_conv_per_stage_decoder
+
+        arch['arch_kwargs'] = arch_kwargs
+        config_dict['architecture'] = arch
+        plans_dict['configurations'][config_name] = config_dict
 
 def maybe_load_checkpoint(nnunet_trainer: nnUNetTrainer, continue_training: bool, validation_only: bool,
                           pretrained_weights_file: str = None):
@@ -145,7 +223,8 @@ def run_training(dataset_name_or_id: Union[str, int],
                  only_run_validation: bool = False,
                  disable_checkpointing: bool = False,
                  val_with_best: bool = False,
-                 device: torch.device = torch.device('cuda')):
+                 device: torch.device = torch.device('cuda'),
+                 bottleneck_removal_layers: Optional[int] = None):
     if plans_identifier == 'nnUNetPlans':
         print("\n############################\n"
               "INFO: You are using the old nnU-Net default plans. We have updated our recommendations. "
@@ -190,7 +269,7 @@ def run_training(dataset_name_or_id: Union[str, int],
                  join=True)
     else:
         nnunet_trainer = get_trainer_from_args(dataset_name_or_id, configuration, fold, trainer_class_name,
-                                               plans_identifier, device=device)
+                                               plans_identifier, device=device, bottleneck_removal_layers = bottleneck_removal_layers)
 
         if disable_checkpointing:
             nnunet_trainer.disable_checkpointing = disable_checkpointing
@@ -248,6 +327,9 @@ def run_training_entry():
                     help="Use this to set the device the training should run with. Available options are 'cuda' "
                          "(GPU), 'cpu' (CPU) and 'mps' (Apple M1/M2). Do NOT use this to set which GPU ID! "
                          "Use CUDA_VISIBLE_DEVICES=X nnUNetv2_train [...] instead!")
+    # Add bottleneck_removal_layers here
+    parser.add_argument('--bottleneck_removal_layers', type=int, default=None, required=False,
+                        help='[OPTIONAL] Number of bottleneck layers to remove from the architecture (if any).')
     args = parser.parse_args()
 
     assert args.device in ['cpu', 'cuda', 'mps'], f'-device must be either cpu, mps or cuda. Other devices are not tested/supported. Got: {args.device}.'
@@ -266,7 +348,7 @@ def run_training_entry():
 
     run_training(args.dataset_name_or_id, args.configuration, args.fold, args.tr, args.p, args.pretrained_weights,
                  args.num_gpus, args.npz, args.c, args.val, args.disable_checkpointing, args.val_best,
-                 device=device)
+                 device=device, bottleneck_removal_layers=args.bottleneck_removal_layers)
 
 
 if __name__ == '__main__':

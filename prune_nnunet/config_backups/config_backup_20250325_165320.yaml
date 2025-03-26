@@ -1,11 +1,6 @@
 prune:
   checkpoint_name: checkpoint_final.pth
   fold:
-  - - 0
-    - 1
-    - 2
-    - 3
-    - 4
   - - all
   gt_folder: nnUNet_raw/Dataset027_ACDC/labelsTs
   input_folder: nnUNet_raw/Dataset027_ACDC/imagesTs

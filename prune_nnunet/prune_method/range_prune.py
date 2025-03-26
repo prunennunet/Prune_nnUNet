@@ -143,7 +143,7 @@ def apply_range_pruning_to_model(model, min_val: float, max_val: float, prune_we
     return model
 
 
-def process_range_pruning_results(root_dir):
+def process_range_pruning_results(root_dir, pruning_method_name=None):
     """Process all directories and extract required information."""
     results = []
     root_dir_path = Path(root_dir)
@@ -154,6 +154,9 @@ def process_range_pruning_results(root_dir):
             continue
 
         pruning_method = pruning_method_dir.name
+
+        if pruning_method is not None and pruning_method != pruning_method_name:
+            continue
 
         # Walk through each pruning configuration
         for config_dir in pruning_method_dir.iterdir():

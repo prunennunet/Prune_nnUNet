@@ -1,156 +1,80 @@
 encoder.stages.0.0.convs.0.conv.weight
+(32, 1, 3, 3)
 encoder.stages.0.0.convs.0.conv.bias
-encoder.stages.0.0.convs.0.all_modules.0.weight
-encoder.stages.0.0.convs.0.all_modules.0.bias
+(32,)
 encoder.stages.0.0.convs.1.conv.weight
+(32, 32, 3, 3)
 encoder.stages.0.0.convs.1.conv.bias
-encoder.stages.0.0.convs.1.all_modules.0.weight
-encoder.stages.0.0.convs.1.all_modules.0.bias
+(32,)
 encoder.stages.1.0.convs.0.conv.weight
+(64, 32, 3, 3)
 encoder.stages.1.0.convs.0.conv.bias
-encoder.stages.1.0.convs.0.all_modules.0.weight
-encoder.stages.1.0.convs.0.all_modules.0.bias
+(64,)
 encoder.stages.1.0.convs.1.conv.weight
+(64, 64, 3, 3)
 encoder.stages.1.0.convs.1.conv.bias
-encoder.stages.1.0.convs.1.all_modules.0.weight
-encoder.stages.1.0.convs.1.all_modules.0.bias
+(64,)
 encoder.stages.2.0.convs.0.conv.weight
+(128, 64, 3, 3)
 encoder.stages.2.0.convs.0.conv.bias
-encoder.stages.2.0.convs.0.all_modules.0.weight
-encoder.stages.2.0.convs.0.all_modules.0.bias
+(128,)
 encoder.stages.2.0.convs.1.conv.weight
+(128, 128, 3, 3)
 encoder.stages.2.0.convs.1.conv.bias
-encoder.stages.2.0.convs.1.all_modules.0.weight
-encoder.stages.2.0.convs.1.all_modules.0.bias
+(128,)
 encoder.stages.3.0.convs.0.conv.weight
+(256, 128, 3, 3)
 encoder.stages.3.0.convs.0.conv.bias
-encoder.stages.3.0.convs.0.all_modules.0.weight
-encoder.stages.3.0.convs.0.all_modules.0.bias
+(256,)
 encoder.stages.3.0.convs.1.conv.weight
+(256, 256, 3, 3)
 encoder.stages.3.0.convs.1.conv.bias
-encoder.stages.3.0.convs.1.all_modules.0.weight
-encoder.stages.3.0.convs.1.all_modules.0.bias
-encoder.stages.4.0.convs.0.conv.weight
-encoder.stages.4.0.convs.0.conv.bias
-encoder.stages.4.0.convs.0.all_modules.0.weight
-encoder.stages.4.0.convs.0.all_modules.0.bias
-encoder.stages.4.0.convs.1.conv.weight
-encoder.stages.4.0.convs.1.conv.bias
-encoder.stages.4.0.convs.1.all_modules.0.weight
-encoder.stages.4.0.convs.1.all_modules.0.bias
-encoder.stages.5.0.convs.0.conv.weight
-encoder.stages.5.0.convs.0.conv.bias
-encoder.stages.5.0.convs.0.all_modules.0.weight
-encoder.stages.5.0.convs.0.all_modules.0.bias
-encoder.stages.5.0.convs.1.conv.weight
-encoder.stages.5.0.convs.1.conv.bias
-encoder.stages.5.0.convs.1.all_modules.0.weight
-encoder.stages.5.0.convs.1.all_modules.0.bias
-decoder.encoder.stages.0.0.convs.0.conv.weight
-decoder.encoder.stages.0.0.convs.0.conv.bias
-decoder.encoder.stages.0.0.convs.0.all_modules.0.weight
-decoder.encoder.stages.0.0.convs.0.all_modules.0.bias
-decoder.encoder.stages.0.0.convs.1.conv.weight
-decoder.encoder.stages.0.0.convs.1.conv.bias
-decoder.encoder.stages.0.0.convs.1.all_modules.0.weight
-decoder.encoder.stages.0.0.convs.1.all_modules.0.bias
-decoder.encoder.stages.1.0.convs.0.conv.weight
-decoder.encoder.stages.1.0.convs.0.conv.bias
-decoder.encoder.stages.1.0.convs.0.all_modules.0.weight
-decoder.encoder.stages.1.0.convs.0.all_modules.0.bias
-decoder.encoder.stages.1.0.convs.1.conv.weight
-decoder.encoder.stages.1.0.convs.1.conv.bias
-decoder.encoder.stages.1.0.convs.1.all_modules.0.weight
-decoder.encoder.stages.1.0.convs.1.all_modules.0.bias
-decoder.encoder.stages.2.0.convs.0.conv.weight
-decoder.encoder.stages.2.0.convs.0.conv.bias
-decoder.encoder.stages.2.0.convs.0.all_modules.0.weight
-decoder.encoder.stages.2.0.convs.0.all_modules.0.bias
-decoder.encoder.stages.2.0.convs.1.conv.weight
-decoder.encoder.stages.2.0.convs.1.conv.bias
-decoder.encoder.stages.2.0.convs.1.all_modules.0.weight
-decoder.encoder.stages.2.0.convs.1.all_modules.0.bias
-decoder.encoder.stages.3.0.convs.0.conv.weight
-decoder.encoder.stages.3.0.convs.0.conv.bias
-decoder.encoder.stages.3.0.convs.0.all_modules.0.weight
-decoder.encoder.stages.3.0.convs.0.all_modules.0.bias
-decoder.encoder.stages.3.0.convs.1.conv.weight
-decoder.encoder.stages.3.0.convs.1.conv.bias
-decoder.encoder.stages.3.0.convs.1.all_modules.0.weight
-decoder.encoder.stages.3.0.convs.1.all_modules.0.bias
-decoder.encoder.stages.4.0.convs.0.conv.weight
-decoder.encoder.stages.4.0.convs.0.conv.bias
-decoder.encoder.stages.4.0.convs.0.all_modules.0.weight
-decoder.encoder.stages.4.0.convs.0.all_modules.0.bias
-decoder.encoder.stages.4.0.convs.1.conv.weight
-decoder.encoder.stages.4.0.convs.1.conv.bias
-decoder.encoder.stages.4.0.convs.1.all_modules.0.weight
-decoder.encoder.stages.4.0.convs.1.all_modules.0.bias
-decoder.encoder.stages.5.0.convs.0.conv.weight
-decoder.encoder.stages.5.0.convs.0.conv.bias
-decoder.encoder.stages.5.0.convs.0.all_modules.0.weight
-decoder.encoder.stages.5.0.convs.0.all_modules.0.bias
-decoder.encoder.stages.5.0.convs.1.conv.weight
-decoder.encoder.stages.5.0.convs.1.conv.bias
-decoder.encoder.stages.5.0.convs.1.all_modules.0.weight
-decoder.encoder.stages.5.0.convs.1.all_modules.0.bias
+(256,)
 decoder.stages.0.convs.0.conv.weight
+(128, 256, 3, 3)
 decoder.stages.0.convs.0.conv.bias
-decoder.stages.0.convs.0.all_modules.0.weight
-decoder.stages.0.convs.0.all_modules.0.bias
+(128,)
 decoder.stages.0.convs.1.conv.weight
+(128, 128, 3, 3)
 decoder.stages.0.convs.1.conv.bias
-decoder.stages.0.convs.1.all_modules.0.weight
-decoder.stages.0.convs.1.all_modules.0.bias
+(128,)
 decoder.stages.1.convs.0.conv.weight
+(64, 128, 3, 3)
 decoder.stages.1.convs.0.conv.bias
-decoder.stages.1.convs.0.all_modules.0.weight
-decoder.stages.1.convs.0.all_modules.0.bias
+(64,)
 decoder.stages.1.convs.1.conv.weight
+(64, 64, 3, 3)
 decoder.stages.1.convs.1.conv.bias
-decoder.stages.1.convs.1.all_modules.0.weight
-decoder.stages.1.convs.1.all_modules.0.bias
+(64,)
 decoder.stages.2.convs.0.conv.weight
+(32, 64, 3, 3)
 decoder.stages.2.convs.0.conv.bias
-decoder.stages.2.convs.0.all_modules.0.weight
-decoder.stages.2.convs.0.all_modules.0.bias
+(32,)
 decoder.stages.2.convs.1.conv.weight
+(32, 32, 3, 3)
 decoder.stages.2.convs.1.conv.bias
-decoder.stages.2.convs.1.all_modules.0.weight
-decoder.stages.2.convs.1.all_modules.0.bias
-decoder.stages.3.convs.0.conv.weight
-decoder.stages.3.convs.0.conv.bias
-decoder.stages.3.convs.0.all_modules.0.weight
-decoder.stages.3.convs.0.all_modules.0.bias
-decoder.stages.3.convs.1.conv.weight
-decoder.stages.3.convs.1.conv.bias
-decoder.stages.3.convs.1.all_modules.0.weight
-decoder.stages.3.convs.1.all_modules.0.bias
-decoder.stages.4.convs.0.conv.weight
-decoder.stages.4.convs.0.conv.bias
-decoder.stages.4.convs.0.all_modules.0.weight
-decoder.stages.4.convs.0.all_modules.0.bias
-decoder.stages.4.convs.1.conv.weight
-decoder.stages.4.convs.1.conv.bias
-decoder.stages.4.convs.1.all_modules.0.weight
-decoder.stages.4.convs.1.all_modules.0.bias
+(32,)
 decoder.transpconvs.0.weight
+(256, 128, 2, 2)
 decoder.transpconvs.0.bias
+(128,)
 decoder.transpconvs.1.weight
+(128, 64, 2, 2)
 decoder.transpconvs.1.bias
+(64,)
 decoder.transpconvs.2.weight
+(64, 32, 2, 2)
 decoder.transpconvs.2.bias
-decoder.transpconvs.3.weight
-decoder.transpconvs.3.bias
-decoder.transpconvs.4.weight
-decoder.transpconvs.4.bias
+(32,)
 decoder.seg_layers.0.weight
+(4, 128, 1, 1)
 decoder.seg_layers.0.bias
+(4,)
 decoder.seg_layers.1.weight
+(4, 64, 1, 1)
 decoder.seg_layers.1.bias
+(4,)
 decoder.seg_layers.2.weight
+(4, 32, 1, 1)
 decoder.seg_layers.2.bias
-decoder.seg_layers.3.weight
-decoder.seg_layers.3.bias
-decoder.seg_layers.4.weight
-decoder.seg_layers.4.bias
+(4,)

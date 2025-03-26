@@ -55,16 +55,16 @@ class FlowPruningMethod(prune.BasePruningMethod):
             return mask
 
         # Calculate the number of channels (assuming the channel dimension is the 0th dimension)
-        num_channels = t.shape[0]
+        num_channels = t.shape[1]
         half_channels = num_channels // 2
 
         # Determine which half to prune based on del_flow
         if self.del_flow == 'encoder':
             # Prune the first half of channels if we're eliminating encoder flow
-            mask[:half_channels] = 0
+            mask[:, :half_channels] = 0
         elif self.del_flow == 'decoder':
             # Prune the second half of channels if we're eliminating decoder flow
-            mask[half_channels:] = 0
+            mask[:, half_channels:] = 0
         else:
             raise ValueError(f"Invalid value for del_flow: {self.del_flow}. Expected 'encoder' or 'decoder'.")
 
@@ -77,8 +77,7 @@ def prune_flow_values(module, name, eliminate_data_flow):
     return module
 
 
-def apply_flow_pruning_to_model(model, eliminate_data_flow, prune_weights: bool = True, prune_bias: bool = False,
-                                prune_layers: list = None):
+def apply_flow_pruning_to_model(model, eliminate_data_flow, prune_weights: bool = True, prune_layers: list = None):
     """
     Apply flow-based pruning to specifically named layers in a model.
 
@@ -133,21 +132,32 @@ def apply_flow_pruning_to_model(model, eliminate_data_flow, prune_weights: bool 
                     print(
                         f"{name}.weight: pruned {pruned_layer}/{total_layer} weights ({pruned_layer / total_layer:.2%})")
 
-            # Prune bias if specified and if the module has bias
-            if prune_bias and hasattr(module, 'bias') and module.bias is not None:
+            if hasattr(module, 'bias') and module.bias is not None:
                 original_bias = module.bias.data.clone()
                 total_bias = original_bias.numel()
                 total_count += total_bias
 
-                # Apply flow pruning to bias
-                prune_flow_values(module, 'bias', eliminate_data_flow)
-
-                # Count pruned bias values
                 if hasattr(module, 'bias_mask'):
                     pruned_bias = (module.bias_mask == 0).sum().item()
                     pruned_count += pruned_bias
                     print(
                         f"{name}.bias: pruned {pruned_bias}/{total_bias} bias values ({pruned_bias / total_bias:.2%})")
+
+            # # Prune bias if specified and if the module has bias
+            # if prune_bias and hasattr(module, 'bias') and module.bias is not None:
+            #     original_bias = module.bias.data.clone()
+            #     total_bias = original_bias.numel()
+            #     total_count += total_bias
+            #
+            #     # Apply flow pruning to bias
+            #     prune_flow_values(module, 'bias', eliminate_data_flow)
+            #
+            #     # Count pruned bias values
+            #     if hasattr(module, 'bias_mask'):
+            #         pruned_bias = (module.bias_mask == 0).sum().item()
+            #         pruned_count += pruned_bias
+            #         print(
+            #             f"{name}.bias: pruned {pruned_bias}/{total_bias} bias values ({pruned_bias / total_bias:.2%})")
 
     # Print overall statistics
     if total_count > 0:
@@ -156,7 +166,7 @@ def apply_flow_pruning_to_model(model, eliminate_data_flow, prune_weights: bool 
     return model
 
 
-def process_flow_pruning_results(root_dir):
+def process_flow_pruning_results(root_dir, pruning_method_name=None):
     """
     Process all directories and extract required information for flow pruning experiments.
 
@@ -179,6 +189,9 @@ def process_flow_pruning_results(root_dir):
 
         pruning_method = pruning_method_dir.name
 
+        if pruning_method is not None and pruning_method != pruning_method_name:
+            continue
+
         # Walk through each pruning configuration
         for config_dir in pruning_method_dir.iterdir():
             if not config_dir.is_dir():
@@ -190,22 +203,16 @@ def process_flow_pruning_results(root_dir):
 
             # Initialize parameters
             eliminate_data_flow = None
-            prune_bias = None
             prune_layers = ""
             prune_weights = None
 
             # Extract parameters from each part
             for part in config_parts:
                 if part.startswith("eliminate_data_flow_"):
-                    flow_value = part.split("eliminate_data_flow_")[1]
-                    # Convert "None" string to None
-                    eliminate_data_flow = None if flow_value.lower() == "none" else flow_value
-                elif part.startswith("prune_bias_"):
-                    prune_bias_value = part.split("prune_bias_")[1]
-                    prune_bias = prune_bias_value.lower() == "true"
+                    eliminate_data_flow = part.split("eliminate_data_flow_")[1]
                 elif part.startswith("prune_layers_"):
                     layers_str = part.split("prune_layers_")[1]
-                    prune_layers = layers_str.split('_')  # Split into a list of layer names
+                    prune_layers = layers_str.split('_')  # Split into a list of layer types
                 elif part.startswith("prune_weights_"):
                     prune_weights_value = part.split("prune_weights_")[1]
                     prune_weights = prune_weights_value.lower() == "true"
@@ -215,7 +222,7 @@ def process_flow_pruning_results(root_dir):
                 if not fold_dir.is_dir():
                     continue
 
-                # Parse fold number
+                # fold_num = int(fold_dir.name.split('_')[1])
                 fold_part = fold_dir.name.split('_')[1]
                 if fold_part == 'all':
                     fold_num = 'all'
@@ -322,7 +329,6 @@ def process_flow_pruning_results(root_dir):
                         'fold': fold_num,
                         'prune_method': pruning_method,
                         'eliminate_data_flow': eliminate_data_flow,
-                        'prune_bias': prune_bias,
                         'prune_layers': prune_layers,
                         'prune_weights': prune_weights,
                         'model_type': model_type,  # Distinguish between final_model and best_model
@@ -334,3 +340,71 @@ def process_flow_pruning_results(root_dir):
                     print(f"Processed {model_type} for fold {fold_num} for {config_dir.name}")
 
     return results
+
+
+def save_flow_pruning_results(results, json_file, csv_file):
+    """Save flow pruning results to JSON and CSV files."""
+    # Save as JSON
+    with open(json_file, 'w') as f:
+        json.dump(results, f, indent=2)
+    print(f"Saved JSON results to {json_file}")
+
+    # Save as CSV
+    with open(csv_file, 'w') as f:
+        # Write header
+        header = ['fold', 'prune_method', 'eliminate_data_flow', 'prune_layers', 'prune_weights', 'model_type']
+
+        # Get all performance keys
+        performance_keys = set()
+        for result in results:
+            performance_keys.update(result.get('performance', {}).keys())
+
+        for key in sorted(performance_keys):
+            header.append(f'performance_{key}')
+
+        # Add pruning stats
+        header.extend([
+            'weights_zeros', 'weights_total', 'weights_percentage',
+            'biases_zeros', 'biases_total', 'biases_percentage',
+            'total_zeros', 'total_total', 'total_percentage'
+        ])
+
+        f.write(','.join(header) + '\n')
+
+        # Write data rows
+        for result in results:
+            # Convert prune_layers list to a string if it's a list
+            prune_layers_value = result.get('prune_layers', '')
+            if isinstance(prune_layers_value, list):
+                prune_layers_value = '_'.join(prune_layers_value)
+
+            row = [
+                str(result['fold']),
+                result['prune_method'],
+                str(result.get('eliminate_data_flow', '')),
+                str(prune_layers_value),
+                str(result.get('prune_weights', '')),
+                result.get('model_type', '')  # New field to distinguish between final_model and best_model
+            ]
+
+            # Add performance values
+            for key in sorted(performance_keys):
+                row.append(str(result.get('performance', {}).get(key, '')))
+
+            # Add pruning stats
+            pruning_stats = result.get('pruning_stats', {})
+            row.extend([
+                str(pruning_stats.get('weights_zeros', '')),
+                str(pruning_stats.get('weights_total', '')),
+                str(pruning_stats.get('weights_percentage', '')),
+                str(pruning_stats.get('biases_zeros', '')),
+                str(pruning_stats.get('biases_total', '')),
+                str(pruning_stats.get('biases_percentage', '')),
+                str(pruning_stats.get('total_zeros', '')),
+                str(pruning_stats.get('total_total', '')),
+                str(pruning_stats.get('total_percentage', ''))
+            ])
+
+            f.write(','.join(row) + '\n')
+
+    print(f"Saved CSV results to {csv_file}")

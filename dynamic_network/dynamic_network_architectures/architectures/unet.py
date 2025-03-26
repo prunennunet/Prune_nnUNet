@@ -1,4 +1,4 @@
-from typing import Union, Type, List, Tuple
+from typing import Union, Type, List, Tuple, Optional
 
 import torch
 from dynamic_network_architectures.building_blocks.helper import convert_conv_op_to_dim
@@ -50,6 +50,7 @@ class PlainConvUNet(nn.Module):
                                                                 f"as we have resolution stages. here: {n_stages} " \
                                                                 f"stages, so it should have {n_stages - 1} entries. " \
                                                                 f"n_conv_per_stage_decoder: {n_conv_per_stage_decoder}"
+
         self.encoder = PlainConvEncoder(input_channels, n_stages, features_per_stage, conv_op, kernel_sizes, strides,
                                         n_conv_per_stage, conv_bias, norm_op, norm_op_kwargs, dropout_op,
                                         dropout_op_kwargs, nonlin, nonlin_kwargs, return_skips=True,

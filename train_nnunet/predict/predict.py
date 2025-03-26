@@ -171,4 +171,7 @@ def build_predict_cmd(predict_config, train_config, fold):
     if predict_config.get('disable_progress_bar', False):
         cmd.append('--disable_progress_bar')
 
+    if predict_config.get('return_intermediates', False):
+        cmd.append('--return_intermediates')
+
     return cmd

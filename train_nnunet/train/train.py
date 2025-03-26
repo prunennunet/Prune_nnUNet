@@ -55,6 +55,10 @@ def build_train_cmd(config, fold):
     if 'device' in config and str(config['device']) != 'cuda':
         cmd.extend(['-device', str(config['device'])])
 
+    # Add bottleneck_removal_layers if present
+    if 'bottleneck_removal_layers' in config and config['bottleneck_removal_layers'] is not None:
+        cmd.extend(['--bottleneck_removal_layers', str(config['bottleneck_removal_layers'])])
+
     # Boolean flags (no values)
     if config.get('npz', False):
         cmd.append('--npz')

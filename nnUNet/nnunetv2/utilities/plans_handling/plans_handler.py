@@ -225,6 +225,86 @@ class PlansManager(object):
         """
         self.plans = plans_file_or_dict if isinstance(plans_file_or_dict, dict) else load_json(plans_file_or_dict)
 
+    def bottleneck_removal(self, bottleneck_removal_layers: int):
+        """
+        Modify the architecture arch_kwargs in each configuration to remove
+        some of the top-most (deepest) stages from the encoder and
+        the corresponding earliest stages in the decoder.
+        """
+        print(f"{'=' * 25}MOVING BOTTLENECK UPWARDS{'=' * 25}")
+
+        for config_name, config_dict in self.plans['configurations'].items():
+            arch = config_dict.get('architecture', {})
+            arch_kwargs = arch.get('arch_kwargs', None)
+
+            # If there's no arch_kwargs, skip
+            if arch_kwargs is None:
+                continue
+
+            n_stages = arch_kwargs.get('n_stages', None)
+            if n_stages is None:
+                # No n_stages → probably no encoder structure to remove
+                continue
+
+            # If bottleneck_removal_layers is None or <= 0, do nothing
+            if bottleneck_removal_layers <= 0:
+                raise ValueError(
+                    f"The bottleneck removal layers must be greater than 0."
+                )
+
+            # If removal is >= n_stages, that doesn't make sense
+            if bottleneck_removal_layers >= n_stages:
+                raise ValueError(
+                    f"`bottleneck_removal_layers` ({bottleneck_removal_layers}) >= "
+                    f"`n_stages` ({n_stages}) for '{config_name}'. Cannot remove more stages than exist."
+                )
+
+            # The number of stages we will actually remove
+            remove_stages = min(bottleneck_removal_layers, n_stages - 1)
+
+            # Grab lists to slice
+            features_per_stage = arch_kwargs.get('features_per_stage')
+            kernel_sizes = arch_kwargs.get('kernel_sizes')
+            strides = arch_kwargs.get('strides')
+            n_conv_per_stage = arch_kwargs.get('n_conv_per_stage')
+            n_conv_per_stage_decoder = arch_kwargs.get('n_conv_per_stage_decoder')
+
+            # Remove from the end of these lists
+            if isinstance(features_per_stage, (list, tuple)):
+                features_per_stage = features_per_stage[:-remove_stages]
+            if isinstance(kernel_sizes, (list, tuple)):
+                kernel_sizes = kernel_sizes[:-remove_stages]
+            if isinstance(strides, (list, tuple)):
+                strides = strides[:-remove_stages]
+            if isinstance(n_conv_per_stage, (list, tuple)):
+                n_conv_per_stage = n_conv_per_stage[:-remove_stages]
+
+            # Decrement the total number of encoder stages
+            n_stages -= remove_stages
+
+            # Remove from the front of the decoder list
+            if isinstance(n_conv_per_stage_decoder, (list, tuple)):
+                # Only remove `remove_stages` if we actually have that many
+                if len(n_conv_per_stage_decoder) >= remove_stages:
+                    n_conv_per_stage_decoder = n_conv_per_stage_decoder[remove_stages:]
+
+            # Update arch_kwargs in place
+            arch_kwargs['n_stages'] = n_stages
+            arch_kwargs['features_per_stage'] = features_per_stage
+            arch_kwargs['kernel_sizes'] = kernel_sizes
+            arch_kwargs['strides'] = strides
+            arch_kwargs['n_conv_per_stage'] = n_conv_per_stage
+            arch_kwargs['n_conv_per_stage_decoder'] = n_conv_per_stage_decoder
+
+            # Write back
+            arch['arch_kwargs'] = arch_kwargs
+            config_dict['architecture'] = arch
+            self.plans['configurations'][config_name] = config_dict
+
+        # Clear any caches that rely on self.plans to avoid stale data
+        self.get_configuration.cache_clear()
+        print(f"{'=' * 60}")
+
     def __repr__(self):
         return self.plans.__repr__()
 

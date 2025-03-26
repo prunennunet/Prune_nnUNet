@@ -1,5 +1,6 @@
 import inspect
 import itertools
+import json
 import multiprocessing
 import os
 from copy import deepcopy
@@ -8,6 +9,7 @@ from threading import Thread
 from time import sleep
 from typing import Tuple, Union, List, Optional
 
+import h5py
 import numpy as np
 import torch
 from acvl_utils.cropping_and_padding.padding import pad_nd_image
@@ -16,6 +18,7 @@ from batchgenerators.utilities.file_and_folder_operations import load_json, join
     save_json
 from torch import nn
 from torch._dynamo import OptimizedModule
+from torch._prims_common import DeviceLikeType
 from torch.nn.parallel import DistributedDataParallel
 from tqdm import tqdm
 
@@ -34,6 +37,88 @@ from nnunetv2.utilities.json_export import recursive_fix_for_json_export
 from nnunetv2.utilities.label_handling.label_handling import determine_num_input_channels
 from nnunetv2.utilities.plans_handling.plans_handler import PlansManager, ConfigurationManager
 from nnunetv2.utilities.utils import create_lists_from_splitted_dataset_folder
+
+
+def _flip_dict_of_tensors(data_dict: dict, flip_axes) -> dict:
+    """Recursively flip all Tensors in the dict along the given axes."""
+    out_dict = {}
+    for k, v in data_dict.items():
+        if isinstance(v, torch.Tensor):
+            out_dict[k] = torch.flip(v, flip_axes)
+        elif isinstance(v, dict):
+            out_dict[k] = _flip_dict_of_tensors(v, flip_axes)
+        else:
+            # For completeness: if it's not a Tensor or dict, copy as is
+            out_dict[k] = v
+    return out_dict
+
+
+def _sum_dict_of_tensors(d1: dict, d2: dict) -> dict:
+    """Recursively sum all Tensors in two equally-structured dicts."""
+    out_dict = {}
+    for k in d1.keys():
+        if isinstance(d1[k], torch.Tensor):
+            out_dict[k] = d1[k] + d2[k]
+        elif isinstance(d1[k], dict):
+            out_dict[k] = _sum_dict_of_tensors(d1[k], d2[k])
+        else:
+            out_dict[k] = d1[k]  # or do something more sophisticated if needed
+    return out_dict
+
+
+def _div_dict_of_tensors(data_dict: dict, divisor: float) -> dict:
+    """Recursively divide all Tensors in the dict by a scalar."""
+    out_dict = {}
+    for k, v in data_dict.items():
+        if isinstance(v, torch.Tensor):
+            out_dict[k] = v / divisor
+        elif isinstance(v, dict):
+            out_dict[k] = _div_dict_of_tensors(v, divisor)
+        else:
+            out_dict[k] = v
+    return out_dict
+
+
+def _convert_dict_of_tensors_to_numpy(data_dict: dict) -> dict:
+    """Recursively convert all Tensors in the dict to numpy arrays for JSON serialization."""
+    out_dict = {}
+    for k, v in data_dict.items():
+        if isinstance(v, torch.Tensor):
+            # Detach if requires_grad, move to CPU if not already, convert to numpy
+            out_dict[k] = v.detach().cpu().numpy().tolist()
+        elif isinstance(v, dict):
+            out_dict[k] = _convert_dict_of_tensors_to_numpy(v)
+        else:
+            out_dict[k] = v
+    return out_dict
+
+
+def _save_tensors_to_hdf5(data_dict, h5_group):
+    """
+    Recursively save tensors from nested dictionaries to HDF5 groups.
+
+    Args:
+        data_dict: Dictionary containing tensors or nested dictionaries
+        h5_group: h5py Group object where data will be stored
+    """
+    for key, value in data_dict.items():
+        if isinstance(value, torch.Tensor):
+            # Convert tensor to numpy and save
+            # String keys in HDF5 must be strings, not integers
+            h5_group.create_dataset(str(key), data=value.detach().cpu().numpy(),
+                                    compression="gzip", compression_opts=4)
+        elif isinstance(value, dict):
+            # Create a new group for nested dictionary
+            nested_group = h5_group.create_group(str(key))
+            # Recursively save the nested dictionary
+            _save_tensors_to_hdf5(value, nested_group)
+        else:
+            # For non-tensor data (like scalars), save as attributes
+            try:
+                h5_group.attrs[str(key)] = value
+            except:
+                # If can't save as attribute, convert to string
+                h5_group.attrs[str(key)] = str(value)
 
 
 class nnUNetPredictor(object):
@@ -63,6 +148,13 @@ class nnUNetPredictor(object):
             perform_everything_on_device = False
         self.device = device
         self.perform_everything_on_device = perform_everything_on_device
+        # ==================NEWLY CREATED ATTRIBUTES=================
+        self.output_dir_for_intermediate_features = None
+        self.output_filename_for_intermediate_features = None
+        self.return_intermediate_features = False
+        self.already_saved = False
+        self.max_save = 5
+        self.save_counter = 0
 
     def initialize_from_trained_model_folder(self, model_training_output_dir: str,
                                              use_folds: Union[Tuple[Union[int, str]], None],
@@ -229,6 +321,10 @@ class nnUNetPredictor(object):
         else:
             output_folder = None
 
+        if self.return_intermediate_features:
+            self.output_dir_for_intermediate_features = join(output_folder, 'intermediate_features')
+            maybe_mkdir_p(self.output_dir_for_intermediate_features)
+
         ########################
         # let's store the input arguments so that its clear what was used to generate the prediction
         if output_folder is not None:
@@ -370,6 +466,8 @@ class nnUNetPredictor(object):
                 ofile = preprocessed['ofile']
                 if ofile is not None:
                     print(f'\nPredicting {os.path.basename(ofile)}:')
+                    self.output_filename_for_intermediate_features = f'{os.path.basename(ofile)}.h5'
+                    self.already_saved = False
                 else:
                     print(f'\nPredicting image of shape {data.shape}:')
 
@@ -551,10 +649,17 @@ class nnUNetPredictor(object):
     def _internal_maybe_mirror_and_predict(self, x: torch.Tensor) -> torch.Tensor:
         mirror_axes = self.allowed_mirroring_axes if self.use_mirroring else None
 
-        if self.configuration_manager.network_arch_class_name == 'dynamic_network_architectures.architectures.unet.PlainConvUNet':
-            prediction, encoder_intermediates, decoder_intermediates = self.network(x)
+        # The PlainConvUNet architecture returns (prediction, encoder_int, decoder_int) if self.return_intermediate_features=True
+        is_plain_conv_unet = (
+                self.configuration_manager.network_arch_class_name
+                == 'dynamic_network_architectures.architectures.unet.PlainConvUNet'
+        )
+
+        if is_plain_conv_unet:
+            prediction, enc_int, dec_int = self.network(x, self.return_intermediate_features)
         else:
             prediction = self.network(x)
+            enc_int, dec_int = None, None
 
         # prediction = self.network(x)
 
@@ -567,23 +672,65 @@ class nnUNetPredictor(object):
             axes_combinations = [
                 c for i in range(len(mirror_axes)) for c in itertools.combinations(mirror_axes, i + 1)
             ]
+
             for axes in axes_combinations:
-                if self.configuration_manager.network_arch_class_name == 'dynamic_network_architectures.architectures.unet.PlainConvUNet':
-                    p, encoder_intermediates, decoder_intermediates = self.network(torch.flip(x, axes))
-                    p = torch.flip(p, axes)
-                    prediction += p
+                if is_plain_conv_unet:
+                    flip_prediction, flip_enc_int, flip_dec_int = self.network(torch.flip(x, axes), self.return_intermediate_features)
+                    flip_back_prediction = torch.flip(flip_prediction, axes)
+                    prediction += flip_back_prediction
+                    if self.return_intermediate_features:
+                        # flip the intermediate feature maps
+                        flip_enc_int = _flip_dict_of_tensors(flip_enc_int, axes)
+                        flip_dec_int = _flip_dict_of_tensors(flip_dec_int, axes)
+
+                        # now sum them up
+                        enc_int = _sum_dict_of_tensors(enc_int, flip_enc_int)
+                        dec_int = _sum_dict_of_tensors(dec_int, flip_dec_int)
                 else:
                     prediction += torch.flip(self.network(torch.flip(x, axes)), axes)
 
                 # prediction += torch.flip(self.network(torch.flip(x, axes)), axes)
-            prediction /= (len(axes_combinations) + 1)
+            divisor = len(axes_combinations) + 1
+            prediction /= divisor
+
+            if self.return_intermediate_features and is_plain_conv_unet:
+                enc_int = _div_dict_of_tensors(enc_int, divisor)
+                dec_int = _div_dict_of_tensors(dec_int, divisor)
+
+        if self.return_intermediate_features and not self.already_saved and self.save_counter < self.max_save:
+            print(self.output_dir_for_intermediate_features)
+            print(self.output_filename_for_intermediate_features)
+            save_path = join(self.output_dir_for_intermediate_features, self.output_filename_for_intermediate_features)
+            if enc_int is not None and dec_int is not None:
+                # # Convert tensor data to serializable format (lists)
+                # enc_int_serializable = _convert_dict_of_tensors_to_numpy(enc_int)
+                # dec_int_serializable = _convert_dict_of_tensors_to_numpy(dec_int)
+                #
+                # # Save to JSON file
+                # with open(save_path, 'w') as f:
+                #     json_data = {
+                #         'encoder_intermediates': enc_int_serializable,
+                #         'decoder_intermediates': dec_int_serializable
+                #     }
+                #     json.dump(json_data, f)
+
+                # Save to HDF5
+                with h5py.File(save_path, 'w') as f:
+                    encoder_group = f.create_group('encoder_intermediates')
+                    _save_tensors_to_hdf5(enc_int, encoder_group)
+
+                    decoder_group = f.create_group('decoder_intermediates')
+                    _save_tensors_to_hdf5(dec_int, decoder_group)
+                self.already_saved = True
+                self.save_counter += 1
+
         return prediction
 
     @torch.inference_mode()
     def _internal_predict_sliding_window_return_logits(self,
                                                        data: torch.Tensor,
                                                        slicers,
-                                                       do_on_device: bool = True,
+                                                       do_on_device: bool = True
                                                        ):
         predicted_logits = n_predictions = prediction = gaussian = workon = None
         results_device = self.device if do_on_device else torch.device('cpu')
@@ -789,6 +936,10 @@ class nnUNetPredictor(object):
         empty_cache(self.device)
         return ret
 
+    def set_return_intermediates_true(self):
+        self.return_intermediate_features = True
+        return
+
 
 def predict_entry_point_modelfolder():
     import argparse
@@ -838,6 +989,8 @@ def predict_entry_point_modelfolder():
     parser.add_argument('--disable_progress_bar', action='store_true', required=False, default=False,
                         help='Set this flag to disable progress bar. Recommended for HPC environments (non interactive '
                              'jobs)')
+    parser.add_argument('--return_intermediates', action='store_true', required=False, default=False,
+                        help='Set this flag to return intermediate results during prediction.')
 
     print(
         "\n#######################################################################\nPlease cite the following paper "
@@ -876,6 +1029,10 @@ def predict_entry_point_modelfolder():
                                 allow_tqdm=not args.disable_progress_bar,
                                 verbose_preprocessing=args.verbose)
     predictor.initialize_from_trained_model_folder(args.m, args.f, args.chk)
+
+    if args.return_intermediates:
+        predictor.set_return_intermediates_true()
+
     predictor.predict_from_files(args.i, args.o, save_probabilities=args.save_probabilities,
                                  overwrite=not args.continue_prediction,
                                  num_processes_preprocessing=args.npp,
@@ -947,6 +1104,8 @@ def predict_entry_point():
     parser.add_argument('--disable_progress_bar', action='store_true', required=False, default=False,
                         help='Set this flag to disable progress bar. Recommended for HPC environments (non interactive '
                              'jobs)')
+    parser.add_argument('--return_intermediates', action='store_true', required=False, default=False,
+                        help='Set this flag to return intermediate results during prediction.')
 
     print(
         "\n#######################################################################\nPlease cite the following paper "
@@ -994,6 +1153,10 @@ def predict_entry_point():
         args.f,
         checkpoint_name=args.chk
     )
+
+    if args.return_intermediates:
+        predictor.set_return_intermediates_true()
+
     predictor.predict_from_files(args.i, args.o, save_probabilities=args.save_probabilities,
                                  overwrite=not args.continue_prediction,
                                  num_processes_preprocessing=args.npp,

@@ -43,7 +43,7 @@ def modify_and_run_config(config_path):
 
     prune_bias_values = [True]
     prune_weights_values = [True]
-    prune_layers_values = [['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0'],
+    prune_layers_values = [['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0'], # equivalent to removing decoder information by one layer
                            ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1'],
                            ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2'],
                            ['encoder.stages.5.0.convs.0.conv', 'encoder.stages.5.0.convs.1.conv', 'decoder.transpconvs.0', 'decoder.transpconvs.1', 'decoder.transpconvs.2', 'decoder.transpconvs.3'],

@@ -29,7 +29,7 @@ def main():
 
     process_func = get_process_function(prune_config['prune_method'])
     print(f"Using process function: {process_func.__name__}")
-    results = process_func(base_dir)
+    results = process_func(base_dir, pruning_method_name=prune_config.get('prune_method', None))
     print(results)
 
     json_file = os.path.join(base_dir, prune_config.get('prune_method', ''), "pruning_analysis_results.json")

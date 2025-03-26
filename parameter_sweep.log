@@ -715,3 +715,276 @@
 2025-03-21 10:41:40,697 - INFO - Finished combination 15/15
 2025-03-21 10:41:40,697 - INFO - Restored original config from prune_nnunet/config.yaml.backup
 2025-03-21 10:41:40,697 - INFO - Parameter sweep completed
+2025-03-24 14:37:24,482 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-24 14:37:24,482 - INFO - Starting parameter sweep with 15 combinations
+2025-03-24 14:37:24,482 - INFO - Running combination 1/15:
+2025-03-24 14:37:24,483 - INFO -   prune_data_flow = encoder
+2025-03-24 14:37:24,483 - INFO -   prune_bias = True
+2025-03-24 14:37:24,483 - INFO -   prune_weights = True
+2025-03-24 14:37:24,483 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 14:37:27,868 - INFO - Finished combination 1/15
+2025-03-24 14:37:27,868 - INFO - Running combination 2/15:
+2025-03-24 14:37:27,868 - INFO -   prune_data_flow = encoder
+2025-03-24 14:37:27,868 - INFO -   prune_bias = True
+2025-03-24 14:37:27,868 - INFO -   prune_weights = True
+2025-03-24 14:37:27,868 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 14:37:30,769 - INFO - Finished combination 2/15
+2025-03-24 14:37:30,769 - INFO - Running combination 3/15:
+2025-03-24 14:37:30,769 - INFO -   prune_data_flow = encoder
+2025-03-24 14:37:30,769 - INFO -   prune_bias = True
+2025-03-24 14:37:30,769 - INFO -   prune_weights = True
+2025-03-24 14:37:30,769 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-24 14:37:34,530 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-24 14:37:34,530 - INFO - Starting parameter sweep with 15 combinations
+2025-03-24 14:37:34,530 - INFO - Running combination 1/15:
+2025-03-24 14:37:34,530 - INFO -   prune_data_flow = encoder
+2025-03-24 14:37:34,530 - INFO -   prune_bias = True
+2025-03-24 14:37:34,530 - INFO -   prune_weights = True
+2025-03-24 14:37:34,530 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 14:37:37,371 - INFO - Finished combination 1/15
+2025-03-24 14:37:37,371 - INFO - Running combination 2/15:
+2025-03-24 14:37:37,371 - INFO -   prune_data_flow = encoder
+2025-03-24 14:37:37,371 - INFO -   prune_bias = True
+2025-03-24 14:37:37,371 - INFO -   prune_weights = True
+2025-03-24 14:37:37,371 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 14:44:32,577 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-24 14:44:32,577 - INFO - Starting parameter sweep with 15 combinations
+2025-03-24 14:44:32,577 - INFO - Running combination 1/15:
+2025-03-24 14:44:32,577 - INFO -   prune_data_flow = encoder
+2025-03-24 14:44:32,577 - INFO -   prune_bias = True
+2025-03-24 14:44:32,577 - INFO -   prune_weights = True
+2025-03-24 14:44:32,577 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 14:44:35,352 - INFO - Finished combination 1/15
+2025-03-24 14:44:35,352 - INFO - Running combination 2/15:
+2025-03-24 14:44:35,352 - INFO -   prune_data_flow = encoder
+2025-03-24 14:44:35,352 - INFO -   prune_bias = True
+2025-03-24 14:44:35,352 - INFO -   prune_weights = True
+2025-03-24 14:44:35,352 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 14:44:38,171 - INFO - Finished combination 2/15
+2025-03-24 14:44:38,171 - INFO - Running combination 3/15:
+2025-03-24 14:44:38,171 - INFO -   prune_data_flow = encoder
+2025-03-24 14:44:38,171 - INFO -   prune_bias = True
+2025-03-24 14:44:38,171 - INFO -   prune_weights = True
+2025-03-24 14:44:38,171 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-24 14:45:50,305 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-24 14:45:50,305 - INFO - Starting parameter sweep with 15 combinations
+2025-03-24 14:45:50,305 - INFO - Running combination 1/15:
+2025-03-24 14:45:50,305 - INFO -   prune_data_flow = encoder
+2025-03-24 14:45:50,305 - INFO -   prune_weights = True
+2025-03-24 14:45:50,305 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 14:46:10,727 - INFO - Finished combination 1/15
+2025-03-24 14:46:10,727 - INFO - Running combination 2/15:
+2025-03-24 14:46:10,727 - INFO -   prune_data_flow = encoder
+2025-03-24 14:46:10,727 - INFO -   prune_weights = True
+2025-03-24 14:46:10,727 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 14:46:31,132 - INFO - Finished combination 2/15
+2025-03-24 14:46:31,132 - INFO - Running combination 3/15:
+2025-03-24 14:46:31,132 - INFO -   prune_data_flow = encoder
+2025-03-24 14:46:31,132 - INFO -   prune_weights = True
+2025-03-24 14:46:31,132 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-24 14:46:51,674 - INFO - Finished combination 3/15
+2025-03-24 14:46:51,674 - INFO - Running combination 4/15:
+2025-03-24 14:46:51,675 - INFO -   prune_data_flow = encoder
+2025-03-24 14:46:51,675 - INFO -   prune_weights = True
+2025-03-24 14:46:51,675 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-24 14:47:12,140 - INFO - Finished combination 4/15
+2025-03-24 14:47:12,140 - INFO - Running combination 5/15:
+2025-03-24 14:47:12,141 - INFO -   prune_data_flow = encoder
+2025-03-24 14:47:12,141 - INFO -   prune_weights = True
+2025-03-24 14:47:12,141 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-24 14:47:32,416 - INFO - Finished combination 5/15
+2025-03-24 14:47:32,416 - INFO - Running combination 6/15:
+2025-03-24 14:47:32,416 - INFO -   prune_data_flow = decoder
+2025-03-24 14:47:32,416 - INFO -   prune_weights = True
+2025-03-24 14:47:32,416 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 14:47:52,965 - INFO - Finished combination 6/15
+2025-03-24 14:47:52,965 - INFO - Running combination 7/15:
+2025-03-24 14:47:52,965 - INFO -   prune_data_flow = decoder
+2025-03-24 14:47:52,965 - INFO -   prune_weights = True
+2025-03-24 14:47:52,965 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 14:48:13,190 - INFO - Finished combination 7/15
+2025-03-24 14:48:13,190 - INFO - Running combination 8/15:
+2025-03-24 14:48:13,190 - INFO -   prune_data_flow = decoder
+2025-03-24 14:48:13,190 - INFO -   prune_weights = True
+2025-03-24 14:48:13,190 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-24 14:48:33,683 - INFO - Finished combination 8/15
+2025-03-24 14:48:33,683 - INFO - Running combination 9/15:
+2025-03-24 14:48:33,683 - INFO -   prune_data_flow = decoder
+2025-03-24 14:48:33,683 - INFO -   prune_weights = True
+2025-03-24 14:48:33,683 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-24 14:48:54,444 - INFO - Finished combination 9/15
+2025-03-24 14:48:54,444 - INFO - Running combination 10/15:
+2025-03-24 14:48:54,444 - INFO -   prune_data_flow = decoder
+2025-03-24 14:48:54,444 - INFO -   prune_weights = True
+2025-03-24 14:48:54,444 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-24 14:49:14,669 - INFO - Finished combination 10/15
+2025-03-24 14:49:14,669 - INFO - Running combination 11/15:
+2025-03-24 14:49:14,669 - INFO -   prune_data_flow = None
+2025-03-24 14:49:14,669 - INFO -   prune_weights = True
+2025-03-24 14:49:14,669 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 14:49:34,886 - INFO - Finished combination 11/15
+2025-03-24 14:49:34,886 - INFO - Running combination 12/15:
+2025-03-24 14:49:34,886 - INFO -   prune_data_flow = None
+2025-03-24 14:49:34,886 - INFO -   prune_weights = True
+2025-03-24 14:49:34,886 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 14:49:54,941 - INFO - Finished combination 12/15
+2025-03-24 14:49:54,941 - INFO - Running combination 13/15:
+2025-03-24 14:49:54,941 - INFO -   prune_data_flow = None
+2025-03-24 14:49:54,941 - INFO -   prune_weights = True
+2025-03-24 14:49:54,941 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-24 14:50:15,111 - INFO - Finished combination 13/15
+2025-03-24 14:50:15,111 - INFO - Running combination 14/15:
+2025-03-24 14:50:15,111 - INFO -   prune_data_flow = None
+2025-03-24 14:50:15,111 - INFO -   prune_weights = True
+2025-03-24 14:50:15,111 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-24 14:50:35,994 - INFO - Finished combination 14/15
+2025-03-24 14:50:35,994 - INFO - Running combination 15/15:
+2025-03-24 14:50:35,994 - INFO -   prune_data_flow = None
+2025-03-24 14:50:35,994 - INFO -   prune_weights = True
+2025-03-24 14:50:35,994 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-24 14:50:56,944 - INFO - Finished combination 15/15
+2025-03-24 14:50:56,944 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-24 14:50:56,944 - INFO - Parameter sweep completed
+2025-03-24 15:19:29,616 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-24 15:19:29,616 - INFO - Starting parameter sweep with 15 combinations
+2025-03-24 15:19:29,617 - INFO - Running combination 1/15:
+2025-03-24 15:19:29,617 - INFO -   prune_data_flow = encoder
+2025-03-24 15:19:29,617 - INFO -   prune_weights = True
+2025-03-24 15:19:29,617 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 15:19:50,053 - INFO - Finished combination 1/15
+2025-03-24 15:19:50,053 - INFO - Running combination 2/15:
+2025-03-24 15:19:50,053 - INFO -   prune_data_flow = encoder
+2025-03-24 15:19:50,054 - INFO -   prune_weights = True
+2025-03-24 15:19:50,054 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 15:20:10,525 - INFO - Finished combination 2/15
+2025-03-24 15:20:10,525 - INFO - Running combination 3/15:
+2025-03-24 15:20:10,525 - INFO -   prune_data_flow = encoder
+2025-03-24 15:20:10,525 - INFO -   prune_weights = True
+2025-03-24 15:20:10,525 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-24 15:20:31,083 - INFO - Finished combination 3/15
+2025-03-24 15:20:31,084 - INFO - Running combination 4/15:
+2025-03-24 15:20:31,084 - INFO -   prune_data_flow = encoder
+2025-03-24 15:20:31,084 - INFO -   prune_weights = True
+2025-03-24 15:20:31,084 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-24 15:20:51,560 - INFO - Finished combination 4/15
+2025-03-24 15:20:51,560 - INFO - Running combination 5/15:
+2025-03-24 15:20:51,560 - INFO -   prune_data_flow = encoder
+2025-03-24 15:20:51,560 - INFO -   prune_weights = True
+2025-03-24 15:20:51,560 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-24 15:21:12,167 - INFO - Finished combination 5/15
+2025-03-24 15:21:12,167 - INFO - Running combination 6/15:
+2025-03-24 15:21:12,167 - INFO -   prune_data_flow = decoder
+2025-03-24 15:21:12,167 - INFO -   prune_weights = True
+2025-03-24 15:21:12,167 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 15:21:32,826 - INFO - Finished combination 6/15
+2025-03-24 15:21:32,826 - INFO - Running combination 7/15:
+2025-03-24 15:21:32,826 - INFO -   prune_data_flow = decoder
+2025-03-24 15:21:32,826 - INFO -   prune_weights = True
+2025-03-24 15:21:32,826 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 15:21:53,089 - INFO - Finished combination 7/15
+2025-03-24 15:21:53,089 - INFO - Running combination 8/15:
+2025-03-24 15:21:53,089 - INFO -   prune_data_flow = decoder
+2025-03-24 15:21:53,089 - INFO -   prune_weights = True
+2025-03-24 15:21:53,089 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-24 15:22:13,463 - INFO - Finished combination 8/15
+2025-03-24 15:22:13,463 - INFO - Running combination 9/15:
+2025-03-24 15:22:13,464 - INFO -   prune_data_flow = decoder
+2025-03-24 15:22:13,464 - INFO -   prune_weights = True
+2025-03-24 15:22:13,464 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-24 15:22:34,028 - INFO - Finished combination 9/15
+2025-03-24 15:22:34,029 - INFO - Running combination 10/15:
+2025-03-24 15:22:34,029 - INFO -   prune_data_flow = decoder
+2025-03-24 15:22:34,029 - INFO -   prune_weights = True
+2025-03-24 15:22:34,029 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-24 15:22:54,413 - INFO - Finished combination 10/15
+2025-03-24 15:22:54,413 - INFO - Running combination 11/15:
+2025-03-24 15:22:54,413 - INFO -   prune_data_flow = None
+2025-03-24 15:22:54,413 - INFO -   prune_weights = True
+2025-03-24 15:22:54,413 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-24 15:23:14,940 - INFO - Finished combination 11/15
+2025-03-24 15:23:14,941 - INFO - Running combination 12/15:
+2025-03-24 15:23:14,941 - INFO -   prune_data_flow = None
+2025-03-24 15:23:14,941 - INFO -   prune_weights = True
+2025-03-24 15:23:14,941 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-24 15:23:35,993 - INFO - Finished combination 12/15
+2025-03-24 15:23:35,993 - INFO - Running combination 13/15:
+2025-03-24 15:23:35,993 - INFO -   prune_data_flow = None
+2025-03-24 15:23:35,993 - INFO -   prune_weights = True
+2025-03-24 15:23:35,993 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-24 15:23:56,496 - INFO - Finished combination 13/15
+2025-03-24 15:23:56,496 - INFO - Running combination 14/15:
+2025-03-24 15:23:56,496 - INFO -   prune_data_flow = None
+2025-03-24 15:23:56,496 - INFO -   prune_weights = True
+2025-03-24 15:23:56,496 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-24 15:24:17,175 - INFO - Finished combination 14/15
+2025-03-24 15:24:17,175 - INFO - Running combination 15/15:
+2025-03-24 15:24:17,175 - INFO -   prune_data_flow = None
+2025-03-24 15:24:17,175 - INFO -   prune_weights = True
+2025-03-24 15:24:17,175 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv']
+2025-03-24 15:24:39,968 - INFO - Finished combination 15/15
+2025-03-24 15:24:39,968 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-24 15:24:39,968 - INFO - Parameter sweep completed
+2025-03-25 13:30:50,404 - INFO - Created backup of original config at prune_nnunet/config.yaml.backup
+2025-03-25 13:30:50,404 - INFO - Starting parameter sweep with 12 combinations
+2025-03-25 13:30:50,405 - INFO - Running combination 1/12:
+2025-03-25 13:30:50,405 - INFO -   prune_data_flow = encoder
+2025-03-25 13:30:50,405 - INFO -   prune_weights = True
+2025-03-25 13:30:50,405 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-25 13:31:08,599 - INFO - Finished combination 1/12
+2025-03-25 13:31:08,599 - INFO - Running combination 2/12:
+2025-03-25 13:31:08,599 - INFO -   prune_data_flow = encoder
+2025-03-25 13:31:08,599 - INFO -   prune_weights = True
+2025-03-25 13:31:08,599 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-25 13:31:26,435 - INFO - Finished combination 2/12
+2025-03-25 13:31:26,435 - INFO - Running combination 3/12:
+2025-03-25 13:31:26,435 - INFO -   prune_data_flow = encoder
+2025-03-25 13:31:26,435 - INFO -   prune_weights = True
+2025-03-25 13:31:26,435 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-25 13:31:44,281 - INFO - Finished combination 3/12
+2025-03-25 13:31:44,281 - INFO - Running combination 4/12:
+2025-03-25 13:31:44,281 - INFO -   prune_data_flow = encoder
+2025-03-25 13:31:44,282 - INFO -   prune_weights = True
+2025-03-25 13:31:44,282 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-25 13:32:02,028 - INFO - Finished combination 4/12
+2025-03-25 13:32:02,028 - INFO - Running combination 5/12:
+2025-03-25 13:32:02,028 - INFO -   prune_data_flow = decoder
+2025-03-25 13:32:02,028 - INFO -   prune_weights = True
+2025-03-25 13:32:02,028 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-25 13:32:19,918 - INFO - Finished combination 5/12
+2025-03-25 13:32:19,918 - INFO - Running combination 6/12:
+2025-03-25 13:32:19,918 - INFO -   prune_data_flow = decoder
+2025-03-25 13:32:19,918 - INFO -   prune_weights = True
+2025-03-25 13:32:19,918 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-25 13:32:37,595 - INFO - Finished combination 6/12
+2025-03-25 13:32:37,595 - INFO - Running combination 7/12:
+2025-03-25 13:32:37,595 - INFO -   prune_data_flow = decoder
+2025-03-25 13:32:37,595 - INFO -   prune_weights = True
+2025-03-25 13:32:37,595 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-25 13:32:55,345 - INFO - Finished combination 7/12
+2025-03-25 13:32:55,346 - INFO - Running combination 8/12:
+2025-03-25 13:32:55,346 - INFO -   prune_data_flow = decoder
+2025-03-25 13:32:55,346 - INFO -   prune_weights = True
+2025-03-25 13:32:55,346 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-25 13:33:12,978 - INFO - Finished combination 8/12
+2025-03-25 13:33:12,978 - INFO - Running combination 9/12:
+2025-03-25 13:33:12,978 - INFO -   prune_data_flow = None
+2025-03-25 13:33:12,978 - INFO -   prune_weights = True
+2025-03-25 13:33:12,978 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv']
+2025-03-25 13:33:30,829 - INFO - Finished combination 9/12
+2025-03-25 13:33:30,829 - INFO - Running combination 10/12:
+2025-03-25 13:33:30,829 - INFO -   prune_data_flow = None
+2025-03-25 13:33:30,829 - INFO -   prune_weights = True
+2025-03-25 13:33:30,830 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv']
+2025-03-25 13:33:48,430 - INFO - Finished combination 10/12
+2025-03-25 13:33:48,430 - INFO - Running combination 11/12:
+2025-03-25 13:33:48,430 - INFO -   prune_data_flow = None
+2025-03-25 13:33:48,430 - INFO -   prune_weights = True
+2025-03-25 13:33:48,430 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv']
+2025-03-25 13:34:06,000 - INFO - Finished combination 11/12
+2025-03-25 13:34:06,000 - INFO - Running combination 12/12:
+2025-03-25 13:34:06,000 - INFO -   prune_data_flow = None
+2025-03-25 13:34:06,000 - INFO -   prune_weights = True
+2025-03-25 13:34:06,000 - INFO -   prune_layers = ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+2025-03-25 13:34:23,704 - INFO - Finished combination 12/12
+2025-03-25 13:34:23,705 - INFO - Restored original config from prune_nnunet/config.yaml.backup
+2025-03-25 13:34:23,705 - INFO - Parameter sweep completed

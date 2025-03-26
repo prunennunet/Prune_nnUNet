@@ -35,28 +35,26 @@ def modify_and_run_config(config_path):
 
     # Define the parameter ranges
     prune_data_flow = ['encoder', 'decoder', None]
-    prune_bias_values = [True]
     prune_weights_values = [True]
     prune_layers_values = [['decoder.stages.0.convs.0.conv'],
                            ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv'],
                            ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv'],
-                           ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv'],
-                           ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv'],
+                           ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv']
+                           # ['decoder.stages.0.convs.0.conv', 'decoder.stages.1.convs.0.conv', 'decoder.stages.2.convs.0.conv', 'decoder.stages.3.convs.0.conv', 'decoder.stages.4.convs.0.conv'],
                            ]  # None for null
 
     # Generate all combinations but filter out invalid ones where both prune_bias and prune_weights are False
-    raw_combinations = list(product(prune_data_flow, prune_bias_values, prune_weights_values, prune_layers_values))
+    raw_combinations = list(product(prune_data_flow, prune_weights_values, prune_layers_values))
     combinations = [combo for combo in raw_combinations if not (combo[1] is False and combo[2] is False)]
 
     total_combinations = len(combinations)
     logging.info(f"Starting parameter sweep with {total_combinations} combinations")
 
     # For each combination
-    for idx, (prune_data_flow, prune_bias, prune_weights, prune_layers) in enumerate(combinations):
+    for idx, (prune_data_flow, prune_weights, prune_layers) in enumerate(combinations):
         # Log the current combination
         logging.info(f"Running combination {idx + 1}/{total_combinations}:")
         logging.info(f"  prune_data_flow = {prune_data_flow}")
-        logging.info(f"  prune_bias = {prune_bias}")
         logging.info(f"  prune_weights = {prune_weights}")
         logging.info(f"  prune_layers = {prune_layers}")
 
@@ -65,7 +63,6 @@ def modify_and_run_config(config_path):
 
         # Modify the parameters
         modified_config['prune']['prune_parameters']['eliminate_data_flow'] = prune_data_flow
-        modified_config['prune']['prune_parameters']['prune_bias'] = prune_bias
         modified_config['prune']['prune_parameters']['prune_weights'] = prune_weights
         modified_config['prune']['prune_parameters']['prune_layers'] = prune_layers
 
