@@ -34,6 +34,7 @@ plot:
   - 2
   - 3
   - 4
+  - all
   max_cols: 4
   output_dir: weight_distribution
   show_kurtosis: true
@@ -52,6 +53,7 @@ predict:
     - 2
     - 3
     - 4
+  - - all
   input_folder: nnUNet_raw/Dataset027_ACDC/imagesTs
   num_processes_preprocessing: 3
   num_processes_segmentation_export: 3
@@ -72,6 +74,7 @@ train:
   - 2
   - 3
   - 4
+  - all
   npz: false
   num_gpus: 1
   p: nnUNetPlans

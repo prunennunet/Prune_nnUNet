@@ -153,7 +153,7 @@ class nnUNetPredictor(object):
         self.output_filename_for_intermediate_features = None
         self.return_intermediate_features = False
         self.already_saved = False
-        self.max_save = 5
+        self.max_save = 8
         self.save_counter = 0
 
     def initialize_from_trained_model_folder(self, model_training_output_dir: str,

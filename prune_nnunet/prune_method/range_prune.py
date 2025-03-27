@@ -92,7 +92,6 @@ def apply_range_pruning_to_model(model, min_val: float, max_val: float, prune_we
                         should_prune = True
                         print("=" * 60)
                         print(f"Pruning {name} based on layer name")
-                        print("=" * 60)
                         break
 
             # Check if module type matches any of the expanded layer types

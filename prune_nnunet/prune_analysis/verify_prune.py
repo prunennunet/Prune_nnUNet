@@ -4,7 +4,7 @@ import sys
 import torch
 
 
-def analyze_pruning_masks_model(model, output_path):
+def analyze_pruning_masks_model(model, output_path, fold):
     """
     Analyze pruning masks from a PyTorch model, counting unique masks to avoid redundancy.
     Saves analysis to a text file at the provided output path.
@@ -19,7 +19,7 @@ def analyze_pruning_masks_model(model, output_path):
             bias_stats: (bias_pruned, bias_total, bias_proportion)
             total_stats: (total_pruned, total_params, overall_proportion)
     """
-    output_path = os.path.join(output_path, "pruning_mask_analysis.txt")
+    output_path = os.path.join(output_path, f"pruning_mask_analysis_{fold}.txt")
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     seen_buffer = set()
@@ -198,7 +198,7 @@ def analyze_pruning_masks_model(model, output_path):
 #     return weight_stats, bias_stats, total_stats
 
 
-def count_zero_parameters_model(model, output_path):
+def count_zero_parameters_model(model, output_path, fold):
     """
     Count zero-valued parameters in a state_dict (OrderedDict), ensuring unique parameter counting.
     Saves the analysis to a text file at the provided output path.
@@ -213,7 +213,7 @@ def count_zero_parameters_model(model, output_path):
             bias_stats: (bias_zeros, bias_total, bias_proportion)
             total_stats: (total_zeros, total_params, total_proportion)
     """
-    output_path = os.path.join(output_path, "zero_parameter_analysis.txt")
+    output_path = os.path.join(output_path, f"zero_parameter_analysis_{fold}.txt")
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     seen_storages = set()
@@ -276,6 +276,46 @@ def count_zero_parameters_model(model, output_path):
     total_stats = (total_zeros, total_params, total_proportion)
 
     return weight_stats, bias_stats, total_stats
+
+
+def write_pruning_mask_analysis(
+    w_pruned, w_total, b_pruned, b_total, t_pruned, t_total, output_folder
+):
+    """
+    Writes the final aggregated 'pruning mask' analysis to pruning_mask_analysis.txt
+    in the exact specified format.
+    """
+    # Safely compute proportions
+    w_prop = (w_pruned / w_total) if w_total else 0
+    b_prop = (b_pruned / b_total) if b_total else 0
+    t_prop = (t_pruned / t_total) if t_total else 0
+
+    filename = os.path.join(output_folder, "pruning_mask_analysis.txt")
+    with open(filename, 'w') as f:
+        f.write("SUMMARY:\n")
+        f.write(f"Weights: {w_pruned:,}/{w_total:,} zeros ({w_prop:.2%})\n")
+        f.write(f"Biases:  {b_pruned:,}/{b_total:,} zeros ({b_prop:.2%})\n")
+        f.write(f"Total:   {t_pruned:,}/{t_total:,} zeros ({t_prop:.2%})\n")
+
+
+def write_zero_parameter_analysis(
+    w_pruned, w_total, b_pruned, b_total, t_pruned, t_total, output_folder
+):
+    """
+    Writes the final aggregated 'zero parameter' analysis to zero_parameter_analysis.txt
+    in the exact specified format.
+    """
+    # Safely compute proportions
+    w_prop = (w_pruned / w_total) if w_total else 0
+    b_prop = (b_pruned / b_total) if b_total else 0
+    t_prop = (t_pruned / t_total) if t_total else 0
+
+    filename = os.path.join(output_folder, "zero_parameter_analysis.txt")
+    with open(filename, 'w') as f:
+        f.write("SUMMARY:\n")
+        f.write(f"Weights: {w_pruned:,}/{w_total:,} zeros ({w_prop:.2%})\n")
+        f.write(f"Biases:  {b_pruned:,}/{b_total:,} zeros ({b_prop:.2%})\n")
+        f.write(f"Total:   {t_pruned:,}/{t_total:,} zeros ({t_prop:.2%})\n")
 
 
 # def count_zero_parameters(model, output_path):

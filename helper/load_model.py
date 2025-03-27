@@ -42,6 +42,7 @@ def load_predictor_from_folder(model_folder, fold, checkpoint_name):
                                 allow_tqdm=False,
                                 )
     predictor.initialize_from_trained_model_folder(model_folder, fold, checkpoint_name)
+    print(f"There are a total of {len(predictor.list_of_parameters)} sets of parameters")
     return predictor
 
 

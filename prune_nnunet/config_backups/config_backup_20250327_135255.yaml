@@ -14,10 +14,9 @@ prune:
   prune_parameters:
     max_val: 0.1
     min_val: -0.1
-    prune_bias: true
     prune_layers:
     - decoder.stages.0.convs.0.conv
     - decoder.stages.1.convs.0.conv
     - decoder.stages.2.convs.0.conv
     prune_weights: true
-  return_intermediates: true
+    prune_bias: true

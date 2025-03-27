@@ -1,4 +1,5 @@
 prune:
+  return_intermediates: true
   checkpoint_name: checkpoint_final.pth
   fold:
   - - 0
@@ -20,4 +21,3 @@ prune:
     - decoder.stages.1.convs.0.conv
     - decoder.stages.2.convs.0.conv
     prune_weights: true
-  return_intermediates: true
