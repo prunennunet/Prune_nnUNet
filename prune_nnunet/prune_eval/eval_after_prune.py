@@ -8,10 +8,13 @@ def eval_after_prune_pred(config: dict, pred_dir: str):
     prune_config = config['prune']
 
     cmd = ['nnUNetv2_evaluate_folder']
+    
 
     # Add required arguments
     cmd.append(prune_config['gt_folder'])
     cmd.append(pred_dir)
+
+    print(f"We are evaluating {pred_dir} with {prune_config['gt_folder']}")
 
     # If model_folder is specified directly, use it
     model_folder = prune_config.get('model_folder', None)

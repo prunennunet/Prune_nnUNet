@@ -1,3 +1,4 @@
+import copy
 import os
 import sys
 
@@ -104,6 +105,7 @@ def predict_after_prune(config: dict):
 
         # Load the predictor and get the model weights
         fold_tuple = tuple(fold)
+        print(f"We are loading for folds: {fold_tuple}")
         predictor = load_predictor_from_folder(prune_config['model_folder'], fold_tuple, prune_config['checkpoint_name'])
 
         # Find the function to the corresponding pruning method
@@ -115,7 +117,8 @@ def predict_after_prune(config: dict):
 
         for single_fold in range(len(fold)):
             print(f"Pruning fold {fold[single_fold]} model")
-            model = predictor.network
+            # model = predictor.network
+            model = copy.deepcopy(predictor.network) 
             model.load_state_dict(predictor.list_of_parameters[single_fold])
             prune_func(model, **prune_params)
             torch.save(model.state_dict(), os.path.join(output_folder, f"pruned_with_mask_fold_{fold[single_fold]}.pth"))

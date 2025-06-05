@@ -35,31 +35,37 @@ def modify_and_run_config(config_path):
 
     # Define the parameter ranges
     # For abs_values, we want [0, 0.001, 0.002, ..., 0.009, 0.01, 0.02, ..., 0.09, 0.01]
-    abs_values = []
-    for exp in [-3, -2]:
-        for i in range(1, 10):
-            abs_values.append(i * 10 ** exp)
-    abs_values = [0] + abs_values  # Add 0 at the beginning
+    # abs_values = []
+    # for exp in [-3, -2, -1]:
+    #     for i in range(1, 10):
+    #         abs_values.append(i * 10 ** exp)
+    # abs_values = [0] + abs_values  # Add 0 at the beginning
+    # abs_values = [0.01, 0.02]
+    abs_values = [i / 1000 for i in range(0, 21)]
+    # print(abs_values)
 
-    prune_bias_values = [True, False]
-    prune_weights_values = [True, False]
+    prune_bias_values = [True]
+    prune_weights_values = [True]
     prune_layers_values = [['conv']]  # None for null
+    exclude_prune_layers_values = [[None]]
+
 
     # Generate all combinations but filter out invalid ones where both prune_bias and prune_weights are False
-    raw_combinations = list(product(abs_values, prune_bias_values, prune_weights_values, prune_layers_values))
+    raw_combinations = list(product(abs_values, prune_bias_values, prune_weights_values, prune_layers_values, exclude_prune_layers_values))
     combinations = [combo for combo in raw_combinations if not (combo[1] is False and combo[2] is False)]
 
     total_combinations = len(combinations)
     logging.info(f"Starting parameter sweep with {total_combinations} combinations")
 
     # For each combination
-    for idx, (abs_val, prune_bias, prune_weights, prune_layers) in enumerate(combinations):
+    for idx, (abs_val, prune_bias, prune_weights, prune_layers, exclude_prune_layers) in enumerate(combinations):
         # Log the current combination
         logging.info(f"Running combination {idx + 1}/{total_combinations}:")
         logging.info(f"  abs_val = {abs_val}")
         logging.info(f"  prune_bias = {prune_bias}")
         logging.info(f"  prune_weights = {prune_weights}")
         logging.info(f"  prune_layers = {prune_layers}")
+        logging.info(f"  exclude_prune_layers = {exclude_prune_layers}")
 
         # Make a deep copy of the original config
         modified_config = copy.deepcopy(config)
@@ -70,6 +76,7 @@ def modify_and_run_config(config_path):
         modified_config['prune']['prune_parameters']['prune_bias'] = prune_bias
         modified_config['prune']['prune_parameters']['prune_weights'] = prune_weights
         modified_config['prune']['prune_parameters']['prune_layers'] = prune_layers
+        modified_config['prune']['prune_parameters']['prune_exclude_layers'] = exclude_prune_layers
 
         # Save the modified config
         with open(config_path, 'w') as file:

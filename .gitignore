@@ -8,3 +8,8 @@
 /nnUNet_results_norm_on
 /nnUNet_results_norm_off
 /weight_distribution
+/nnUNet_unpruned_pseudo_gt
+/overlay
+overlay.zip
+parameter_analysis_results/
+flow_elimination_plots/

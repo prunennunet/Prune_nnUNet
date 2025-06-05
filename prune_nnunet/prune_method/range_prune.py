@@ -32,8 +32,9 @@ def prune_values_in_range(module, name, min_val, max_val):
 
 
 def apply_range_pruning_to_model(model, min_val: float, max_val: float, prune_weights: bool = True,
-                               prune_bias: bool = False,
-                               prune_layers: list = None):
+                                 prune_bias: bool = False,
+                                 prune_layers: list = None,
+                                 prune_exclude_layers: list = None):
     """
     Apply range-based pruning to specified layers in a model.
 
@@ -48,6 +49,9 @@ def apply_range_pruning_to_model(model, min_val: float, max_val: float, prune_we
                      - Layer types as strings (e.g., 'Conv2d', 'Linear')
                      - Generic categories as strings (e.g., 'conv', 'norm', 'linear')
                      If None, all layers with weights will be pruned (default: None)
+        prune_exclude_layers: List of exact layer names to exclude from pruning.
+                              These layers will not be pruned even if they match criteria in prune_layers.
+                              Must specify exact layer names only (default: None)
 
     Returns:
         The pruned model
@@ -74,6 +78,11 @@ def apply_range_pruning_to_model(model, min_val: float, max_val: float, prune_we
     total_count = 0
 
     for name, module in model.named_modules():
+        # Check if this module is in the exclude list
+        if prune_exclude_layers is not None and name in prune_exclude_layers:
+            print(f"Excluding {name} from pruning as specified in exclude_prune_layers")
+            continue
+
         # Check if this module should be pruned based on the prune_layers list
         should_prune = prune_layers is None  # Prune all if no specific layers provided
 
@@ -190,128 +199,144 @@ def process_range_pruning_results(root_dir, pruning_method_name=None):
                     prune_weights = prune_weights_value.lower() == "true"
 
             # Walk through each fold
-            for fold_dir in config_dir.glob('fold_*'):
-                if not fold_dir.is_dir():
-                    continue
+            for pattern in ['fold_*', 'ensemble_*']:
+                for fold_dir in config_dir.glob(pattern):
+                    if not fold_dir.is_dir():
+                        continue
+                    
+                    # Handle different directory naming patterns
+                    dir_parts = fold_dir.name.split('_')
+                    dir_type = dir_parts[0]  # Either "fold" or "ensemble"
+                    
+                    if dir_type == "fold":
+                        # Handle fold_X or fold_all directories
+                        fold_part = dir_parts[1]
+                        if fold_part == 'all':
+                            fold_num = 'all'
+                        else:
+                            fold_num = int(fold_part)
+                    else:  # ensemble
+                        # Handle ensemble_1_2_3_all directories
+                        # Combine all parts after "ensemble_" as a representation of the folds
+                        fold_num = '_'.join(dir_parts[1:])
 
-                # fold_num = int(fold_dir.name.split('_')[1])
-                fold_part = fold_dir.name.split('_')[1]
-                if fold_part == 'all':
-                    fold_num = 'all'
-                else:
-                    fold_num = int(fold_part)
+                    # fold_part = fold_dir.name.split('_')[1]
+                    # if fold_part == 'all':
+                    #     fold_num = 'all'
+                    # else:
+                    #     fold_num = int(fold_part)
 
-                # Check both final_model and best_model
-                model_types = ["final_model", "best_model"]
-                found_models = []
+                    # Check both final_model and best_model
+                    model_types = ["final_model", "best_model"]
+                    found_models = []
 
-                for model_type in model_types:
-                    model_dir = fold_dir / model_type
-                    if model_dir.exists():
-                        found_models.append((model_type, model_dir))
+                    for model_type in model_types:
+                        model_dir = fold_dir / model_type
+                        if model_dir.exists():
+                            found_models.append((model_type, model_dir))
 
-                if not found_models:
-                    print(f"No final_model or best_model directory found in {fold_dir}")
-                    continue
+                    if not found_models:
+                        print(f"No final_model or best_model directory found in {fold_dir}")
+                        continue
 
-                # Process each found model
-                for model_type, model_dir in found_models:
-                    # Get performance from summary.json
-                    performance = {}
-                    summary_path = model_dir / 'summary.json'
-                    if summary_path.exists():
-                        try:
-                            with open(summary_path, 'r') as f:
-                                data = json.load(f)
-                                performance = data.get('foreground_mean', {})
-                            print(f"Extracted performance metrics from {summary_path}")
-                        except Exception as e:
-                            print(f"Error reading {summary_path}: {e}")
-                    else:
-                        print(f"Warning: {summary_path} does not exist")
+                    # Process each found model
+                    for model_type, model_dir in found_models:
+                        # Get performance from summary.json
+                        performance = {}
+                        summary_path = model_dir / 'summary.json'
+                        if summary_path.exists():
+                            try:
+                                with open(summary_path, 'r') as f:
+                                    data = json.load(f)
+                                    performance = data.get('foreground_mean', {})
+                                print(f"Extracted performance metrics from {summary_path}")
+                            except Exception as e:
+                                print(f"Error reading {summary_path}: {e}")
+                        else:
+                            print(f"Warning: {summary_path} does not exist")
 
-                    # Get pruning stats from zero_parameter_analysis.txt
-                    pruning_stats = {}
-                    zero_path = model_dir / 'zero_parameter_analysis.txt'
+                        # Get pruning stats from zero_parameter_analysis.txt
+                        pruning_stats = {}
+                        zero_path = model_dir / 'zero_parameter_analysis.txt'
 
-                    if zero_path.exists():
-                        try:
-                            with open(zero_path, 'r') as f:
-                                lines = f.readlines()
+                        if zero_path.exists():
+                            try:
+                                with open(zero_path, 'r') as f:
+                                    lines = f.readlines()
 
-                                # Find the summary section
-                                summary_index = -1
-                                for i, line in enumerate(lines):
-                                    if line.strip() == "SUMMARY:":
-                                        summary_index = i
-                                        break
+                                    # Find the summary section
+                                    summary_index = -1
+                                    for i, line in enumerate(lines):
+                                        if line.strip() == "SUMMARY:":
+                                            summary_index = i
+                                            break
 
-                                if summary_index != -1 and summary_index + 3 < len(lines):
-                                    weights_line = lines[summary_index + 1].strip()
-                                    biases_line = lines[summary_index + 2].strip()
-                                    total_line = lines[summary_index + 3].strip()
+                                    if summary_index != -1 and summary_index + 3 < len(lines):
+                                        weights_line = lines[summary_index + 1].strip()
+                                        biases_line = lines[summary_index + 2].strip()
+                                        total_line = lines[summary_index + 3].strip()
 
-                                    # Extract weights percentage
-                                    weights_match = re.search(r"Weights:.*\(([\d.]+)%\)", weights_line)
-                                    if weights_match:
-                                        pruning_stats['weights_percentage'] = float(weights_match.group(1))
+                                        # Extract weights percentage
+                                        weights_match = re.search(r"Weights:.*\(([\d.]+)%\)", weights_line)
+                                        if weights_match:
+                                            pruning_stats['weights_percentage'] = float(weights_match.group(1))
 
-                                        # Also extract the fraction
-                                        fraction_match = re.search(r"Weights:\s+([\d,]+)/([\d,]+)", weights_line)
-                                        if fraction_match:
-                                            zeros = int(fraction_match.group(1).replace(',', ''))
-                                            total = int(fraction_match.group(2).replace(',', ''))
-                                            pruning_stats['weights_zeros'] = zeros
-                                            pruning_stats['weights_total'] = total
+                                            # Also extract the fraction
+                                            fraction_match = re.search(r"Weights:\s+([\d,]+)/([\d,]+)", weights_line)
+                                            if fraction_match:
+                                                zeros = int(fraction_match.group(1).replace(',', ''))
+                                                total = int(fraction_match.group(2).replace(',', ''))
+                                                pruning_stats['weights_zeros'] = zeros
+                                                pruning_stats['weights_total'] = total
 
-                                    # Extract biases percentage
-                                    biases_match = re.search(r"Biases:.*\(([\d.]+)%\)", biases_line)
-                                    if biases_match:
-                                        pruning_stats['biases_percentage'] = float(biases_match.group(1))
+                                        # Extract biases percentage
+                                        biases_match = re.search(r"Biases:.*\(([\d.]+)%\)", biases_line)
+                                        if biases_match:
+                                            pruning_stats['biases_percentage'] = float(biases_match.group(1))
 
-                                        # Also extract the fraction
-                                        fraction_match = re.search(r"Biases:\s+([\d,]+)/([\d,]+)", biases_line)
-                                        if fraction_match:
-                                            zeros = int(fraction_match.group(1).replace(',', ''))
-                                            total = int(fraction_match.group(2).replace(',', ''))
-                                            pruning_stats['biases_zeros'] = zeros
-                                            pruning_stats['biases_total'] = total
+                                            # Also extract the fraction
+                                            fraction_match = re.search(r"Biases:\s+([\d,]+)/([\d,]+)", biases_line)
+                                            if fraction_match:
+                                                zeros = int(fraction_match.group(1).replace(',', ''))
+                                                total = int(fraction_match.group(2).replace(',', ''))
+                                                pruning_stats['biases_zeros'] = zeros
+                                                pruning_stats['biases_total'] = total
 
-                                    # Extract total percentage
-                                    total_match = re.search(r"Total:.*\(([\d.]+)%\)", total_line)
-                                    if total_match:
-                                        pruning_stats['total_percentage'] = float(total_match.group(1))
+                                        # Extract total percentage
+                                        total_match = re.search(r"Total:.*\(([\d.]+)%\)", total_line)
+                                        if total_match:
+                                            pruning_stats['total_percentage'] = float(total_match.group(1))
 
-                                        # Also extract the fraction
-                                        fraction_match = re.search(r"Total:\s+([\d,]+)/([\d,]+)", total_line)
-                                        if fraction_match:
-                                            zeros = int(fraction_match.group(1).replace(',', ''))
-                                            total = int(fraction_match.group(2).replace(',', ''))
-                                            pruning_stats['total_zeros'] = zeros
-                                            pruning_stats['total_total'] = total
+                                            # Also extract the fraction
+                                            fraction_match = re.search(r"Total:\s+([\d,]+)/([\d,]+)", total_line)
+                                            if fraction_match:
+                                                zeros = int(fraction_match.group(1).replace(',', ''))
+                                                total = int(fraction_match.group(2).replace(',', ''))
+                                                pruning_stats['total_zeros'] = zeros
+                                                pruning_stats['total_total'] = total
 
-                            print(f"Extracted pruning stats from {zero_path}")
-                        except Exception as e:
-                            print(f"Error reading {zero_path}: {e}")
-                    else:
-                        print(f"Warning: {zero_path} does not exist")
+                                print(f"Extracted pruning stats from {zero_path}")
+                            except Exception as e:
+                                print(f"Error reading {zero_path}: {e}")
+                        else:
+                            print(f"Warning: {zero_path} does not exist")
 
-                    # Save results for this model
-                    result = {
-                        'fold': fold_num,
-                        'prune_method': pruning_method,
-                        'min_val': min_val,
-                        'max_val': max_val,
-                        'prune_bias': prune_bias,
-                        'prune_layers': prune_layers,
-                        'prune_weights': prune_weights,
-                        'model_type': model_type,  # Distinguish between final_model and best_model
-                        'performance': performance,
-                        'pruning_stats': pruning_stats
-                    }
+                        # Save results for this model
+                        result = {
+                            'fold': fold_num,
+                            'prune_method': pruning_method,
+                            'min_val': min_val,
+                            'max_val': max_val,
+                            'prune_bias': prune_bias,
+                            'prune_layers': prune_layers,
+                            'prune_weights': prune_weights,
+                            'model_type': model_type,  # Distinguish between final_model and best_model
+                            'performance': performance,
+                            'pruning_stats': pruning_stats
+                        }
 
-                    results.append(result)
-                    print(f"Processed {model_type} for fold {fold_num} for {config_dir.name}")
+                        results.append(result)
+                        print(f"Processed {model_type} for fold {fold_num} for {config_dir.name}")
 
     return results
 

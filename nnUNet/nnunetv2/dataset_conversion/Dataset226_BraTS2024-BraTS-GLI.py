@@ -7,7 +7,7 @@ if __name__ == '__main__':
     this dataset does not copy the data into nnunet format and just links to existing data. The dataset can only be 
     used from one machine because the paths in the dataset.json are hard coded
     """
-    extracted_BraTS2024_GLI_dir = '/home/isensee/BraTS2024_traindata/training_data1'
+    extracted_BraTS2024_GLI_dir = '/mnt/data/downloads/BraTS2024-BraTS-GLI-TrainingData/training_data1_v2'
     nnunet_dataset_name = 'BraTS2024-BraTS-GLI'
     nnunet_dataset_id = 226
     dataset_name = f'Dataset{nnunet_dataset_id:03d}_{nnunet_dataset_name}'

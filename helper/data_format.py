@@ -3,7 +3,7 @@
 
 def format_scientific(num):
     # Convert to scientific notation with 0 decimal places
-    formatted = f"{num:.0e}"
+    formatted = f"{num:.1e}"
     # Remove leading zeros in the exponent part
     parts = formatted.split('e')
     exponent = parts[1].lstrip('+-0')
